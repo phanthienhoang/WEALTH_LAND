@@ -22,5 +22,3 @@ Database Design: [a link](https://drive.google.com/open?id=1GIS-2HC6K5X4SC4CnHqS
 Run
 `php artisan voyager:install`
 
-After that, run `composer dump-autoload` to finish your installation!
-
