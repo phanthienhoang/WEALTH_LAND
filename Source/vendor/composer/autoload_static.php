@@ -53,6 +53,7 @@ class ComposerStaticInit9e7eae0a567e2913409162abc4e9dada
         array (
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
             'Tests\\' => 6,
+            'TestHook\\' => 9,
             'TCG\\Voyager\\' => 12,
         ),
         'S' => 
@@ -219,6 +220,10 @@ class ComposerStaticInit9e7eae0a567e2913409162abc4e9dada
         'Tests\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests',
+        ),
+        'TestHook\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/test-hook/src',
         ),
         'TCG\\Voyager\\' => 
         array (
@@ -5695,6 +5700,7 @@ class ComposerStaticInit9e7eae0a567e2913409162abc4e9dada
         'TCG\\Voyager\\Widgets\\PageDimmer' => __DIR__ . '/..' . '/tcg/voyager/src/Widgets/PageDimmer.php',
         'TCG\\Voyager\\Widgets\\PostDimmer' => __DIR__ . '/..' . '/tcg/voyager/src/Widgets/PostDimmer.php',
         'TCG\\Voyager\\Widgets\\UserDimmer' => __DIR__ . '/..' . '/tcg/voyager/src/Widgets/UserDimmer.php',
+        'TestHook\\TestHookServiceProvider' => __DIR__ . '/..' . '/test-hook/src/TestHookServiceProvider.php',
         'Tests\\CreatesApplication' => __DIR__ . '/../..' . '/tests/CreatesApplication.php',
         'Tests\\Feature\\ExampleTest' => __DIR__ . '/../..' . '/tests/Feature/ExampleTest.php',
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',

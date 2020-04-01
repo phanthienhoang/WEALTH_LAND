@@ -6661,6 +6661,36 @@
         ]
     },
     {
+        "name": "test-hook",
+        "version": "v1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/larapack/test-hook.git",
+            "reference": "v1.0.0"
+        },
+        "require": {
+            "larapack/hooks": "~1.0"
+        },
+        "time": "2020-03-30T13:03:50+00:00",
+        "type": "library",
+        "extra": {
+            "hook": {
+                "providers": [
+                    "TestHook\\TestHookServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "TestHook\\": "src/"
+            }
+        },
+        "notification-url": "https://larapack.io/downloads",
+        "description": "This is my first hook."
+    },
+    {
         "name": "theseer/tokenizer",
         "version": "1.1.3",
         "version_normalized": "1.1.3.0",
