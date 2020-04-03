@@ -33,12 +33,15 @@
             </div>
             <div class="intro-row reverse">
                 <div class="media-container">
-                    <form class="contact-form">
-                        <input type="text" placeholder="Vui lòng nhập họ tên" />
-                        <input type="text" placeholder="Số điện thoại" />
-                        <input type="text" placeholder="Email" />
-                        <textarea type="text" placeholder="Viết bình luận" rows="6"></textarea>
-                        <button class="btn btn-accent">Liên hệ</button>
+                    <form class="contact-form" id="contact-form" @submit.prevent="postComment" action="/api/contact">
+                        <input type="text" v-model="form.fullname" placeholder="Vui lòng nhập họ tên" />
+                        <input type="text" v-model="form.email" placeholder="Số điện thoại" />
+                        <input type="text" v-model="form.phone" placeholder="Email" />
+                        <textarea type="text" v-model="form.comment" placeholder="Viết bình luận" rows="6"></textarea>
+                        <button class="btn btn-accent" v-bind:disabled="requesting">
+                            <span v-if="!requesting">Gửi bình luận </span>
+                            <span v-if="requesting">Đang yêu cầu ... </span>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -46,4 +49,11 @@
         </div>
     </article>
 </main>
+@endsection
+
+@section('partial-scripts')
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="/js/contact-form.js"></script>
 @endsection
