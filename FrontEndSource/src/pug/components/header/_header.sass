@@ -1,0 +1,229 @@
+.loading-overlay
+    position: fixed
+    height: 100vh
+    width: 100vw
+    background: white
+    z-index: 100
+    display: flex
+    justify-content: center
+    align-items: center
+    transition: 1s opacity
+
+    .hide 
+        opacity: 0
+
+.menu-backdrop
+    position: fixed
+    opacity: 0
+    left: 0
+    top: 0
+    box-sizing: border-box
+    width: 100vw
+    height: 0vh
+    background-color: rgba(0,0,0, .7)
+    transition: .3s opacity ease-in
+
+    &.show
+        height: 100vh
+        z-index: 1
+        display: block
+        opacity: 1
+
+    a
+        position: absolute
+        right: 2rem
+        top: 1.5rem
+        font-size: 1.7rem
+        color: $light
+
+header
+    background-color: transparent
+    z-index: 1
+    transition: .3s all
+    display: block
+    z-index: 1000
+
+    &.fixed
+        top: -100px
+        position: fixed
+
+        &.show
+            top: 0px !important
+
+        nav 
+           background-color: rgba($dark, 100%) !important
+
+nav
+    margin: auto
+    width: 100%
+    
+    position: absolute
+    top: 0
+    left: 0
+    background-color: rgba($dark, 0%)
+    transition: .3s all
+
+    .nav-container
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 0 1rem
+
+    .toggle-menu-button-container
+        display: none
+
+    ul
+        z-index: 10
+        li
+            text-transform: uppercase
+            color: $white
+            margin: 0 0 0 1.5rem
+            float: left
+
+            &.nav-search
+                display: none
+
+            a.nav-link
+                font-weight: 600
+                padding: 2rem 0
+                display: block
+                height: 100%
+                box-sizing: border-box
+                position: relative
+                transition: .3s all
+                font-size: 16px
+                opacity: .9
+
+                &.active
+                    &::before
+                        position: absolute
+                        content: ' '
+                        width: 100%
+                        height: .2rem
+                        bottom: 0
+                        left: 0
+                        background-color: $accent
+                        opacity: 1
+
+                &::after
+                    position: absolute
+                    content: ' '
+                    width: 100%
+                    height: .2rem
+                    bottom: 0
+                    left: 0
+                    background-color: $accent
+                    opacity: 0
+                    transition: .3s all ease-out
+
+                &:hover
+                    opacity: 1
+                    &::after
+                        opacity: 1
+
+@media only screen and (max-width: $md-screen-max)
+    .brand
+        a.logo-website
+            img
+                height: 24px
+                
+    header
+        &.fixed
+            .toggle-menu-button-container
+                a
+                    font-size: 2rem
+                    color: #f2f2f2
+
+        nav
+            padding: 1rem 1rem
+            align-items: flex-end
+
+            .toggle-menu-button-container
+                display: block
+                flex-grow: 0
+                flex-shrink: 0
+
+                a
+                    font-size: 2.4rem
+                    color: $light
+                    opacity: .8
+                    transition: .3s all ease-out
+
+                    &:hover
+                        opacity: 1
+                        color: $accent
+
+        ul.nav-list
+            margin-left: 0
+            position: fixed
+            left: -300px
+            top: 0
+            width: 300px
+            z-index: 1
+            margin-block-start: 0
+            margin-block-end: 0
+            transition: .3s all ease-out
+
+            &.show
+                left: 0
+
+            &::after
+                content: ' '
+                top: 0
+                left: 0
+                position: absolute
+                background-color: $light
+                height: 100vh
+                width: 100%
+                z-index: -1
+
+            li
+                float: none
+                margin: 0
+                padding: 0 1.5rem
+
+            li.nav-search
+                display: block
+                padding-top: 3.7rem
+                padding-bottom: 1.3rem
+
+                form.search__container
+                    display: flex
+                    justify-content: space-between
+
+                input
+                    margin: 0
+                    font-size: 1rem
+                    font-weight: 200
+                    padding: .6rem
+                    border: none
+                    box-shadow: inset .1px .1px .1px 1px rgba(0,0,0, .1)
+                    flex-grow: 1
+                    color: $medium-light
+
+                button
+                    padding: 0 1rem
+                    margin: 0
+
+            li.nav-item
+                border-top: 1px solid #dfdfdf
+                transition: .3s all
+
+                &:hover
+                    background: rgb(235,235,235)
+
+                a.nav-link
+                    color: $medium
+                    padding: 1.3rem 0
+                    font-size: 1rem
+                    font-weight: 500
+                    letter-spacing: 1.2
+                    &:hover
+                        &::after
+                            display: none
+
+    @media screen and ( max-width: $sm-screen-max )
+        .brand
+                a.logo-website
+                    img
+                        height: 24px

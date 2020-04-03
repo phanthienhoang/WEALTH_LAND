@@ -1,0 +1,58 @@
+html
+    include ../components/head/head.pug
+    body
+
+        include ../components/header/header.pug
+
+        main
+            .page-header
+                h2.page-title.text-3 Liên hệ
+
+                span.page-sub-title Chúng tôi luôn sẵn sàng chào đón các bạn!
+
+            article.container.intro-details
+                p.intro
+
+                .intro-row
+                    .media-container
+                        img(data-original="/assets/images/1_2.jpg")
+
+                    .text-description
+                        .title-section
+                            h2.text-3 BABYLON RESIDENCE
+                            
+
+                        .text-4.officer-title.text-medium Văn phòng tập đoàn Babylon
+
+                        .office-detail
+                            .icon 
+                                i.fa.fa-map-marker
+                            p.content Số 7 đường Bằng Lăng 1, KĐT sinh thái Vinhomes Riverside, P. Việt Hưng, Q. Long Biên, Hà Nội, Việt Nam
+
+                        .office-detail
+                            .icon 
+                                i.fa.fa-phone
+                            p.content 024 3974 9999
+
+                        .office-detail
+                            .icon 
+                                i.fa.fa-envelope-o
+                            p.content salesvillas@vingroup.net
+
+                        .office-detail
+                            .icon 
+                                i.fa.fa-search
+                            p.content https://vinpearlvillas.com
+
+                    .intro-row.reverse
+                        .media-container
+                            form.contact-form
+                                input(type="text" placeholder="Vui lòng nhập họ tên")
+                                input(type="text" placeholder="Số điện thoại")
+                                input(type="text" placeholder="Email")
+                                textarea(type="text" placeholder="Viết bình luận", rows=6)
+                                button.btn.btn-accent Liên hệ
+                    .text-description
+
+
+        include ../components/footer/footer.pug
