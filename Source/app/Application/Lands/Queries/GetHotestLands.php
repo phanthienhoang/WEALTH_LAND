@@ -4,12 +4,11 @@ namespace App\Application\Lands\Queries;
 use App\AppLand;
 use App\Helpers\Translaters\LandTranslater;
 
-class GetLandsPagination {
+class GetHotestLands {
     public static function query($args = []) {
-        $pageSize = $args['pageSize'] ?? 12;
-        $pageIndex = $args['pageIndex'] ?? 1;
+        $length = $args['length'] ?? 10;
 
-        $lands = AppLand::skip(($pageIndex - 1) * $pageSize)->take($pageSize)->get();
+        $lands = AppLand::orderBy('isHot', 'desc')->orderBy('id', 'desc')->take($length)->get();
 
         $lands->map(function($land) {
             return LandTranslater::transform($land);

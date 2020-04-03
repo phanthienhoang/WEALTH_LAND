@@ -96,71 +96,30 @@
                 <h2 class="text-3">Bất động sản nổi bật</h2>
             </div>
             <div class="row">
-                <div class="col-6 col-sm-6 col-md-4">
-                    <figure class="gallery-figure-room"><a href="#">
-                            <div class="image__wrapper"><img data-original="/assets/images/design_page_room_1_img_3.jpg" /></div>
-                        </a></figure>
-                </div>
-                <div class="col-6 col-sm-6 col-md-4">
-                    <figure class="gallery-figure-room"><a href="#">
-                            <div class="image__wrapper"><img data-original="/assets/images/design_page_room_1_img_3.jpg" /></div>
-                        </a></figure>
-                </div>
-                <div class="col-6 col-sm-6 col-md-4">
-                    <figure class="gallery-figure-room"><a href="#">
-                            <div class="image__wrapper"><img data-original="/assets/images/design_page_room_1_img_3.jpg" /></div>
-                        </a></figure>
-                </div>
-                <div class="col-6 col-sm-6 col-md-4">
-                    <figure class="gallery-figure-room"><a href="#">
-                            <div class="image__wrapper"><img data-original="/assets/images/design_page_room_1_img_3.jpg" /></div>
-                        </a></figure>
-                </div>
-                <div class="col-6 col-sm-6 col-md-4">
-                    <figure class="gallery-figure-room"><a href="#">
-                            <div class="image__wrapper"><img data-original="/assets/images/design_page_room_1_img_3.jpg" /></div>
-                        </a></figure>
-                </div>
-                <div class="col-6 col-sm-6 col-md-4">
-                    <figure class="gallery-figure-room"><a href="#">
-                            <div class="image__wrapper"><img data-original="/assets/images/design_page_room_1_img_3.jpg" /></div>
-                        </a></figure>
-                </div>
-            </div>
-            <div class="title-section has-margin">
-                <h2 class="text-3">Mặt bằng căn hộ 3 phòng ngủ</h2>
-            </div>
-            <div class="row">
-                <div class="col-6 col-sm-6 col-md-4">
-                    <figure class="gallery-figure-room"><a href="#">
-                            <div class="image__wrapper"><img data-original="/assets/images/design_page_room_1_img_3.jpg" /></div>
-                        </a></figure>
-                </div>
-                <div class="col-6 col-sm-6 col-md-4">
-                    <figure class="gallery-figure-room"><a href="#">
-                            <div class="image__wrapper"><img data-original="/assets/images/design_page_room_1_img_3.jpg" /></div>
-                        </a></figure>
-                </div>
-                <div class="col-6 col-sm-6 col-md-4">
-                    <figure class="gallery-figure-room"><a href="#">
-                            <div class="image__wrapper"><img data-original="/assets/images/design_page_room_1_img_3.jpg" /></div>
-                        </a></figure>
-                </div>
-                <div class="col-6 col-sm-6 col-md-4">
-                    <figure class="gallery-figure-room"><a href="#">
-                            <div class="image__wrapper"><img data-original="/assets/images/design_page_room_1_img_3.jpg" /></div>
-                        </a></figure>
-                </div>
-                <div class="col-6 col-sm-6 col-md-4">
-                    <figure class="gallery-figure-room"><a href="#">
-                            <div class="image__wrapper"><img data-original="/assets/images/design_page_room_1_img_3.jpg" /></div>
-                        </a></figure>
-                </div>
-                <div class="col-6 col-sm-6 col-md-4">
-                    <figure class="gallery-figure-room"><a href="#">
-                            <div class="image__wrapper"><img data-original="/assets/images/design_page_room_1_img_3.jpg" /></div>
-                        </a></figure>
-                </div>
+                @foreach($hotestLands as $land)
+                <div class="col-12 col-md-6 col-xl-4">
+                <a class="land-figure" href="{{ route('land.single', $land->seoAlias) }}"><figure class="land-figure-link"><img data-original="{{ $land->imgCoverUrl}}"/>
+                        <div class="land-details-nail">
+                          <div class="land-detail-info">
+                            <div class="icon"><i class="fa fa-home" aria-hidden="true"></i></div>
+                          <p>{{ $land->iArea }}m2</p>
+                          </div>
+                          <div class="land-detail-info">
+                            <div class="icon end"><i class="fa fa-bed" aria-hidden="true"></i></div>
+                            <p>{{ $land->iBedroom}}</p>
+                          </div>
+                          <div class="land-detail-info">
+                            <div class="icon top"><i class="fa fa-bath" aria-hidden="true"></i></div>
+                            <p>{{ $land->iBathroom}}</p>
+                          </div>
+                          <div class="land-detail-info">
+                            <div class="icon smaller"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i></div>
+                            <p>{{ $land->iBuiltYear }}</p>
+                          </div>
+                        </div>
+                        <div class="land-price">{{ $land->iPrice}}T</div></figure></a>
+                  </div>
+                @endforeach
             </div>
         </section>
     </div>

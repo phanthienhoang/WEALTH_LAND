@@ -11,7 +11,7 @@
  Target Server Version : 50729
  File Encoding         : 65001
 
- Date: 03/04/2020 11:50:45
+ Date: 03/04/2020 14:47:24
 */
 
 SET NAMES utf8mb4;
@@ -201,12 +201,14 @@ CREATE TABLE `app_user_comments` (
   `deleted_at` timestamp NULL DEFAULT NULL,
   `isReply` tinyint(4) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of app_user_comments
 -- ----------------------------
 BEGIN;
+INSERT INTO `app_user_comments` VALUES (11, 'Danh Nguyễn', '0935418749', 'nguyentd92@gmail.com', 'Chúng tôi muốn mua Căn hộ giá từ 2T đến 2.5T, Tư vấn giúp tôi nhé', '2020-04-03 07:23:20', '2020-04-03 07:23:20', NULL, 0);
+INSERT INTO `app_user_comments` VALUES (12, 'Michael Khoa Nguyễn', '0935216417', 'khoa.nguyen@codegym.vn', 'Tôi muốn 1 căn biệt thự sân vườn diện tích vườn trên 100m2, có hồ bơi, 8 đến 10 phòng ngủ. Giá không thành vấn đề. Liên hệ cho tôi vào 8-9h AM', '2020-04-03 07:30:03', '2020-04-03 07:30:03', NULL, 0);
 COMMIT;
 
 -- ----------------------------
@@ -332,7 +334,7 @@ INSERT INTO `data_rows` VALUES (155, 17, 'iBathroom', 'number', 'Số Phòng t�
 INSERT INTO `data_rows` VALUES (156, 17, 'iBuiltYear', 'number', 'Năm xây dựng', 0, 1, 1, 1, 1, 1, '{}', 26);
 INSERT INTO `data_rows` VALUES (157, 17, 'iHasGarage', 'checkbox', 'Có Garage?', 0, 0, 1, 1, 1, 1, '{\"on\":\"HOT\",\"off\":\"Kh\\u00f4ng\",\"checked\":false}', 27);
 INSERT INTO `data_rows` VALUES (158, 17, 'iParking', 'number', 'Gần bao nhiêu Bãi đậu xe', 0, 0, 1, 1, 1, 1, '{}', 28);
-INSERT INTO `data_rows` VALUES (159, 17, 'iPrice', 'number', 'Gía bán', 0, 1, 1, 1, 1, 1, '{}', 29);
+INSERT INTO `data_rows` VALUES (159, 17, 'iPrice', 'number', 'Giá bán (Đơn vị: Tỷ đồng)', 0, 1, 1, 1, 1, 1, '{}', 29);
 INSERT INTO `data_rows` VALUES (163, 19, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1);
 INSERT INTO `data_rows` VALUES (164, 19, 'seoAliasVI', 'text', 'Tên SEO (Tiếng Việt)', 1, 0, 1, 1, 1, 1, '{}', 6);
 INSERT INTO `data_rows` VALUES (165, 19, 'seoAliasEN', 'text', 'SEO Alias (English)', 1, 0, 1, 1, 1, 1, '{}', 7);
@@ -361,7 +363,7 @@ INSERT INTO `data_rows` VALUES (189, 19, 'category_project_land_id', 'text', 'Ca
 INSERT INTO `data_rows` VALUES (190, 17, 'category_land_id', 'text', 'Category Land Id', 0, 0, 0, 0, 0, 0, '{}', 2);
 INSERT INTO `data_rows` VALUES (191, 17, 'project_land_id', 'text', 'Project Land Id', 0, 0, 0, 0, 0, 0, '{}', 3);
 INSERT INTO `data_rows` VALUES (192, 17, 'iAddress', 'text', 'Địa chỉ', 0, 1, 1, 1, 1, 1, '{}', 21);
-INSERT INTO `data_rows` VALUES (193, 17, 'app_land_belongsto_app_project_land_relationship', 'relationship', 'Thuộc dự án nào?', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\AppProjectLand\",\"table\":\"app_project_lands\",\"type\":\"belongsTo\",\"column\":\"project_land_id\",\"key\":\"id\",\"label\":\"titleVI\",\"pivot_table\":\"app_category_lands\",\"pivot\":\"0\",\"taggable\":\"0\"}', 5);
+INSERT INTO `data_rows` VALUES (193, 17, 'app_land_belongsto_app_project_land_relationship', 'relationship', 'Thuộc dự án nào?', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\AppProjectLand\",\"table\":\"app_project_lands\",\"type\":\"belongsTo\",\"column\":\"project_land_id\",\"key\":\"id\",\"label\":\"id\",\"pivot_table\":\"app_category_lands\",\"pivot\":\"0\",\"taggable\":\"0\"}', 5);
 INSERT INTO `data_rows` VALUES (194, 20, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1);
 INSERT INTO `data_rows` VALUES (195, 20, 'uName', 'text', 'Tên khách hàng', 0, 1, 1, 0, 0, 0, '{}', 2);
 INSERT INTO `data_rows` VALUES (196, 20, 'uPhone', 'text', 'Số điện thoại', 0, 1, 1, 0, 0, 0, '{}', 3);
@@ -411,7 +413,7 @@ INSERT INTO `data_types` VALUES (10, 'AppCategoryLands', 'appcategorylands', 'Ap
 INSERT INTO `data_types` VALUES (11, 'app_category_lands', 'app-category-lands', 'Thể loại BĐS', 'Thể loại BĐS', NULL, 'App\\AppCategoryLand', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":\"id\",\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-03-30 07:34:54', '2020-03-30 09:01:35');
 INSERT INTO `data_types` VALUES (12, 'app_category_project_lands', 'app-category-project-lands', 'Thể loại Dự án Bất động sản', 'Thể loại Dự án Bất động sản', NULL, 'App\\AppCategoryProjectLand', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-03-30 07:38:04', '2020-03-30 09:03:06');
 INSERT INTO `data_types` VALUES (13, 'app_news_posts', 'app-news-posts', 'Tin tức Bất động sản', 'Tin tức Bất động sản', NULL, 'App\\AppNewsPost', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":\"id\",\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-03-30 07:44:03', '2020-03-30 09:25:28');
-INSERT INTO `data_types` VALUES (17, 'app_lands', 'app-lands', 'Bất động sản', 'Bất động sản', NULL, 'App\\AppLand', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-03-30 08:00:11', '2020-04-02 10:37:47');
+INSERT INTO `data_types` VALUES (17, 'app_lands', 'app-lands', 'Bất động sản', 'Bất động sản', NULL, 'App\\AppLand', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-03-30 08:00:11', '2020-04-03 07:47:00');
 INSERT INTO `data_types` VALUES (19, 'app_project_lands', 'app-project-lands', 'Dự án Bất động sản', 'Dự án Bất động sản', NULL, 'App\\AppProjectLand', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-03-30 08:17:23', '2020-03-30 09:19:47');
 INSERT INTO `data_types` VALUES (20, 'app_user_comments', 'app-user-comments', 'Khách hàng hỏi', 'Khách hàng hỏi', 'voyager-documentation', 'App\\AppUserComment', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2020-04-03 04:49:01', '2020-04-03 04:49:01');
 COMMIT;
