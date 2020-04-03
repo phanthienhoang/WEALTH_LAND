@@ -2,10 +2,38 @@
 
 @section('main-content')
 <main>
-    <div class="page-header">
-        <h2 class="page-title text-3">Giới thiệu</h2>
+    <div class="page-header" style="background: url(/{{ $land->imgCoverUrl }}) no-repeat center bottom; background-size: cover">
+        <h2 class="page-title text-3">{{ $land->title }}</h2>
     </div>
     <article class="container intro-details">
+        <section class="project-details app-container">
+            <div class="title-section has-margin">
+                <h2 class="text-3">Thông tin chi tiết</h2>
+            </div>
+            <div class="detail-container">
+                <div class="detail-figure"><img data-original="/assets/icons/icon_calendar.png" />
+                    <div class="icon-label">Xây dựng</div>
+                    <div class="info">Năm {{ $land->iBuiltYear }}</div>
+                </div>
+                <div class="detail-figure"><img data-original="/assets/icons/icon_dimension.png" />
+                    <div class="icon-label">diện tích</div>
+                    <div class="info">{{ $land->iArea }} m2</div>
+                </div>
+                <div class="detail-figure"><img data-original="/assets/icons/icon_parking.png" />
+                    <div class="icon-label">bãi gửi xe</div>
+                    <div class="info">{{ $land->iParking}}</div>
+                </div>
+                <div class="detail-figure"><img data-original="/assets/icons/icon_bed.png" />
+                    <div class="icon-label">phòng ngủ</div>
+                    <div class="info">{{ $land->iBedroom }}</div>
+                </div>
+                <div class="detail-figure"><img data-original="/assets/icons/icon_bath.png" />
+                    <div class="icon-label">PHÒNG tắm</div>
+                    <div class="info">{{ $land->iBathroom }}</div>
+                </div>
+            </div>
+        </section>
+
         <p class="intro"><b>Trang giới thiệu</b> giúp khách hàng hiểu rõ hơn về cửa hàng của bạn. Hãy cung cấp thông tin cụ thể về việc kinh doanh, về cửa hàng, thông tin liên hệ. Điều này sẽ giúp khách hàng cảm thấy tin tưởng khi mua hàng trên website của bạn.</p>
         <div class="intro-row">
             <div class="media-container"><img data-original="/assets/images/sp8_master.jpg" /></div>
