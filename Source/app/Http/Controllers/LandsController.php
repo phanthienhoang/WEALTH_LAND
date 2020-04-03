@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Application\Lands\Queries\GetLandBySeoAlias;
 use App\Application\Lands\Queries\GetLandsPagination;
-use Illuminate\Http\Request;
 
 class LandsController extends Controller
 {

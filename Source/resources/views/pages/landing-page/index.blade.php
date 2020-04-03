@@ -17,7 +17,7 @@
             </form>
         </div>
     </div>
-    <section class="project-details app-container">
+    {{-- <section class="project-details app-container">
         <div class="title-section has-margin">
             <h2 class="text-3">Thông tin chi tiết</h2>
         </div>
@@ -43,8 +43,8 @@
                 <div class="info">2</div>
             </div>
         </div>
-    </section>
-    <section class="overview">
+    </section> --}}
+    {{-- <section class="overview">
         <div class="row">
             <div class="col-md-6"></div>
             <div class="col-12 col-md-6">
@@ -74,7 +74,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <section class="gallery-room app-container">
         <div class="title-section">
             <h2 class="text-3">Dự án nổi bật</h2>
