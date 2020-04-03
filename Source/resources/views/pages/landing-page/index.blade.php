@@ -13,7 +13,7 @@
                 <input type="text" v-model="form.phone" placeholder="Số điện thoại" />
                 <input type="text" v-model="form.email" placeholder="Email" />
                 <textarea v-model="form.comment" placeholder="Viết bình luận" rows="4"></textarea>
-                <button class="btn btn-accent">Đăng ký tư vấn></button>
+                <button class="btn btn-accent">Đăng ký tư vấn</button>
             </form>
         </div>
     </div>
