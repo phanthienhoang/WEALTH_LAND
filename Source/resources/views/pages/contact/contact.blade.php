@@ -35,8 +35,8 @@
                 <div class="media-container">
                     <form class="contact-form" id="contact-form" @submit.prevent="postComment" action="/api/contact">
                         <input type="text" v-model="form.fullname" placeholder="Vui lòng nhập họ tên" />
-                        <input type="text" v-model="form.email" placeholder="Số điện thoại" />
-                        <input type="text" v-model="form.phone" placeholder="Email" />
+                        <input type="text" v-model="form.phone" placeholder="Số điện thoại" />
+                        <input type="text" v-model="form.email" placeholder="Email" />
                         <textarea type="text" v-model="form.comment" placeholder="Viết bình luận" rows="6"></textarea>
                         <button class="btn btn-accent" v-bind:disabled="requesting">
                             <span v-if="!requesting">Gửi bình luận </span>
