@@ -8,12 +8,12 @@
                 <h2 class="feature text-2">BABYLON RESIDENCE</h2><span class="feature-description">458 Minh Khai, Hai Bà Trưng - Hà Nội</span><span class="feature-description">Giá chỉ từ 4 tỷ</span>
                 <button class="btn btn-accent">Xem chi tiết</button>
             </div>
-            <form>
-                <input type="text" placeholder="Vui lòng nhập họ tên" />
-                <input type="text" placeholder="Số điện thoại" />
-                <input type="text" placeholder="Email" />
-                <textarea placeholder="Viết bình luận" rows="4"></textarea>
-                <button class="btn btn-accent">Đăng ký</button>
+            <form id="contact-form" @submit.prevent="postComment" action="/api/contact">
+                <input type="text" v-model="form.fullname" placeholder="Vui lòng nhập họ tên" />
+                <input type="text" v-model="form.phone" placeholder="Số điện thoại" />
+                <input type="text" v-model="form.email" placeholder="Email" />
+                <textarea v-model="form.comment" placeholder="Viết bình luận" rows="4"></textarea>
+                <button class="btn btn-accent">Đăng ký tư vấn</button>
             </form>
         </div>
     </div>
@@ -147,4 +147,11 @@
         </div>
     </section>
 </main>
+@endsection
+
+@section('partial-scripts')
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="/js/contact-form.js"></script>
 @endsection
