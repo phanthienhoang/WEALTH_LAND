@@ -1,0 +1,62 @@
+figure.gallery-figure-room
+    display: block
+    position: relative
+    overflow: hidden
+    margin-bottom: 1.7rem
+    height: 240px
+
+    .image__wrapper
+        display: flex
+        align-items: center
+        justify-content: center
+        // height: 100%
+
+        img
+            width: 110%
+
+    &:hover
+        .float-title
+            bottom: 48%
+            opacity: 1
+            transform: scale(1) translateX(-50%)
+            transition: .6s all
+
+    .title
+        position: absolute
+        width: 100%
+        text-align: center
+        bottom: 0
+        padding: .5rem 0 .7rem
+        background-color: rgba(white, .8)
+
+        span
+            font-size: 17px
+
+    .float-title
+        position: absolute
+        width: auto
+        border: 1px solid tomato
+        left: 50%
+        bottom: -3rem
+        opacity: 0
+        transform: translateX(-50%) scale(.3)
+        border: 3px solid $accent-dark
+        color: $accent
+        padding: .5rem 2rem
+        transition: .4s all
+
+@media screen and ( max-width: $lg-screen-max )
+    figure.gallery-figure-room
+        height: 200px
+
+@media screen and ( max-width: $md-screen-max )
+    figure.gallery-figure-room
+        height: 100px
+        
+@media screen and ( max-width: $sm-screen-max )
+    .float-title
+        background-color: $accent
+        color: $white !important
+
+    figure.gallery-figure-room
+        height: 220px

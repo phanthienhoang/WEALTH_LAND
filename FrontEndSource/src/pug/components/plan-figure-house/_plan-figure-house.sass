@@ -1,0 +1,40 @@
+figure.plan-figure-house
+    display: block
+    position: relative
+    overflow: hidden
+    margin-bottom: 1.7rem
+
+    .image__wrapper
+        display: block
+        
+        img
+            width: 100%
+
+    &:hover
+        .float-title
+            bottom: 48%
+            opacity: 1
+            transform: scale(1) translateX(-50%)
+
+    .title
+        position: absolute
+        width: 100%
+        text-align: center
+        bottom: 0
+        padding: .5rem 0 .7rem
+        background-color: rgba(white, .8)
+
+        span
+            font-size: 17px
+
+    .float-title
+        position: absolute
+        width: auto
+        border: 1px solid tomato
+        left: 50%
+        bottom: -3rem
+        opacity: 0
+        transform: translateX(-50%) scale(.3)
+        border: 3px solid $accent-dark
+        color: $accent
+        padding: .5rem 2rem
