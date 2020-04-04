@@ -1,9 +1,11 @@
 @extends('layouts.app')
 
+@section('meta-description') Thị trường Bất động sản - Danh sách Bất động sản WealthLand @endsection
+
 @section('main-content')
 <main class="index-page">
     <div class="page-header">
-        <h2 class="page-title text-3">Bất động sản WealthLand</h2>
+        <h1 class="page-title text-3">Bất động sản WealthLand</h1>
     </div>
     <section class="gallery-room container">
         <div class="title-section has-margin">
@@ -12,7 +14,7 @@
         <div class="row">
             @foreach($lands as $land)
             <div class="col-12 col-md-6 col-xl-4">
-            <a class="land-figure" href="{{ route('land.single', $land->seoAlias) }}"><figure class="land-figure-link"><img data-original="{{ $land->imgCoverUrl}}"/>
+            <a class="land-figure" href="{{ route('land.single', $land->seoAlias) }}"><figure class="land-figure-link"><img alt="{{ $land->title }}" data-original="{{ $land->imgCoverUrl}}"/>
                     <div class="land-details-nail">
                       <div class="land-detail-info">
                         <div class="icon"><i class="fa fa-home" aria-hidden="true"></i></div>

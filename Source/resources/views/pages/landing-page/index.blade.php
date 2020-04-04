@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
+@section('meta-description')Công ty Bất động sản WealthLand Đà Nẵng @endsection
+
 @section('main-content')
 <main class="index-page">
+    <h1 style="display: none">Công ty Bất động sản WealthLand</h1>
     <div class="carousel-container">
         <div class="carousel-widget app-container">
             <div class="project-description">
@@ -83,7 +86,7 @@
             @foreach($hotestProjects as $project)
             <div class="col-12 col-sm-6 col-md-4">
                 <figure class="gallery-figure-room">
-                    <div class="image__wrapper"><img data-original="{{ $project->imgCoverUrl }}" /></div>
+                    <div class="image__wrapper"><img alt="$project->title" data-original="{{ $project->imgCoverUrl }}" /></div>
                     <div class="title text-medium"><span>{{ $project->title}}</span></div><a class="float-title hover-darken ease-out" href="{{ route('project.single', $project->seoAlias) }}"> Chi tiết</a>
                 </figure>
             </div>
@@ -98,7 +101,7 @@
             <div class="row">
                 @foreach($hotestLands as $land)
                 <div class="col-12 col-md-6 col-xl-4">
-                <a class="land-figure" href="{{ route('land.single', $land->seoAlias) }}"><figure class="land-figure-link"><img data-original="{{ $land->imgCoverUrl}}"/>
+                <a class="land-figure" href="{{ route('land.single', $land->seoAlias) }}"><figure class="land-figure-link"><img alt="{{ $land->title }}" data-original="{{ $land->imgCoverUrl}}"/>
                         <div class="land-details-nail">
                           <div class="land-detail-info">
                             <div class="icon"><i class="fa fa-home" aria-hidden="true"></i></div>
@@ -130,7 +133,7 @@
         <div class="row">
             @foreach($lastestNews as $news)
         <div class="col-12 col-sm-6 col-md-4"><a class="news-figure-vertical" href="{{ route('news.single',  $news->slug )}}">
-                    <div class="image__wrapper"><img data-original="/assets/images/5-yeu-to-tao-nen-co-hoi-dau-tu-thong-minh-tai-flc-luxury-hotel-sam-son-257-8643.jpg" />
+            <div class="image__wrapper"><img alt="{{ $news->title }}" data-original="/assets/images/5-yeu-to-tao-nen-co-hoi-dau-tu-thong-minh-tai-flc-luxury-hotel-sam-son-257-8643.jpg" />
                         <div class="date-tag bg-accent"><span class="date">{{ date("d", strtotime($news->created_at)) }}</span><span class="month">Th{{ (int)date("m", strtotime($news->created_at)) }}</span></div>
                     </div>
                     <div class="main-title-wrapper">
