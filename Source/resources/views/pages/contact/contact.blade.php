@@ -1,14 +1,18 @@
 @extends('layouts.app')
 
+@section('meta-description')
+    Liên hệ tư vấn, hỗ trợ mua bán Bất động sản, đất đai, căn hộ, dự án bất động sản WealthLand
+@endsection
+
 @section('main-content')
 <main>
     <div class="page-header">
-        <h2 class="page-title text-3">Liên hệ</h2><span class="page-sub-title">Chúng tôi luôn sẵn sàng chào đón các bạn!</span>
+        <h1 class="page-title text-3">Liên hệ tư vấn</h1><span class="page-sub-title">Chúng tôi luôn sẵn sàng hỗ trợ quý khách hàng!</span>
     </div>
     <article class="container intro-details">
         <p class="intro"></p>
         <div class="intro-row">
-            <div class="media-container"><img data-original="/assets/images/1_2.jpg" /></div>
+            <div class="media-container"><img alt="Văn phòng Tập đoàn bất động sản WealthLand" data-original="/assets/images/1_2.jpg" /></div>
             <div class="text-description">
                 <div class="title-section">
                     <h2 class="text-3">BABYLON RESIDENCE</h2>
