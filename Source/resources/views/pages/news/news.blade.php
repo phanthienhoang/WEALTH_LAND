@@ -3,7 +3,7 @@
 @section('main-content')
 <main>
     <div class="page-header">
-        <h2 class="page-title text-3">Tin tức WealthLand</h2>
+        <h1 class="page-title text-3">Tin tức WealthLand</h1>
     </div>
     <div class="app-container">
         <div class="row">
