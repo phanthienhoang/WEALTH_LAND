@@ -11,11 +11,18 @@
             opacity: .9
 
     .image__wrapper
-        display: block
+        display: flex
+        box-sizing: border-box
         position: relative
+        width: 100%
+        justify-content: center
+        align-items: center
+        height: 220px
+        overflow: hidden
 
         img
-            width: 100%
+            object-fit: cover
+            width: 120%
 
         .date-tag
             position: absolute
@@ -32,7 +39,6 @@
 
             .month
                 font-size: .9rem
-
 
     .main-title-wrapper
         max-width: 100%
@@ -69,3 +75,19 @@
         font-size: .9rem
         opacity: .4
         transition: .3s all
+
+@media screen and ( max-width: $lg-screen-max )
+    .news-figure-vertical .image__wrapper
+        height: 220px
+
+@media screen and ( max-width: $md-screen-max )
+    .news-figure-vertical .image__wrapper
+        height: 200px
+
+@media screen and ( max-width: $sm-screen-max )
+    .float-title
+        background-color: $accent
+        color: $white !important
+
+    .news-figure-vertical .image__wrapper
+        height: 240px

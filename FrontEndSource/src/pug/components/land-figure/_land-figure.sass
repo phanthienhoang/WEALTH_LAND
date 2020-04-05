@@ -39,7 +39,8 @@ a.land-figure
         box-sizing: border-box
         align-items: center
         justify-content: center
-        position: relative
+        position: relative     
+        height: 220px
 
         img
             object-fit: cover
@@ -64,16 +65,15 @@ a.land-figure
             justify-content: space-between
 
             .land-detail-info
-                float: left
                 display: flex
                 align-items: flex-end
-                margin-right: .7rem
+                justify-content: flex-start
                 min-width: 2.5rem
                 color: $medium-light
                 flex-shrink: 0
                 flex-grow: 0
                 overflow: hidden
-                width: 24%
+                width: 25%
 
                 .icon
                     float: left
@@ -90,18 +90,24 @@ a.land-figure
                     margin-left: .3rem
                     font-size: .9rem
 
+                &:not(:first-child)
+                    justify-content: center
+
+                &:last-child
+                    justify-content: flex-end
+
 @media screen and ( max-width: $lg-screen-max )
-    figure.land-figure
-        height: 200px
+    figure.land-figure-link
+        height: 220px
 
 @media screen and ( max-width: $md-screen-max )
-    figure.land-figure
-        height: 100px
+    figure.land-figure-link
+        height: 200px
 
 @media screen and ( max-width: $sm-screen-max )
     .float-title
         background-color: $accent
         color: $white !important
 
-    figure.land-figure
-        height: 220px
+    figure.land-figure-link
+        height: 240px
