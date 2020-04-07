@@ -20,64 +20,6 @@
             </form>
         </div>
     </div>
-    {{-- <section class="project-details app-container">
-        <div class="title-section has-margin">
-            <h2 class="text-3">Thông tin chi tiết</h2>
-        </div>
-        <div class="detail-container">
-            <div class="detail-figure"><img data-original="/assets/icons/icon_calendar.png" />
-                <div class="icon-label">Xây dựng</div>
-                <div class="info">Năm 2018</div>
-            </div>
-            <div class="detail-figure"><img data-original="/assets/icons/icon_dimension.png" />
-                <div class="icon-label">diện tích</div>
-                <div class="info">50,75 - 83,12 M2</div>
-            </div>
-            <div class="detail-figure"><img data-original="/assets/icons/icon_parking.png" />
-                <div class="icon-label">bãi gửi xe</div>
-                <div class="info">2</div>
-            </div>
-            <div class="detail-figure"><img data-original="/assets/icons/icon_bed.png" />
-                <div class="icon-label">phòng ngủ</div>
-                <div class="info">2</div>
-            </div>
-            <div class="detail-figure"><img data-original="/assets/icons/icon_bath.png" />
-                <div class="icon-label">PHÒNG tắm</div>
-                <div class="info">2</div>
-            </div>
-        </div>
-    </section> --}}
-    {{-- <section class="overview">
-        <div class="row">
-            <div class="col-md-6"></div>
-            <div class="col-12 col-md-6">
-                <div class="text__container">
-                    <div class="title-section">
-                        <h2 class="text-3">Cơ sở hạ tầng</h2>
-                    </div>
-                    <p class="description">Khu căn hộ Babylon Residence được đầu tư bởi Tập đoàn Đất Xanh, hiện dự án Babylon Residence đang hoàn thiện nhà điều hành, nhà mẫu và công viên ven sông. Dự kiến dự án sẽ được công bố vào tháng 5/2016 và hoàn thành vào đầu năm 2018.</p>
-                    <div class="more-description">
-                        <div class="widget">
-                            <div class="title">TẦM NHÌN</div>
-                            <p class="content">Với vị trí của căn hộ quý khách sẽ cảm thấy sảng khoái và vui vẻ với quang cảnh từ căn hộ của mình vào..</p>
-                        </div>
-                        <div class="widget">
-                            <div class="title">SÂN CHƠI</div>
-                            <p class="content">Phải mất công tìm kiếm một nơi để hoạt động thể thao đủ lớn và tiện nghi ,nay với việc sở hữu căn hộ của…</p>
-                        </div>
-                        <div class="widget">
-                            <div class="title">SÂN CHƠI</div>
-                            <p class="content">Phải mất công tìm kiếm một nơi để hoạt động thể thao đủ lớn và tiện nghi ,nay với việc sở hữu căn hộ của…</p>
-                        </div>
-                        <div class="widget">
-                            <div class="title">SÂN CHƠI</div>
-                            <p class="content">Phải mất công tìm kiếm một nơi để hoạt động thể thao đủ lớn và tiện nghi ,nay với việc sở hữu căn hộ của…</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
     <section class="gallery-room app-container">
         <div class="title-section">
             <h2 class="text-3">Dự án nổi bật</h2>
@@ -132,20 +74,21 @@
         </div>
         <div class="row">
             @foreach($lastestNews as $news)
-        <div class="col-12 col-sm-6 col-md-4"><a class="news-figure-vertical" href="{{ route('news.single',  $news->slug )}}">
-            <div class="image__wrapper"><img alt="{{ $news->title }}" data-original="/assets/images/5-yeu-to-tao-nen-co-hoi-dau-tu-thong-minh-tai-flc-luxury-hotel-sam-son-257-8643.jpg" />
-                        <div class="date-tag bg-accent"><span class="date">{{ date("d", strtotime($news->created_at)) }}</span><span class="month">Th{{ (int)date("m", strtotime($news->created_at)) }}</span></div>
-                    </div>
-                    <div class="main-title-wrapper">
-                        <div class="main-title text-medium">{{ $news->title }}</div>
-                    </div>
-                    <div class="split-line">
-                        <div></div>
-                    </div>
-                    <div class="short-description text-medium">
-                        {{ $news->created_at }}
-                    </div>
-                </a></div>
+            <div class="col-12 col-sm-6 col-md-4"><a class="news-figure-vertical" href="{{ route('news.single',  $news->slug )}}">
+            <figure class="news-figure-vertical__preview"><img data-original="{{ '/'.$news->imgCoverUrl }}"/>
+                <div class="date-tag bg-accent"><span class="date">{{ date("d", strtotime($news->created_at)) }}</span><span class="month">Th{{ date("d", strtotime($news->created_at)) }}</span></div>
+              </figure>
+              <div class="main-title-wrapper">
+                <div class="main-title text-medium">
+                    {{ $news->title }}
+                </div>
+              </div>
+              <div class="split-line">
+                <div></div>
+              </div>
+              <div class="short-description text-medium">
+                {{ $news->created_at }}
+              </div></a></div>
                 @endforeach
         </div>
     </section>

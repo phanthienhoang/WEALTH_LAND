@@ -9,9 +9,16 @@
 @import '../pug/components/plan-figure-house/_plan-figure-house'
 @import '../pug/components/blog-list-item/_blog-list-item'
 @import '../pug/components/land-figure/_land-figure'
+@import '../pug/components/land-gallery-item/_land-gallery-item'
 
 html
     position: relative
+    overflow-y: auto
+    overflow-x: hidden
+
+body
+    overflow-y: auto
+    overflow-x: hidden
 
 // Global Style
 
@@ -340,7 +347,8 @@ aside.function-container
         justify-content: space-between
 
         input
-            padding: 0 1rem
+            padding: .5rem 1rem .5rem 0
+            width: 100%
             font-size: 1rem
             font-weight: 300
 
