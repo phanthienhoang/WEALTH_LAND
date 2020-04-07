@@ -8,13 +8,12 @@ $(document).ready(function () {
         function () {
             $('.loading-overlay').css('display', 'none')
             // $('.loading-overlay').css('z-index', '-1000')
-            
+
         },
         1000
     )
-
-
 })
+
 var lastScrollTop = 0;
 
 var isFixed = false
@@ -73,7 +72,7 @@ function showMenu() {
     $('.nav-list').addClass('show')
     $('.menu-backdrop').addClass('show')
 
-    $('html').css('overflow','hidden')
+    $('html').css('overflow', 'hidden')
     $('body').css('overflow', 'hidden')
 }
 
@@ -81,6 +80,31 @@ function hideMenu() {
     $('.nav-list').removeClass('show')
     $('.menu-backdrop').removeClass('show')
 
-    $('html').css('overflow','auto')
+    $('html').css('overflow', 'auto')
     $('body').css('overflow', 'auto')
+}
+
+function initialGallery(imgUrls, indexActive) {
+    let pswpElement = document.querySelectorAll('.pswp')[0];
+
+    // alert(imgUrls)
+    // build items array
+    let items = (imgUrls || []).map(e => ({
+
+        src: '/' + e,
+        w: 600,
+        h: 400
+
+    }));
+
+    // define options (if needed)
+    let options = {
+        // optionName: 'option value'
+        // for example:
+        index: indexActive // start at first slide
+    };
+
+    // Initializes and opens PhotoSwipe
+    const gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+    gallery.init();
 }

@@ -11,6 +11,8 @@ class GetLandBySeoAlias
     {
         $land = AppLand::where('seoAliasVI', $seoAlias)->orWhere('seoAliasEN', $seoAlias)->firstOrFail();
 
+        $land->imgUrls = !isset($land->imgUrls) || empty($land->imgUrls)  ? json_encode([]) : $land->imgUrls;
+
         $land = LandTranslater::transform($land);
 
         return $land;

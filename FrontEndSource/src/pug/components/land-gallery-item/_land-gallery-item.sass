@@ -1,0 +1,55 @@
+a.land-gallery-item
+    display: block
+    margin-bottom: 1.4rem
+    position: relative
+
+    &::after
+        position: absolute
+        top: 0
+        left: 0
+        content: 'Xem ảnh'
+        color: $dark
+        font-weight: bold
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 100%
+        width: 100%
+        border: 2px solid $accent
+        opacity: 0
+        background-color: rgba(lighten($accent, 10%), .6 )
+        transition: .2s ease-out
+
+    &:hover::after
+        opacity: 1
+        
+
+    figure.land-gallery-item__wrapper
+        box-sizing: border-box
+        overflow: hidden
+        height: 200px
+
+        img
+            object-fit: cover
+            width: 100%
+            height: 100%
+
+@media screen and ( max-width: $lg-screen-max )
+    a.land-gallery-item
+        figure.land-gallery-item__wrapper
+            height: 220px
+
+@media screen and ( max-width: $md-screen-max )
+    a.land-gallery-item
+        figure.land-gallery-item__wrapper
+            height: 200px
+
+@media screen and ( max-width: $sm-screen-max )
+    a.land-gallery-item
+        figure.land-gallery-item__wrapper
+            height: 150px
+
+@media screen and ( max-width: $xs-screen-max )
+    a.land-gallery-item
+        figure.land-gallery-item__wrapper
+            height: 140px
