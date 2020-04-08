@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="/assets/css/style.css"/>
     <link rel="stylesheet" href="/assets/css/bootstrap-grid.min.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="loading-overlay"><img src="https://batdongsan8.trustweb.vn/wp-content/themes/flatsome-child/images/preloader.gif"/></div>
     <header class="container-fluid">
-      <div class="menu-backdrop"><a onclick="hideMenu()"><i class="fa fa-times"></i></a></div>
       <nav>
         <div class="nav-container app-container">
           <div class="toggle-menu-button-container"><a><i class="fa fa-bars" aria-hidden="true" onclick="showMenu()"></i></a></div>
@@ -36,6 +36,18 @@
       </nav>
     </header>
     <div class="carousel-container">
+      <div id="wowslider-container1">
+        <div class="ws_images">
+          <ul>
+            <li> <a href="http://wowslider.net"><img src="/libs/wowslider/data/images/sp9_master.jpg" alt="" title=""/></a></li>
+            <li> <a href="http://wowslider.net"><img src="/libs/wowslider/data/images/sp8_master.jpg" alt="image carousel" title=""/></a></li>
+            <li><a href="http://wowslider.net"><img src="/libs/wowslider/data/images/5yeutotaonencohoidaututhongminhtaiflcluxuryhotelsamson2578643.jpg" title="" alt="5-yeu-to-tao-nen-co-hoi-dau-tu-thong-minh-tai-flc-luxury-hotel-sam-son-257-8643"/></a></li>
+          </ul>
+          <div class="ws_bullets"><a href="#" title=""><span><img class="tooltip__img" src="/libs/wowslider/data/images/sp9_master.jpg" alt=""/><span>1</span></span></a><a href="#" title="sp8_master"><span><img class="tooltip__img" src="/libs/wowslider/data/tooltips/sp8_master.jpg" alt="sp8_master"/><span>2</span></span></a><a href="#" title="5-yeu-to-tao-nen-co-hoi-dau-tu-thong-minh-tai-flc-luxury-hotel-sam-son-257-8643"><span><img class="tooltip__img" src="/libs/wowslider/data/tooltips/5yeutotaonencohoidaututhongminhtaiflcluxuryhotelsamson2578643.jpg" alt="5-yeu-to-tao-nen-co-hoi-dau-tu-thong-minh-tai-flc-luxury-hotel-sam-son-257-8643"/><span>3</span></span></a></div>
+          <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">slider jquery</a><span>by WOWSlider.com v9.0m</span></div>
+        </div>
+        <div class="ws_shadow"></div>
+      </div>
       <div class="carousel-widget app-container">
         <div class="project-description">
           <h2 class="feature text-2">BABYLON RESIDENCE</h2><span class="feature-description">458 Minh Khai, Hai Bà Trưng - Hà Nội</span><span class="feature-description">Giá chỉ từ 4 tỷ</span>
@@ -50,6 +62,9 @@
         </form>
       </div>
     </div>
+    <link rel="stylesheet" type="text/css" href="/libs/wowslider/engine/style.css"/>
+    <script src="/libs/wowslider/engine/wowslider.js"></script>
+    <script src="/libs/wowslider/engine/script.js"></script>
     <section class="gallery-room">
       <figure class="gallery-figure-room"><img data-original="/assets/images/phong-giai-tr.jpg"/>
         <div class="title text-medium"><span>ROOM IN HOUSE</span></div><a class="float-title hover-darken ease-out" href="../introduce.html"> Chi tiết</a>

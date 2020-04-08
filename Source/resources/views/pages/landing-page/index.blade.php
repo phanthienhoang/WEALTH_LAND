@@ -2,24 +2,43 @@
 
 @section('meta-description')Công ty Bất động sản WealthLand Đà Nẵng @endsection
 
+@section('partial-styles')
+  <link rel="stylesheet" type="text/css" href="/libs/wowslider/engine/style.css" />
+@endsection
+
 @section('main-content')
 <main class="index-page">
     <h1 style="display: none">Công ty Bất động sản WealthLand</h1>
     <div class="carousel-container">
-        <div class="carousel-widget app-container">
-            <div class="project-description">
-                <h2 class="feature text-2">BABYLON RESIDENCE</h2><span class="feature-description">458 Minh Khai, Hai Bà Trưng - Hà Nội</span><span class="feature-description">Giá chỉ từ 4 tỷ</span>
-                <button class="btn btn-accent">Xem chi tiết</button>
-            </div>
-            <form id="contact-form" @submit.prevent="postComment" action="/api/contact">
-                <input type="text" v-model="form.fullname" placeholder="Vui lòng nhập họ tên" />
-                <input type="text" v-model="form.phone" placeholder="Số điện thoại" />
-                <input type="text" v-model="form.email" placeholder="Email" />
-                <textarea v-model="form.comment" placeholder="Viết bình luận" rows="4"></textarea>
-                <button class="btn btn-accent">Đăng ký tư vấn</button>
-            </form>
+        <div id="wowslider-container1">
+          <div class="ws_images">
+            <ul>
+              <li> <a href="http://wowslider.net"><img src="/libs/wowslider/data/images/sp9_master.jpg" alt="" title=""/></a></li>
+              <li> <a href="http://wowslider.net"><img src="/libs/wowslider/data/images/sp8_master.jpg" alt="image carousel" title=""/></a></li>
+              <li><a href="http://wowslider.net"><img src="/libs/wowslider/data/images/5yeutotaonencohoidaututhongminhtaiflcluxuryhotelsamson2578643.jpg" title="" alt="5-yeu-to-tao-nen-co-hoi-dau-tu-thong-minh-tai-flc-luxury-hotel-sam-son-257-8643"/></a></li>
+            </ul>
+            <div class="ws_bullets"><a href="#" title=""><span><img class="tooltip__img" src="/libs/wowslider/data/images/sp9_master.jpg" alt=""/><span>1</span></span></a><a href="#" title="sp8_master"><span><img class="tooltip__img" src="/libs/wowslider/data/tooltips/sp8_master.jpg" alt="sp8_master"/><span>2</span></span></a><a href="#" title="5-yeu-to-tao-nen-co-hoi-dau-tu-thong-minh-tai-flc-luxury-hotel-sam-son-257-8643"><span><img class="tooltip__img" src="/libs/wowslider/data/tooltips/5yeutotaonencohoidaututhongminhtaiflcluxuryhotelsamson2578643.jpg" alt="5-yeu-to-tao-nen-co-hoi-dau-tu-thong-minh-tai-flc-luxury-hotel-sam-son-257-8643"/><span>3</span></span></a></div>
+            <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">slider jquery</a><span>by WOWSlider.com v9.0m</span></div>
+          </div>
+          <div class="ws_shadow"></div>
         </div>
+        <div class="carousel-widget app-container">
+          <div class="project-description">
+            <h2 class="feature text-2">BABYLON RESIDENCE</h2><span class="feature-description">458 Minh Khai, Hai Bà Trưng - Hà Nội</span><span class="feature-description">Giá chỉ từ 4 tỷ</span>
+            <button class="btn btn-accent">Xem chi tiết</button>
+          </div>
+          <form id="contact-form" @submit.prevent="postComment" action="/api/contact">
+            <input type="text" v-model="form.fullname" placeholder="Vui lòng nhập họ tên" />
+            <input type="text" v-model="form.phone" placeholder="Số điện thoại" />
+            <input type="text" v-model="form.email" placeholder="Email" />
+            <textarea v-model="form.comment" placeholder="Viết bình luận" rows="4"></textarea>
+            <button class="btn btn-accent">Đăng ký tư vấn</button>
+        </form>
+        </div>
+
     </div>
+
+     
     <section class="gallery-room app-container">
         <div class="title-section">
             <h2 class="text-3">Dự án nổi bật</h2>
@@ -98,6 +117,8 @@
 @section('partial-scripts')
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="/libs/wowslider/engine/wowslider.js"></script>
+    <script type="text/javascript" src="/libs/wowslider/engine/script.js"></script>
 
     <script src="/js/contact-form.js"></script>
 @endsection
