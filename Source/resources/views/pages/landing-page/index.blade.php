@@ -13,18 +13,24 @@
         <div id="wowslider-container1">
           <div class="ws_images">
             <ul>
-              <li> <a href="http://wowslider.net"><img src="/libs/wowslider/data/images/sp9_master.jpg" alt="" title=""/></a></li>
-              <li> <a href="http://wowslider.net"><img src="/libs/wowslider/data/images/sp8_master.jpg" alt="image carousel" title=""/></a></li>
-              <li><a href="http://wowslider.net"><img src="/libs/wowslider/data/images/5yeutotaonencohoidaututhongminhtaiflcluxuryhotelsamson2578643.jpg" title="" alt="5-yeu-to-tao-nen-co-hoi-dau-tu-thong-minh-tai-flc-luxury-hotel-sam-son-257-8643"/></a></li>
+              @foreach($banners as $banner)
+                <li><a href="javascript:void(0)">
+                <img src="{{ asset($banner->imgCoverUrl) }}" title="" alt="{{ $banner->bannerTitle }}"/></a></li>
+              @endforeach
             </ul>
-            <div class="ws_bullets"><a href="#" title=""><span><img class="tooltip__img" src="/libs/wowslider/data/images/sp9_master.jpg" alt=""/><span>1</span></span></a><a href="#" title="sp8_master"><span><img class="tooltip__img" src="/libs/wowslider/data/tooltips/sp8_master.jpg" alt="sp8_master"/><span>2</span></span></a><a href="#" title="5-yeu-to-tao-nen-co-hoi-dau-tu-thong-minh-tai-flc-luxury-hotel-sam-son-257-8643"><span><img class="tooltip__img" src="/libs/wowslider/data/tooltips/5yeutotaonencohoidaututhongminhtaiflcluxuryhotelsamson2578643.jpg" alt="5-yeu-to-tao-nen-co-hoi-dau-tu-thong-minh-tai-flc-luxury-hotel-sam-son-257-8643"/><span>3</span></span></a></div>
+            <div class="ws_bullets">
+              @foreach($banners as $index => $banner)
+                <a href="javascript:void(0)" onclick="bannerDetail.startIntervalCarousel({{$index}})" title=""><span><img class="tooltip__img" src="{{ $banner->imgCoverUrl }}" alt=""/><span>{{ $index + 1 }}</span></span></a>
+              @endforeach
+            </div>
             <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">slider jquery</a><span>by WOWSlider.com v9.0m</span></div>
           </div>
           <div class="ws_shadow"></div>
         </div>
         <div class="carousel-widget app-container">
-          <div class="project-description">
-            <h2 class="feature text-2">BABYLON RESIDENCE</h2><span class="feature-description">458 Minh Khai, Hai Bà Trưng - Hà Nội</span><span class="feature-description">Giá chỉ từ 4 tỷ</span>
+          <div class="project-description" id="banner-detail">
+            <input hidden id="banner-data" type="text" value="{{$banners}}">
+          <h2 class="feature text-2">@{{ currentBanner.bannerTitle }}</h2><span class="feature-description">@{{ currentBanner.bannerSubtitle }}</span><span v-if="currentBanner.price" class="feature-description">@{{ currentBanner.price }} tỷ</span>
             <button class="btn btn-accent">Xem chi tiết</button>
           </div>
           <form id="contact-form" @submit.prevent="postComment" action="/api/contact">
@@ -121,4 +127,5 @@
     <script type="text/javascript" src="/libs/wowslider/engine/script.js"></script>
 
     <script src="/js/contact-form.js"></script>
+    <script src="/js/landing-page.js"></script>
 @endsection
