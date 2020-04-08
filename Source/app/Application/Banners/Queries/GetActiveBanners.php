@@ -15,7 +15,7 @@ class GetActiveBanners {
 
     public static function query($args = []) {
 
-        $banners = AppBanner::get();
+        $banners = AppBanner::where('isActive', 1)->orderBy('orderIndex', 'asc')->get();
 
         $banners = $banners->map(function($banner) {
             /** Kiểm tra Banner có liên quan tới Dự án hoặc BĐS hay không, nếu có thì xử lý dử liệu trả về Banner phù hợp */
@@ -43,7 +43,7 @@ class GetActiveBanners {
             $banner->bannerTitle = $project->title;
             $banner->bannerSubtitle = $project->address;
             $banner->imgCoverUrl = $project->imgCoverUrl;
-            $banner->bannerHref = route('project.single', $project->id);
+            $banner->bannerHref = route('project.single', $project->seoAlias);
             $banner->bannerButtonTitle = "Xem Dự Án";
 
             return $banner;
@@ -62,7 +62,7 @@ class GetActiveBanners {
             $banner->bannerTitle = $land->title;
             $banner->bannerSubtitle = $land->iAddress;
             $banner->imgCoverUrl = $land->imgCoverUrl;
-            $banner->bannerHref = route('land.single', $land->id);
+            $banner->bannerHref = route('land.single', $land->seoAlias);
             $banner->bannerButtonTitle = "Xem Căn hộ";
             $banner->price = $land->iPrice;
             return $banner;

@@ -12,27 +12,27 @@
     <article class="container intro-details">
         <p class="intro"></p>
         <div class="intro-row">
-            <div class="media-container"><img alt="Văn phòng Tập đoàn bất động sản WealthLand" data-original="/assets/images/1_2.jpg" /></div>
+            <div class="media-container"><img alt="Văn phòng Tập đoàn bất động sản WealthLand" data-original="/assets/images/card-visit.jpg" /></div>
             <div class="text-description">
                 <div class="title-section">
-                    <h2 class="text-3">BABYLON RESIDENCE</h2>
+                    <h2 class="text-3">Wealth Land</h2>
                 </div>
-                <div class="text-4 officer-title text-medium">Văn phòng tập đoàn Babylon</div>
+                <div class="text-4 officer-title text-medium">Văn phòng Công ty WealthLand Vietnam</div>
                 <div class="office-detail">
                     <div class="icon"> <i class="fa fa-map-marker"></i></div>
-                    <p class="content">Số 7 đường Bằng Lăng 1, KĐT sinh thái Vinhomes Riverside, P. Việt Hưng, Q. Long Biên, Hà Nội, Việt Nam</p>
+                    <p class="content">Tầng 4, Toà nhà VietinBank, 02 Lê Quý Đôn, TP Huế</p>
                 </div>
                 <div class="office-detail">
                     <div class="icon"> <i class="fa fa-phone"></i></div>
-                    <p class="content">024 3974 9999</p>
+                    <p class="content">0977 175 923</p>
                 </div>
                 <div class="office-detail">
                     <div class="icon"> <i class="fa fa-envelope-o"></i></div>
-                    <p class="content">salesvillas@vingroup.net</p>
+                    <p class="content">wealthland@gmail.com</p>
                 </div>
                 <div class="office-detail">
                     <div class="icon"> <i class="fa fa-search"></i></div>
-                    <p class="content">https://vinpearlvillas.com</p>
+                    <p class="content">www.wealthland.vn</p>
                 </div>
             </div>
             <div class="intro-row reverse">
