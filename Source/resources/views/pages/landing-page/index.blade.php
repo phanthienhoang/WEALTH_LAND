@@ -9,7 +9,10 @@
 @section('main-content')
 <main class="index-page">
     <h1 style="display: none">Công ty Bất động sản WealthLand</h1>
+
+    {{-- Carousel --}}
     <div class="carousel-container">
+        {{-- Slider --}}
         <div id="wowslider-container1">
           <div class="ws_images">
             <ul>
@@ -27,22 +30,32 @@
           </div>
           <div class="ws_shadow"></div>
         </div>
+        {{-- End Slider --}}
+
+        {{-- Front Widget --}}
         <div class="carousel-widget app-container">
-          <div class="project-description" id="banner-detail">
+          {{-- Banner Detail --}}
+        <div class="project-description" id="banner-detail" :listString="'123123'">
             <input hidden id="banner-data" type="text" value="{{$banners}}">
-          <h2 class="feature text-2">@{{ currentBanner.bannerTitle }}</h2><span class="feature-description">@{{ currentBanner.bannerSubtitle }}</span><span v-if="currentBanner.price" class="feature-description">@{{ currentBanner.price }} tỷ</span>
-            <button class="btn btn-accent">Xem chi tiết</button>
+            <h2 class="feature text-2">@{{ currentBanner.bannerTitle }}</h2><span class="feature-description">@{{ currentBanner.bannerSubtitle }}</span><span v-if="currentBanner.price" class="feature-description">@{{ currentBanner.price }} tỷ</span>
+            <a class="btn btn-accent" :href="currentBanner.bannerHref">Xem chi tiết  @{{listString}} </a>
           </div>
+          {{-- End Banner Detail --}}
+
+          {{-- Contact Form --}}
           <form id="contact-form" @submit.prevent="postComment" action="/api/contact">
             <input type="text" v-model="form.fullname" placeholder="Vui lòng nhập họ tên" />
             <input type="text" v-model="form.phone" placeholder="Số điện thoại" />
             <input type="text" v-model="form.email" placeholder="Email" />
             <textarea v-model="form.comment" placeholder="Viết bình luận" rows="4"></textarea>
             <button class="btn btn-accent">Đăng ký tư vấn</button>
-        </form>
+          </form>
+        {{-- End contact form --}}
         </div>
+        {{-- End Front Widget --}}
 
     </div>
+    {{-- End Carousel --}}
 
      
     <section class="gallery-room app-container">
