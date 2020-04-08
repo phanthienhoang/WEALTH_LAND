@@ -1,5 +1,36 @@
 .carousel-container
+    #wowslider-container1
+        .ws_images
+            ul
+                li 
+                    a(href="http://wowslider.net")
+                        img(src="/libs/wowslider/data/images/sp9_master.jpg", alt="", title="")
+                li 
+                    a(href="http://wowslider.net")
+                        img(src="/libs/wowslider/data/images/sp8_master.jpg", alt="image carousel", title="")
+                li
+                    a(href="http://wowslider.net")
+                        img(src="/libs/wowslider/data/images/5yeutotaonencohoidaututhongminhtaiflcluxuryhotelsamson2578643.jpg", title="", alt="5-yeu-to-tao-nen-co-hoi-dau-tu-thong-minh-tai-flc-luxury-hotel-sam-son-257-8643")
+
+            .ws_bullets
+                a(href="#", title="")
+                    span
+                        img.tooltip__img(src="/libs/wowslider/data/images/sp9_master.jpg", alt="")
+                        span 1
+                a(href="#", title="sp8_master")
+                    span
+                        img.tooltip__img(src="/libs/wowslider/data/tooltips/sp8_master.jpg" alt="sp8_master")
+                        span 2
+                a(href="#", title="5-yeu-to-tao-nen-co-hoi-dau-tu-thong-minh-tai-flc-luxury-hotel-sam-son-257-8643")
+                    span
+                        img.tooltip__img(src="/libs/wowslider/data/tooltips/5yeutotaonencohoidaututhongminhtaiflcluxuryhotelsamson2578643.jpg" alt="5-yeu-to-tao-nen-co-hoi-dau-tu-thong-minh-tai-flc-luxury-hotel-sam-son-257-8643")
+                        span 3
+            .ws_script(style="position:absolute;left:-99%")
+                a(href="http://wowslider.net") slider jquery
+                span by WOWSlider.com v9.0m
+        .ws_shadow
     .carousel-widget.app-container
+        
         .project-description
             h2.feature.text-2 BABYLON RESIDENCE
 
@@ -15,3 +46,7 @@
             input(type="text" placeholder="Email")
             textarea(placeholder="Viết bình luận" rows=4)
             button.btn.btn-accent Đăng ký
+
+link(rel="stylesheet", type="text/css", href="/libs/wowslider/engine/style.css")
+script(src="/libs/wowslider/engine/wowslider.js")
+script(src="/libs/wowslider/engine/script.js")
