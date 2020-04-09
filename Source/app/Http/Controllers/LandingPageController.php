@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Application\Banners\Queries\GetActiveBanners;
 use App\Application\Lands\Queries\GetHotestLands;
+use App\Application\Lands\Queries\GetLandBySearchParams;
 use App\Application\News\Queries\GetLastNewsList;
 use App\Application\Projects\Queries\GetHotestProjects;
 use Illuminate\Http\Request;
@@ -34,5 +35,14 @@ class LandingPageController extends Controller
         ];
 
         return view('pages.landing-page.index')->with($compactData);
+    }
+
+    public function search(Request $request) 
+    {
+        $result = GetLandBySearchParams::query($request->all());
+
+        // dd($result);
+
+        return view('pages.lands.land-search', compact('result'));
     }
 }
