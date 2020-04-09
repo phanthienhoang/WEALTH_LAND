@@ -39,7 +39,7 @@
             </div>
         </div>
     </section>
-    
+
     <article class="container intro-details">
         {!! $land->introduceContent !!}
 
