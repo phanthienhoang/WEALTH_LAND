@@ -23,7 +23,7 @@
             </ul>
             <div class="ws_bullets">
               @foreach($banners as $index => $banner)
-                <a href="javascript:void(0)" onclick="bannerDetail.startIntervalCarousel({{$index}})" title=""><span><img class="tooltip__img" src="{{ $banner->imgCoverUrl }}" alt=""/><span>{{ $index + 1 }}</span></span></a>
+                <a href="javascript:void(0)" onclick="bannerDetail.startIntervalCarousel('{{$index}}')" title=""><span><img class="tooltip__img" src="{{ asset($banner->imgCoverUrl) }}" alt=""/><span>{{ $index + 1 }}</span></span></a>
               @endforeach
             </div>
             <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">slider jquery</a><span>by WOWSlider.com v9.0m</span></div>
@@ -66,7 +66,7 @@
             @foreach($hotestProjects as $project)
             <div class="col-12 col-sm-6 col-md-4">
                 <figure class="gallery-figure-room">
-                    <img alt="$project->title" data-original="{{ $project->imgCoverUrl }}" />
+                    <img alt="$project->title" data-original="{{ asset($project->imgCoverUrl) }}" />
                     <div class="title text-medium"><span>{{ $project->title}}</span></div><a class="float-title hover-darken ease-out" href="{{ route('project.single', $project->seoAlias) }}"> Chi tiết</a>
                 </figure>
             </div>

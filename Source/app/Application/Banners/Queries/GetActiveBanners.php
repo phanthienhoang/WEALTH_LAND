@@ -9,39 +9,45 @@ use App\Helpers\Strings\FileStorageMakingUrl;
 use App\Helpers\Translaters\LandTranslater;
 use App\Helpers\Translaters\ProjectTranslater;
 
-class GetActiveBanners {
-    private function __constructor() {
-
+class GetActiveBanners
+{
+    private function __constructor()
+    {
     }
 
-    public static function query($args = []) {
+    public static function query($args = [])
+    {
 
         $banners = AppBanner::where('isActive', 1)->orderBy('orderIndex', 'asc')->get();
 
-        $banners = $banners->map(function($banner) {
+        $banners = $banners->map(function ($banner, &$bannersTest) {
             /** Kiểm tra Banner có liên quan tới Dự án hoặc BĐS hay không, nếu có thì xử lý dử liệu trả về Banner phù hợp */
 
-            if(isset($banner->project_land_id)) {
+            if (isset($banner->project_land_id)) {
                 return self::convertFromProjectLand($banner);
             }
 
-            if(isset($banner->land_id)) {
+            if (isset($banner->land_id)) {
                 return self::convertFromLand($banner);
             }
 
-            $banner->imgCoverUrl = FileStorageMakingUrl::transformString($banner->imgCoverUrl);
 
             return $banner;
+        });
 
+        $banners = $banners->map(function($banner) {
+            $banner->imgCoverUrl = FileStorageMakingUrl::transformString($banner->imgCoverUrl);
+            return $banner;
         });
 
         return $banners;
     }
 
-    private static function convertFromProjectLand(AppBanner $banner) {
+    private static function convertFromProjectLand(AppBanner $banner)
+    {
         $project = AppProjectLand::find($banner->project_land_id);
 
-        if(isset($project)) {
+        if (isset($project)) {
             $project = ProjectTranslater::transform($project);
 
             $banner->bannerTitle = $project->title;
@@ -54,13 +60,13 @@ class GetActiveBanners {
         }
 
         return $banner;
-
     }
 
-    private static function convertFromLand(AppBanner $banner) {
+    private static function convertFromLand(AppBanner $banner)
+    {
         $land = AppLand::find($banner->land_id);
 
-        if(isset($land)) {
+        if (isset($land)) {
             $land = LandTranslater::transform($land);
 
             $banner->bannerTitle = $land->title;

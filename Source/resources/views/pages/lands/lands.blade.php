@@ -14,7 +14,7 @@
         <div class="row">
             @foreach($lands as $land)
             <div class="col-12 col-md-6 col-xl-4">
-            <a class="land-figure" href="{{ route('land.single', $land->seoAlias) }}"><figure class="land-figure-link"><img alt="{{ $land->title }}" data-original="{{ $land->imgCoverUrl}}"/>
+            <a class="land-figure" href="{{ route('land.single', $land->seoAlias) }}"><figure class="land-figure-link"><img alt="{{ $land->title }}" data-original="{{ asset($land->imgCoverUrl)}}"/>
                     <div class="land-details-nail">
                       <div class="land-detail-info">
                         <div class="icon"><i class="fa fa-home" aria-hidden="true"></i></div>

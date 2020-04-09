@@ -8,7 +8,7 @@
 
 @section('main-content')
 <main>
-    <div class="page-header" style="background: url(/{{ $land->imgCoverUrl }}) no-repeat center bottom; background-size: cover">
+    <div class="page-header" style="background: url('{{ asset($land->imgCoverUrl) }}') no-repeat center bottom; background-size: cover">
         <h1 class="page-title text-3">{{ $land->title }}</h1>
     </div>
 

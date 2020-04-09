@@ -7,17 +7,27 @@ class FileStorageMakingUrl {
             return dd('valet');
         }
 
-        if (isset($str) || strlen($str) == 0) {
+        if (!isset($str) || strlen($str) == 0) {
             return '';
         }
 
-        return '/storage/'.$str;
+        return 'storage/'.$str;
     }
 
     public static function transformListString($list) {
-        $list->map(function($str) {
+        $isListMode = false;
+        if (gettype($list) == 'string') {
+            $list = json_decode($list);
+            $isListMode = true;
+        }
+
+        collect($list)->map(function($str) {
             return self::transformString($str);
         });
+
+        if ($isListMode) {
+            $list = json_encode($list);
+        }
 
         return $list;
     }

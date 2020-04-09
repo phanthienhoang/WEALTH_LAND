@@ -37,18 +37,10 @@
         color: $light
 
 header
-<<<<<<< HEAD
     transition: .3s all
     display: block
     z-index: 100
     position: absolute
-=======
-    background-color: transparent
-    z-index: 1
-    transition: .3s all
-    display: block
-    z-index: 1000
->>>>>>> feature/statistical-count-views
 
     &.fixed
         top: -100px
@@ -182,6 +174,7 @@ nav
                 &::after
                     left: 0
                     opacity: 1
+                    height: 100vh
                     transition-delay: 0 !important
                     transition-property: opacity
 
@@ -201,13 +194,12 @@ nav
                 left: 300px
                 background: rgba(black, .8)
                 position: absolute
-                height: 100vh
+                height: 0
                 width: 100vw
                 z-index: -2
                 opacity: 0
-                transition: opacity .6s
-                transition-delay: .5s
-                transition-property: opacity
+                transition: .6s opacity
+                transition-delay: opacity .5s
 
             li
                 float: none
