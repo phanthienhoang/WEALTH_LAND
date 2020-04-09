@@ -9,7 +9,6 @@
         <div class="row">
             <section class="blog-list col-12 col-md-9">
                 @foreach($list as $data)
-<<<<<<< HEAD
                 <a class="blog-list-item" href="{{route('news.single', $data->slug)}}">
                     <figure class="blog-list-item__preview"><img data-original="{{ $data->imgCoverUrl }}"/>
                       <div class="date-tag bg-accent"><span class="date">{{ date("d", strtotime($data->created_at)) }}</span><span class="month">Th{{ (int)date("m", strtotime($data->created_at)) }}</span></div>
@@ -27,27 +26,6 @@
                         {{ $data->created_at }}
                       </div>
                     </div></a>
-=======
-                <a class="blog-list-item" href="{{route('news.single', $data->slugVI)}}">
-                    <div class="news-figure">
-                    <div class="image__wrapper">
-                            <img data-original="{{ $data->imgCoverUrl }}" />
-                            <div class="date-tag bg-accent"><span class="date">{{ date("d", strtotime($data->created_at)) }}</span><span class="month">Th{{ (int)date("m", strtotime($data->created_at)) }}</span></div>
-                        </div>
-                    </div>
-                    <div class="text-info">
-                        <div class="main-title-wrapper">
-                            <p class="main-title text-medium">{{ $data->titleVI }}</p>
-                        </div>
-                        <div class="split-line">
-                            <div></div>
-                        </div>
-                        <p class="short-description text-medium">
-                            {{ $data->created_at }}
-                        </p>
-                    </div>
-                </a>
->>>>>>> feature/statistical-count-views
                 @endforeach
             </section>
 

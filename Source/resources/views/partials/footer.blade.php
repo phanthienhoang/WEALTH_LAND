@@ -8,10 +8,6 @@
             <a class="btn btn-accent" href="{{ route('contact.index') }}">Liên hệ</a>
         </div>
     </div>
-<<<<<<< HEAD
-    <div class="container-fluid copyright">Copyright 2020 @ WealthLand</div>
-</footer>
-=======
     <div class="container-fluid copyright">
         
     <div class="app-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%">
@@ -45,4 +41,3 @@
 </script>
   
 @endpush
->>>>>>> feature/statistical-count-views

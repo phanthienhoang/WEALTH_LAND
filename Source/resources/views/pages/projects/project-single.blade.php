@@ -2,13 +2,10 @@
 
 @section('meta-description') {{ $project->title }} @endsection
 
-<<<<<<< HEAD
 @section('partial-styles')
     @include('partials.photoswipe.photoswipe-styles')
 @endsection
 
-=======
->>>>>>> feature/statistical-count-views
 @section('main-content')
 <main>
     <div class="page-header" style="background: url(/{{ $project->imgCoverUrl }}) no-repeat center bottom; background-size: cover;">
@@ -16,7 +13,6 @@
     </div>
     <article class="container intro-details">
         {!! $project->introduceContent !!}
-<<<<<<< HEAD
 
         @if(count(json_decode($project->imgUrls)) > 0)
         <div class="land-gallery">
@@ -38,8 +34,4 @@
 
 @section('partial-scripts')
     @include('partials.photoswipe.photoswipe-scripts')
-=======
-    </article>
-</main>
->>>>>>> feature/statistical-count-views
 @endsection

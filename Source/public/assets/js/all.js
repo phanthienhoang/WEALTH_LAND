@@ -8,29 +8,18 @@ $(document).ready(function () {
         function () {
             $('.loading-overlay').css('display', 'none')
             // $('.loading-overlay').css('z-index', '-1000')
-<<<<<<< HEAD
 
         },
         1000
     )
 })
 
-=======
-            
-        },
-        1000
-    )
-
-
-})
->>>>>>> feature/statistical-count-views
 var lastScrollTop = 0;
 
 var isFixed = false
 
 const breakPoint = 300;
 
-<<<<<<< HEAD
 
 $(document).click(function() {
 
@@ -45,8 +34,6 @@ $("li").click(function(event) {
     event.stopPropagation();
 });
 
-=======
->>>>>>> feature/statistical-count-views
 $(window).scroll(() => {
     const { pageYOffset, innerWidth } = window
 
@@ -96,7 +83,6 @@ $(window).scroll(() => {
 })
 
 function showMenu() {
-<<<<<<< HEAD
     setTimeout(function() {
         $('.nav-list').addClass('show')
         $('.menu-backdrop').addClass('show')
@@ -105,20 +91,12 @@ function showMenu() {
         $('body').css('overflow', 'hidden')
     }, 0)
 
-=======
-    $('.nav-list').addClass('show')
-    $('.menu-backdrop').addClass('show')
-
-    $('html').css('overflow','hidden')
-    $('body').css('overflow', 'hidden')
->>>>>>> feature/statistical-count-views
 }
 
 function hideMenu() {
     $('.nav-list').removeClass('show')
     $('.menu-backdrop').removeClass('show')
 
-<<<<<<< HEAD
     $('html').css('overflow', 'auto')
     $('body').css('overflow', 'auto')
 }
@@ -146,8 +124,4 @@ function initialGallery(imgUrls, indexActive) {
     // Initializes and opens PhotoSwipe
     const gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
     gallery.init();
-=======
-    $('html').css('overflow','auto')
-    $('body').css('overflow', 'auto')
->>>>>>> feature/statistical-count-views
 }

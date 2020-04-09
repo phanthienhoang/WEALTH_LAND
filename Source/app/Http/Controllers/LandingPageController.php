@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
 use App\Application\Banners\Queries\GetActiveBanners;
-=======
->>>>>>> feature/statistical-count-views
 use App\Application\Lands\Queries\GetHotestLands;
 use App\Application\News\Queries\GetLastNewsList;
 use App\Application\Projects\Queries\GetHotestProjects;
@@ -27,7 +24,6 @@ class LandingPageController extends Controller
             'length' => 6
         ]);
 
-<<<<<<< HEAD
         $banners = GetActiveBanners::query();
 
         $compactData = [
@@ -35,12 +31,6 @@ class LandingPageController extends Controller
             'hotestProjects' => $hotestProjects,
             'hotestLands' => $hotestLands,
             'banners' => $banners
-=======
-        $compactData = [
-            'lastestNews' => $lastestNews,
-            'hotestProjects' => $hotestProjects,
-            'hotestLands' => $hotestLands
->>>>>>> feature/statistical-count-views
         ];
 
         return view('pages.landing-page.index')->with($compactData);

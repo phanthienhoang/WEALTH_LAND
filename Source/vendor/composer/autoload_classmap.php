@@ -11,8 +11,6 @@ return array(
     'App\\AppLand' => $baseDir . '/app/AppLand.php',
     'App\\AppNewsPost' => $baseDir . '/app/AppNewsPost.php',
     'App\\AppProjectLand' => $baseDir . '/app/AppProjectLand.php',
-<<<<<<< HEAD
-=======
     'App\\AppUserComment' => $baseDir . '/app/AppUserComment.php',
     'App\\Application\\Contact\\Commands\\StoreFeedback' => $baseDir . '/app/Application/Contact/Commands/StoreFeedback.php',
     'App\\Application\\Lands\\Queries\\GetHotestLands' => $baseDir . '/app/Application/Lands/Queries/GetHotestLands.php',
@@ -25,7 +23,6 @@ return array(
     'App\\Application\\Projects\\Queries\\GetHotestProjects' => $baseDir . '/app/Application/Projects/Queries/GetHotestProjects.php',
     'App\\Application\\Projects\\Queries\\GetProjectBySeoAlias' => $baseDir . '/app/Application/Projects/Queries/GetProjectBySeoAlias.php',
     'App\\Application\\Projects\\Queries\\GetProjectListPagination' => $baseDir . '/app/Application/Projects/Queries/GetProjectListPagination.php',
->>>>>>> feature/statistical-count-views
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Contact\\Commands\\SendFeedback' => $baseDir . '/app/Application/Contact/Commands/SendFeedback.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
