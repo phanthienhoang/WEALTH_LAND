@@ -46,7 +46,7 @@ Route::group(['prefix' => 'lien-he', 'name' => 'contact.'], function() {
     Route::get('', 'ContactController@index')->name('contact.index');
 });
 
-Route::group(['prefix' => 'gioi-thieu', 'name' => 'introduct.'], function() {
+Route::group(['prefix' => 'gioi-thieu', 'name' => 'introduction.'], function() {
     Route::get('', 'IntroductController@index')->name('introduction.list');
     // Route::get('{seoAlias}', 'LandsController@single')->name('land.single');
 });

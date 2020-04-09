@@ -14,7 +14,7 @@
                     </form>
                 </li>
                 <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'landing-page') === 0 ? 'active' : '' }}" href="{{ route('landing-page')}}"> Trang chủ </a></li>
-                <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'introduct.') === 0 ? 'active' : '' }}" href="{{ route('introduction.list')}}"> Giới Thiệu </a></li>
+                <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'introduction.') === 0 ? 'active' : '' }}" href="{{ route('introduction.list')}}"> Giới Thiệu </a></li>
                 <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'land.') ===0 ? 'active' : '' }}" href="{{ route('land.list')}}"> Bất động sản </a></li>
                 <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'project.') === 0 ? 'active' : '' }}" href="{{ route('project.list')}}"> Dự án BĐS </a></li>
                 <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'news.') === 0 ? 'active' : '' }}" href="{{ route('news.list')}}"> Tin tức </a></li>

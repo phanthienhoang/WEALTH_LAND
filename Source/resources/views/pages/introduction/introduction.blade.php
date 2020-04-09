@@ -5,21 +5,15 @@
 @endsection
 
 @section('main-content')
-<main>
+<main id="introduction-tabs">
     <div class="page-header">
-        <h1 class="page-title text-3">Giới thiệu về chúng tôi </h1><span class="page-sub-title"></span>
+        <h1 class="page-title text-3">@{{ currentIntro?.title_vi }}</h1><span class="page-sub-title"></span>
     </div>
 
-    <section class="control-tabs container p-0">
+    <section class="control-tabs container app-container p-0">
         <div class="row">
-          <div class="col-12 col-md-4">
-            <button class="btn btn-outline active">Về chúng tôi</button>
-          </div>
-          <div class="col-12 col-md-4">
-            <button class="btn btn-outline">Về chúng tôi</button>
-          </div>
-          <div class="col-12 col-md-4">
-            <button class="btn btn-outline">Về chúng tôi</button>
+          <div class="col-12 col-md-4" v-for="intro in list">
+            <button @click="setCurrentSlug(intro.slug_en)" :class="{'active': intro.slug_en == currentSlug}" class="btn btn-outline">@{{ intro.title_vi }}</button>
           </div>
         </div>
       </section>
@@ -29,6 +23,8 @@
         <div class="title-section">
             {{-- <h2 class="text-3">VỀ CHÚNG TÔI</h2> --}}
         </div>
+
+        <div v-html="currentIntro?.content_vi"></div>
     </article>
 </main>
 @endsection
