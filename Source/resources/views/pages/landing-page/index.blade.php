@@ -62,6 +62,7 @@
         <div class="d-flex flex-md-row flex-column combox__wrapper">
           <div class="col-12 col-md-4 control-column">
             <div class="control__wrapper">
+              <label>Giá nhà</label>
               <select class="control" placeholder="Khoảng giá">
                 <option value="">Dưới 1.5 Tỷ</option>
                 <option value="">Từ 1.5 Tỷ - 2.5 Tỷ</option>
@@ -71,6 +72,7 @@
               </select>
             </div>
             <div class="control__wrapper">
+              <label>Diện tích</label>
               <select class="control" placeholder="Diện tích">
                 <option value="">Dưới 85 m2</option>
                 <option value="">Từ 85 m2 - 135 m2</option>
@@ -82,6 +84,7 @@
           </div>
           <div class="col-12 col-md-4 control-column">
             <div class="control__wrapper">
+              <label>Phòng ngủ</label>
               <select class="control" placeholder="Số phòng ngủ">
                 <option value="">Từ 1 - 2 phòng</option>
                 <option value="">Từ 3 - 4 phòng</option>
@@ -89,6 +92,7 @@
               </select>
             </div>
             <div class="control__wrapper">
+              <label>Phòng tắm</label>
               <select class="control" placeholder="Số phòng tắm">
                 <option value="">Từ 1 - 1.5 phòng</option>
                 <option value="">Từ 2 - 3.5 phòng</option>
@@ -98,6 +102,7 @@
           </div>
           <div class="col-12 col-md-4 control-column">
             <div class="control__wrapper">
+              <label>Từ khoá</label>
               <input class="control" type="text" placeholder="Từ khoá tìm kiếm"/>
             </div>
             <div class="control__wrapper">
@@ -107,7 +112,6 @@
         </div>
       </form>
     </section>
-
 
     <section class="gallery-room app-container">
         <div class="title-section">
