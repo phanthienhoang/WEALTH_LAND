@@ -3,6 +3,7 @@
 namespace App\Application\Projects\Queries;
 
 use App\AppProjectLand;
+use App\Helpers\Strings\FileStorageMakingUrl;
 use App\Helpers\Translaters\ProjectTranslater;
 
 class GetProjectBySeoAlias
@@ -14,6 +15,9 @@ class GetProjectBySeoAlias
         $project = ProjectTranslater::transform($project);
 
         $project->imgUrls = !isset($project->imgUrls) ? json_encode([]) : $project->imgUrls;
+
+        $project->imgCoverUrl = FileStorageMakingUrl::transformString($project->imgCoverUrl);
+        $project->imgUrls = FileStorageMakingUrl::transformListString($project->imgUrls);
 
         return $project;
     }

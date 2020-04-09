@@ -3,6 +3,7 @@
 namespace App\Application\Projects\Queries;
 
 use App\AppProjectLand;
+use App\Helpers\Strings\FileStorageMakingUrl;
 use App\Helpers\Translaters\ProjectTranslater;
 
 class GetProjectListPagination {
@@ -13,6 +14,10 @@ class GetProjectListPagination {
         $projects = AppProjectLand::skip(($pageIndex - 1) * $pageSize)->take($pageSize)->get();
 
         $projects->map(function($project) {
+            $project->imgCoverUrl = FileStorageMakingUrl::transformString($project->imgCoverUrl);
+
+            $project->imgUrls = FileStorageMakingUrl::transformListString($project->imgUrls);
+            
             return ProjectTranslater::transform($project);
         });
 

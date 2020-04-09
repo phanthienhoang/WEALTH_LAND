@@ -5,6 +5,7 @@ namespace App\Application\Banners\Queries;
 use App\AppBanner;
 use App\AppLand;
 use App\AppProjectLand;
+use App\Helpers\Strings\FileStorageMakingUrl;
 use App\Helpers\Translaters\LandTranslater;
 use App\Helpers\Translaters\ProjectTranslater;
 
@@ -28,7 +29,10 @@ class GetActiveBanners {
                 return self::convertFromLand($banner);
             }
 
+            $banner->imgCoverUrl = FileStorageMakingUrl::transformString($banner->imgCoverUrl);
+
             return $banner;
+
         });
 
         return $banners;
