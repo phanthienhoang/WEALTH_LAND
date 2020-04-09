@@ -14,8 +14,33 @@ class IntroductController extends Controller
     }
 
     public function api_index(){
-        $data = AppIntroduction::all();
-        return response()->json($data, 200);
+        $datas = AppIntroduction::all();
+
+        // $arrayData;
+        // foreach($datas as $key =>$data){
+        //     $data_json = [
+        //         'vietname' => [
+        //             'title' => $data['title_vi'],
+        //             'slug' => $data['slug_vi'],
+        //             'description' => $data['description_vi'],
+        //             'content' => $data['content_vi']
+        //         ],
+        //         'english' => [
+        //             'title' => $data['title_en'],
+        //             'slug' => $data['slug_en'],
+        //             'description' => $data['description_en'],
+        //             'content' => $data['content_en']
+        //         ],
+    
+        //     ];
+
+        //     $arrayData[$key] =$data_json;
+        // }
+       
+        // dd($data_json);
+
+
+        return response()->json($datas, 200);
     }
 
     public function api_count_views()
@@ -24,4 +49,9 @@ class IntroductController extends Controller
         return response()->json($activerUser, 200);
     }
 
+    public function changeLanguage($language)
+    {
+        session(['language' => $language]);
+        return redirect('/');
+    }
 }
