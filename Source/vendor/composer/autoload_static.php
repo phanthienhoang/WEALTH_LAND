@@ -630,21 +630,6 @@ class ComposerStaticInit9e7eae0a567e2913409162abc4e9dada
         'App\\AppLand' => __DIR__ . '/../..' . '/app/AppLand.php',
         'App\\AppNewsPost' => __DIR__ . '/../..' . '/app/AppNewsPost.php',
         'App\\AppProjectLand' => __DIR__ . '/../..' . '/app/AppProjectLand.php',
-<<<<<<< HEAD
-=======
-        'App\\AppUserComment' => __DIR__ . '/../..' . '/app/AppUserComment.php',
-        'App\\Application\\Contact\\Commands\\StoreFeedback' => __DIR__ . '/../..' . '/app/Application/Contact/Commands/StoreFeedback.php',
-        'App\\Application\\Lands\\Queries\\GetHotestLands' => __DIR__ . '/../..' . '/app/Application/Lands/Queries/GetHotestLands.php',
-        'App\\Application\\Lands\\Queries\\GetLandBySearchParams' => __DIR__ . '/../..' . '/app/Application/Lands/Queries/GetLandBySearchParams.php',
-        'App\\Application\\Lands\\Queries\\GetLandBySeoAlias' => __DIR__ . '/../..' . '/app/Application/Lands/Queries/GetLandBySeoAlias.php',
-        'App\\Application\\Lands\\Queries\\GetLandsPagination' => __DIR__ . '/../..' . '/app/Application/Lands/Queries/GetLandsPagination.php',
-        'App\\Application\\News\\Queries\\GetLastNewsList' => __DIR__ . '/../..' . '/app/Application/News/Queries/GetLastNewsList.php',
-        'App\\Application\\News\\Queries\\GetNewsListBySearchParams' => __DIR__ . '/../..' . '/app/Application/News/Queries/GetNewsListBySearchParams.php',
-        'App\\Application\\News\\Queries\\GetNewsSingleBySlug' => __DIR__ . '/../..' . '/app/Application/News/Queries/GetNewsSingleBySlug.php',
-        'App\\Application\\Projects\\Queries\\GetHotestProjects' => __DIR__ . '/../..' . '/app/Application/Projects/Queries/GetHotestProjects.php',
-        'App\\Application\\Projects\\Queries\\GetProjectBySeoAlias' => __DIR__ . '/../..' . '/app/Application/Projects/Queries/GetProjectBySeoAlias.php',
-        'App\\Application\\Projects\\Queries\\GetProjectListPagination' => __DIR__ . '/../..' . '/app/Application/Projects/Queries/GetProjectListPagination.php',
->>>>>>> feature/statistical-count-views
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Contact\\Commands\\SendFeedback' => __DIR__ . '/../..' . '/app/Application/Contact/Commands/SendFeedback.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
