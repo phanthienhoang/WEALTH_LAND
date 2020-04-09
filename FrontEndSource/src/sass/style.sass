@@ -22,6 +22,9 @@ body
 
 // Global Style
 
+.row
+    width: 100% !important
+
 .app-container
     max-width: $lg-screen-max
     margin: auto
@@ -231,9 +234,8 @@ section.plan-gallery
     align-items: center
     justify-content: center
     text-align: center
-
-    background: url(/assets/images/wealthland-brand.jpg) no-repeat center center
-    background-size: cover
+    position: relative
+    background-color: rgba($dark, .5)
     color: $white
 
     .page-title
@@ -243,6 +245,15 @@ section.plan-gallery
 
     .page-sub-title
         margin-top: 1rem
+
+    &::after
+        content: ' '
+        position: absolute
+        z-index: -1
+        background: url(/assets/images/wealthland-brand.jpg) no-repeat center center
+        background-size: cover
+        width: 100%
+        height: 100%
 
 article.intro-details
     p.intro
@@ -498,5 +509,3 @@ article.blog-detail
             float: none !important
             width: 100% !important
             padding: 0 0 1.5rem !important
-
-
