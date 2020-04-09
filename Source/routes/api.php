@@ -21,10 +21,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['prefix' => 'contact'], function () {
     Route::post('', 'ContactController@postComment');
 });
-<<<<<<< HEAD
-=======
-
-
 
 Route::group(['prefix' => 'gioi-thieu', 'name' => 'introduct.'], function() {
     Route::get('', 'IntroductController@api_index')->name('introduction.list.api');
@@ -32,4 +28,3 @@ Route::group(['prefix' => 'gioi-thieu', 'name' => 'introduct.'], function() {
 
     // Route::get('{seoAlias}', 'LandsController@single')->name('land.single');
 });
->>>>>>> feature/statistical-count-views
