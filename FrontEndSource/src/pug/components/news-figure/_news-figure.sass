@@ -1,0 +1,93 @@
+.news-figure-vertical
+    display: block
+    position: relative
+    overflow: hidden
+    box-sizing: border-box
+    padding-bottom: 1rem
+    margin-bottom: 1rem
+
+    &:hover
+        .short-description
+            opacity: .9
+
+    .image__wrapper
+        display: flex
+        box-sizing: border-box
+        position: relative
+        width: 100%
+        justify-content: center
+        align-items: center
+        height: 220px
+        overflow: hidden
+
+        img
+            object-fit: cover
+            width: 120%
+
+        .date-tag
+            position: absolute
+            left: 0
+            top: 1rem
+            padding: .5rem 1rem
+            color: $light
+
+            span
+                display: block
+
+            .date
+                font-size: 1.2rem
+
+            .month
+                font-size: .9rem
+
+    .main-title-wrapper
+        max-width: 100%
+        .main-title
+            margin-top: 1rem
+            margin-bottom: .5rem
+            text-transform: uppercase
+            text-align: center
+            display: -webkit-box
+            -webkit-line-clamp: 2
+            -webkit-box-orient: vertical
+            overflow: hidden
+
+    .split-line
+        display: flex
+        justify-content: center
+        align-items: center
+        margin: .5rem 0
+
+        div
+            box-sizing: border-box
+            height: .2rem
+            width: 2rem
+            background: rgba(0,0,0,.1)
+            text-align: center
+            border-radius: .5rem
+
+    .short-description
+        text-align: center
+        display: -webkit-box
+        -webkit-line-clamp: 2
+        -webkit-box-orient: vertical
+        overflow: hidden
+        font-size: .9rem
+        opacity: .4
+        transition: .3s all
+
+@media screen and ( max-width: $lg-screen-max )
+    .news-figure-vertical .image__wrapper
+        height: 220px
+
+@media screen and ( max-width: $md-screen-max )
+    .news-figure-vertical .image__wrapper
+        height: 200px
+
+@media screen and ( max-width: $sm-screen-max )
+    .float-title
+        background-color: $accent
+        color: $white !important
+
+    .news-figure-vertical .image__wrapper
+        height: 240px

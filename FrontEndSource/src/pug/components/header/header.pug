@@ -1,0 +1,46 @@
+
+.loading-overlay
+    img(src="https://batdongsan8.trustweb.vn/wp-content/themes/flatsome-child/images/preloader.gif")
+
+header.container-fluid
+    .menu-backdrop
+        a(onclick="hideMenu()")
+            i.fa.fa-times
+
+
+
+    nav
+        .nav-container.app-container
+            .toggle-menu-button-container
+                a
+                    i.fa.fa-bars(aria-hidden="true" onclick="showMenu()")
+
+            .brand
+                a.logo-website
+                    img(data-original="/assets/images/logo_babylon.png").logo
+
+            .toggle-menu-button-container
+                a(href="tel:0935418749")
+                    i.fa.fa-volume-control-phone
+
+
+            ul.nav-list
+                li.nav-search
+                    form.search__container
+                        input(type="text" placeholder="Search...")
+                        button.btn.btn-accent
+                            i.fa.fa-search
+                li.nav-item
+                    a.nav-link(href="../index.html") Trang chủ
+                li.nav-item
+                    a.nav-link(href="../gallery.html") Thư viện ảnh
+                li.nav-item
+                    a.nav-link(href="../house-plan.html") Mặt bằng căn hộ
+                li.nav-item
+                    a.nav-link(href="../land.html") Bất động sản
+                li.nav-item
+                    a.nav-link(href="../blogs.html")  Tin tức
+                li.nav-item
+                    a.nav-link(href="../introduce.html") Giới thiệu
+                li.nav-item
+                    a.nav-link(href="../contact.html") Liên hệ

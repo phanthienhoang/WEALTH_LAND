@@ -1,0 +1,77 @@
+.carousel-container
+    box-sizing: border-box
+    width: 100%
+    height: 100vh
+    background: url(/assets/images/slider_1.jpg) center center no-repeat
+    background-size: cover
+    display: flex
+    flex-direction: column
+
+    .carousel-widget
+        width: 100%
+        display: flex
+        justify-content: space-between
+        margin: auto
+
+        .project-description
+            color: $white
+
+            h2.feature
+                text-transform: uppercase
+                margin-bottom: 1.5rem
+                font-weight: 600
+
+            span
+                display: block
+                margin-bottom: 2rem
+
+        form
+            display: flex
+            flex-direction: column
+            width: 35%
+            background-color: rgba(white, .6)
+            padding: 1rem
+
+            input, textarea
+                margin-bottom: 1rem
+                padding: .6rem 1rem
+                font-size: 1rem
+                font-weight: 200
+                border: none
+
+@media screen and ( max-width: $lg-screen-max )
+    .carousel-container
+
+        .carousel-widget
+            padding: 0 8rem
+
+            .project-description
+
+            form
+                width: 40%
+
+@media screen and ( max-width: $md-screen-max )
+    .carousel-container
+
+        .carousel-widget
+            padding: 0 1rem
+
+            .project-description
+
+            form
+                textarea
+                    rows: 3
+
+@media screen and ( max-width: $xs-screen-max )
+    .carousel-widget
+        height: 100%
+        flex-direction: column
+        justify-content: center !important
+
+        .project-description
+            padding: 1rem
+            margin-bottom: 2rem
+
+        form
+            display: none !important
+            width: 100% !important

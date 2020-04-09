@@ -1,0 +1,139 @@
+html
+    include ../components/head/head.pug
+    body(scroll="no")
+
+        include ../components/header/header.pug
+
+        main.index-page
+            include ../components/banner-carousel/banner-carousel.pug
+
+            section.project-details.app-container
+                .title-section.has-margin
+                    h2.text-3 Thông tin chi tiết
+                    
+
+                .detail-container
+                    .detail-figure
+                        img(data-original="/assets/icons/icon_calendar.png")
+                        .icon-label Xây dựng
+                        .info Năm 2018
+                    .detail-figure
+                        img(data-original="/assets/icons/icon_dimension.png")
+                        .icon-label diện tích
+                        .info 50,75 - 83,12 M2
+                    .detail-figure
+                        img(data-original="/assets/icons/icon_parking.png")
+                        .icon-label bãi gửi xe
+                        .info 2
+                    .detail-figure
+                        img(data-original="/assets/icons/icon_bed.png")
+                        .icon-label phòng ngủ
+                        .info 2
+                    .detail-figure
+                        img(data-original="/assets/icons/icon_bath.png")
+                        .icon-label PHÒNG tắm
+                        .info 2
+
+            section.overview
+                .row
+                    .col-md-6
+                    .col-12.col-md-6
+                        .text__container
+                            .title-section
+                                h2.text-3 Cơ sở hạ tầng
+                                
+
+                            p.description Khu căn hộ Babylon Residence được đầu tư bởi Tập đoàn Đất Xanh, hiện dự án Babylon Residence đang hoàn thiện nhà điều hành, nhà mẫu và công viên ven sông. Dự kiến dự án sẽ được công bố vào tháng 5/2016 và hoàn thành vào đầu năm 2018.
+
+                            .more-description
+                                .widget
+                                    .title TẦM NHÌN
+                                    p.content Với vị trí của căn hộ quý khách sẽ cảm thấy sảng khoái và vui vẻ với quang cảnh từ căn hộ của mình vào..
+                                .widget
+                                    .title SÂN CHƠI
+                                    p.content Phải mất công tìm kiếm một nơi để hoạt động thể thao đủ lớn và tiện nghi ,nay với việc sở hữu căn hộ của…
+                                .widget
+                                    .title SÂN CHƠI
+                                    p.content Phải mất công tìm kiếm một nơi để hoạt động thể thao đủ lớn và tiện nghi ,nay với việc sở hữu căn hộ của…
+                                .widget
+                                    .title SÂN CHƠI
+                                    p.content Phải mất công tìm kiếm một nơi để hoạt động thể thao đủ lớn và tiện nghi ,nay với việc sở hữu căn hộ của…
+
+
+            section.gallery-room.app-container
+                .title-section
+                    h2.text-3 Thư viện ảnh
+                    
+                .row
+                    .col-12.col-sm-6.col-md-4
+                        include ../components/gallery-figure-room/gallery-figure-room.pug
+                    .col-12.col-sm-6.col-md-4
+                        include ../components/gallery-figure-room/gallery-figure-room.pug
+                    .col-12.col-sm-6.col-md-4
+                        include ../components/gallery-figure-room/gallery-figure-room.pug
+                    .col-12.col-sm-6.col-md-4
+                        include ../components/gallery-figure-room/gallery-figure-room.pug
+                    .col-12.col-sm-6.col-md-4
+                        include ../components/gallery-figure-room/gallery-figure-room.pug
+                    .col-12.col-sm-6.col-md-4
+                        include ../components/gallery-figure-room/gallery-figure-room.pug
+                    .col-12.col-sm-6.col-md-4
+                        include ../components/gallery-figure-room/gallery-figure-room.pug
+                    .col-12.col-sm-6.col-md-4
+                        include ../components/gallery-figure-room/gallery-figure-room.pug
+                    .col-12.col-sm-6.col-md-4
+                        include ../components/gallery-figure-room/gallery-figure-room.pug
+
+            //- .container-fluid.bg-light
+
+            
+            .bg-light
+                section.gallery-room.app-container
+                    .title-section.has-margin
+                        h2.text-3 Mặt bằng căn hộ 2 phòng ngủ
+                        
+                    .row
+                        .col-6.col-sm-6.col-md-4
+                            include ../components/plan-figure-house/plan-figure-house.pug
+                        .col-6.col-sm-6.col-md-4
+                            include ../components/plan-figure-house/plan-figure-house.pug
+                        .col-6.col-sm-6.col-md-4
+                            include ../components/plan-figure-house/plan-figure-house.pug
+                        .col-6.col-sm-6.col-md-4
+                            include ../components/plan-figure-house/plan-figure-house.pug
+                        .col-6.col-sm-6.col-md-4
+                            include ../components/plan-figure-house/plan-figure-house.pug
+                        .col-6.col-sm-6.col-md-4
+                            include ../components/plan-figure-house/plan-figure-house.pug
+
+                    .title-section.has-margin
+                        h2.text-3 Mặt bằng căn hộ 3 phòng ngủ
+                        
+                    .row
+                        .col-6.col-sm-6.col-md-4
+                            include ../components/plan-figure-house/plan-figure-house.pug
+                        .col-6.col-sm-6.col-md-4
+                            include ../components/plan-figure-house/plan-figure-house.pug
+                        .col-6.col-sm-6.col-md-4
+                            include ../components/plan-figure-house/plan-figure-house.pug
+                        .col-6.col-sm-6.col-md-4
+                            include ../components/plan-figure-house/plan-figure-house.pug
+                        .col-6.col-sm-6.col-md-4
+                            include ../components/plan-figure-house/plan-figure-house.pug
+                        .col-6.col-sm-6.col-md-4
+                            include ../components/plan-figure-house/plan-figure-house.pug
+
+
+            section.news-figure-list.app-container
+                .title-section
+                    h2.text-3 Tin tức
+                    
+                .row
+                    .col-12.col-sm-6.col-md-4
+                        include ../components/news-figure/news-figure.pug
+                    .col-12.col-sm-6.col-md-4
+                        include ../components/news-figure/news-figure.pug
+                    .col-12.col-sm-6.col-md-4
+                        include ../components/news-figure/news-figure.pug
+
+        include ../components/footer/footer.pug
