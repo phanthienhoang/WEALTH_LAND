@@ -25,7 +25,7 @@ class LandsController extends Controller
             'land' => $land
         ];
 
-        return view('pages.lands.land-single')->with($compactData);
+        return view('pages.lands.land-single')->with($compactData);
     }
 
     /** Api actions */
