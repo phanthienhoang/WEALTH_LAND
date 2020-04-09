@@ -8,5 +8,41 @@
             <a class="btn btn-accent" href="{{ route('contact.index') }}">Liên hệ</a>
         </div>
     </div>
+<<<<<<< HEAD
     <div class="container-fluid copyright">Copyright 2020 @ WealthLand</div>
 </footer>
+=======
+    <div class="container-fluid copyright">
+        
+    <div class="app-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%">
+        <p style="opacity: 0">   người đang truy cập</p> 
+        <p>  Copyright 2020 @ WealthLand  </p> <p id="countviews">  </p> 
+    </div>
+   </div>
+</footer>
+
+@push('viewscount')
+<script>
+
+
+  $( document ).ready(function() {
+        $.ajax({
+            url: "{{route('introduction.countviews.api')}}", 
+            success: function(result){
+                $("#countviews").html(result +" người đang truy cập") ;
+            }});
+
+    });
+    setInterval(function(){ 
+            
+            $.ajax({
+            url: "{{route('introduction.countviews.api')}}", 
+            success: function(result){
+                $("#countviews").html(result + " người đang truy cập") ;
+            }});
+            
+        }, 5000);
+</script>
+  
+@endpush
+>>>>>>> feature/statistical-count-views

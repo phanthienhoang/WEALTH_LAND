@@ -21,6 +21,7 @@ var isFixed = false
 
 const breakPoint = 300;
 
+<<<<<<< HEAD
 $(document).click(function() {
 
     const nav = $('.nav-list.show')
@@ -34,6 +35,8 @@ $("li").click(function(event) {
     event.stopPropagation();
 });
 
+=======
+>>>>>>> feature/statistical-count-views
 $(window).scroll(() => {
     const { pageYOffset, innerWidth } = window
 
@@ -83,6 +86,7 @@ $(window).scroll(() => {
 })
 
 function showMenu() {
+<<<<<<< HEAD
     setTimeout(function() {
         $('.nav-list').addClass('show')
         $('.menu-backdrop').addClass('show')
@@ -91,6 +95,13 @@ function showMenu() {
         $('body').css('overflow', 'hidden')
     }, 0)
 
+=======
+    $('.nav-list').addClass('show')
+    $('.menu-backdrop').addClass('show')
+
+    $('html').css('overflow','hidden')
+    $('body').css('overflow', 'hidden')
+>>>>>>> feature/statistical-count-views
 }
 
 function hideMenu() {

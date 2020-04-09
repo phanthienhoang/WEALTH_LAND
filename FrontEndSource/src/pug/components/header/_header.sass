@@ -3,7 +3,11 @@
     height: 100vh
     width: 100vw
     background: white
+<<<<<<< HEAD
     z-index: 10000
+=======
+    z-index: 100
+>>>>>>> feature/statistical-count-views
     display: flex
     justify-content: center
     align-items: center
@@ -20,7 +24,11 @@
     box-sizing: border-box
     width: 100vw
     height: 0vh
+<<<<<<< HEAD
     background-color: rgba(0,0,0, .8)
+=======
+    background-color: rgba(0,0,0, .7)
+>>>>>>> feature/statistical-count-views
     transition: .3s opacity ease-in
 
     &.show
@@ -37,10 +45,18 @@
         color: $light
 
 header
+<<<<<<< HEAD
     transition: .3s all
     display: block
     z-index: 100
     position: absolute
+=======
+    background-color: transparent
+    z-index: 1
+    transition: .3s all
+    display: block
+    z-index: 1000
+>>>>>>> feature/statistical-count-views
 
     &.fixed
         top: -100px
@@ -61,8 +77,12 @@ nav
     left: 0
     background-color: rgba($dark, 0%)
     transition: .3s all
+<<<<<<< HEAD
     background: linear-gradient(180deg, rgba(0,0,0,0.623686974789916) 0%, rgba(0,0,0,0.3127626050420168) 51%, rgba(0,0,0,0) 86%);
     
+=======
+
+>>>>>>> feature/statistical-count-views
     .nav-container
         display: flex
         justify-content: space-between
@@ -73,7 +93,11 @@ nav
         display: none
 
     ul
+<<<<<<< HEAD
         
+=======
+        z-index: 10
+>>>>>>> feature/statistical-count-views
         li
             text-transform: uppercase
             color: $white
@@ -128,7 +152,10 @@ nav
                 height: 24px
                 
     header
+<<<<<<< HEAD
         z-index: 1000
+=======
+>>>>>>> feature/statistical-count-views
         &.fixed
             .toggle-menu-button-container
                 a
@@ -138,7 +165,10 @@ nav
         nav
             padding: 1rem 1rem
             align-items: flex-end
+<<<<<<< HEAD
             z-index: 1000
+=======
+>>>>>>> feature/statistical-count-views
 
             .toggle-menu-button-container
                 display: block
@@ -161,6 +191,7 @@ nav
             left: -300px
             top: 0
             width: 300px
+<<<<<<< HEAD
             z-index: 1000
             margin-block-start: 0
             margin-block-end: 0
@@ -178,6 +209,17 @@ nav
                     transition-property: opacity
 
             &::before
+=======
+            z-index: 1
+            margin-block-start: 0
+            margin-block-end: 0
+            transition: .3s all ease-out
+
+            &.show
+                left: 0
+
+            &::after
+>>>>>>> feature/statistical-count-views
                 content: ' '
                 top: 0
                 left: 0
@@ -187,6 +229,7 @@ nav
                 width: 100%
                 z-index: -1
 
+<<<<<<< HEAD
             &::after
                 content: ' '
                 top: 0
@@ -201,6 +244,8 @@ nav
                 transition-delay: .5s
                 transition-property: opacity
 
+=======
+>>>>>>> feature/statistical-count-views
             li
                 float: none
                 margin: 0

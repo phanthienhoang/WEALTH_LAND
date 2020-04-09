@@ -11,10 +11,17 @@ class GetLandBySeoAlias
     {
         $land = AppLand::where('seoAliasVI', $seoAlias)->orWhere('seoAliasEN', $seoAlias)->firstOrFail();
 
+<<<<<<< HEAD
         $land->imgUrls = !isset($land->imgUrls) || empty($land->imgUrls)  ? json_encode([]) : $land->imgUrls;
 
+=======
+>>>>>>> feature/statistical-count-views
         $land = LandTranslater::transform($land);
 
         return $land;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> feature/statistical-count-views

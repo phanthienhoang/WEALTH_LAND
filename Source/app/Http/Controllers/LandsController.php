@@ -25,7 +25,10 @@ class LandsController extends Controller
             'land' => $land
         ];
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> feature/statistical-count-views
         return view('pages.lands.land-single')->with($compactData);
     }
 
