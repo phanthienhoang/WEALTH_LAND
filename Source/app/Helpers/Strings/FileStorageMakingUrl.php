@@ -21,7 +21,7 @@ class FileStorageMakingUrl {
             $isListMode = true;
         }
 
-        collect($list)->map(function($str) {
+        $list = collect($list)->map(function($str) {
             return self::transformString($str);
         });
 
