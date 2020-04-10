@@ -1,0 +1,41 @@
+
+form.search-form
+    .d-flex.flex-md-row.flex-column.combox__wrapper
+        .col-12.col-md-4.control-column
+            .control__wrapper
+                label Giá nhà
+                select.control(placeholder="Khoảng giá")
+                    option(value="") Dưới 1.5 Tỷ
+                    option(value="") Từ 1.5 Tỷ - 2.5 Tỷ
+                    option(value="") Từ 2.5 Tỷ - 4 Tỷ
+                    option(value="") Từ 4 Tỷ đến 7 Tỷ
+                    option(value="") Trên 7 Tỷ
+            .control__wrapper
+                label Diện tích
+                select.control(placeholder="Diện tích")
+                    option(value="") Dưới 85 m2
+                    option(value="") Từ 85 m2 - 135 m2
+                    option(value="") Từ 135 m2 - 200 m2
+                    option(value="") Từ 200 m2 - 320 m2
+                    option(value="") Trên 320 m2
+        .col-12.col-md-4.control-column
+            .control__wrapper
+                label Phòng ngủ
+                select.control(placeholder="Số phòng ngủ")
+                    option(value="") Từ 1 - 2 phòng
+                    option(value="") Từ 3 - 4 phòng
+                    option(value="") Trên 4 phòng
+            .control__wrapper
+                label Phòng tắm
+                select.control(placeholder="Số phòng tắm")
+                    option(value="") Từ 1 - 1.5 phòng
+                    option(value="") Từ 2 - 3.5 phòng
+                    option(value="") Trên 3.5 phòng
+
+        
+        .col-12.col-md-4.control-column
+            .control__wrapper
+                label Từ khoá
+                input.control(type="text", placeholder="Từ khoá tìm kiếm")
+            .control__wrapper
+                button.btn.btn-accent Tìm kiếm
