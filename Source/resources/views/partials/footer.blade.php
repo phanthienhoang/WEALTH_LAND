@@ -11,8 +11,15 @@
     <div class="container-fluid copyright">
         
     <div class="app-container" style="display: flex; justify-content: space-between; align-items: center; width: 100%">
-        <p style="opacity: 0">   người đang truy cập</p> 
-        <p>  Copyright 2020 @ WealthLand  </p> <p ><span id="countviews"> </span> {{ trans('navbar.nguoitruycap') }}</p> 
+        <div style="display: flex; align-items: center; width: 5rem">Lang: 
+            <a href="{{ route('user.change-language',['vi'])}}">
+                <img style="width: 30px; margin-left: 5px" src="/assets/icons/vietnam.svg"/>
+            </a>
+            <a href="{{ route('user.change-language',['en'])}}">
+                <img style="width: 30px; margin-left: 5px" src="/assets/icons/united-states.svg"/>
+            </a>
+        </div> 
+        <p>  Copyright 2020 @ WealthLand  </p> <p style="width: 5rem"><span id="countviews"> </span> {{ trans('navbar.nguoitruycap') }}</p> 
     </div>
    </div>
 </footer>
