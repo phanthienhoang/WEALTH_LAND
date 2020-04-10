@@ -6,46 +6,43 @@ form.search-form
     padding: 1rem
 
     .combox__wrapper
-        height: auto !important
-        .control-column
-            width: 100%
-            padding: 0
-            height: 100px
-            .control__wrapper
-                margin: 1rem
-                position: relative
+        display: grid
 
-                label
-                    padding: 0 .5rem
-                    position: absolute
-                    font-size: .7rem
-                    transform: translate(.4rem, -60%)
-                    background: white
-                    color: $medium
+        .control__wrapper
+            margin: 1rem
+            position: relative
 
-                .control
-                    height: 42px
-                    -webkit-appearance: none
-                    -moz-appearance:    none
-                    appearance:         none
-                    width: 100%
-                    padding: .5rem .8rem
-                    font-size: 1rem
-                    font-weight: 300
-                    border: 1px solid $accent !important
-                    -webkit-border-radius: 0
-                    -moz-border-radius: 0
-                    -ms-border-radius: 0
-                    border-radius: 0
-                    border: 2px solid #bbb;
-                    box-shadow: none !important
-                    transition: .3s all
-                    background: transparent
-                    outline: none
+            label
+                padding: 0 .5rem
+                position: absolute
+                font-size: .7rem
+                transform: translate(.4rem, -60%)
+                background: white
+                color: $medium
+
+            .control
+                height: 42px
+                -webkit-appearance: none
+                -moz-appearance:    none
+                appearance:         none
+                width: 100%
+                padding: .5rem .8rem
+                font-size: 1rem
+                font-weight: 300
+                border: 1px solid $accent !important
+                -webkit-border-radius: 0
+                -moz-border-radius: 0
+                -ms-border-radius: 0
+                border-radius: 0
+                border: 2px solid #bbb;
+                box-shadow: none !important
+                transition: .3s all
+                background: transparent
+                outline: none
 
 
-                    &:focus
-                        box-shadow: 1px 1px .5px rgba(0,0,0,.3)
+                &:focus
+                    box-shadow: 1px 1px .5px rgba(0,0,0,.3)
 
         button
             width: 100%
@@ -60,4 +57,8 @@ form.search-form
                 margin: 0 !important
 
         
-
+@media screen and ( min-width: $sm-screen-max  )
+    form.search-form
+        .combox__wrapper
+            grid-template-columns: 1fr 1fr 1fr
+    
