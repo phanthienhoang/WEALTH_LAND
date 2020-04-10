@@ -18,12 +18,7 @@
         </div>
       </section>
 
-    <article class="container intro-details">
-        <p class="intro"></p>
-        <div class="title-section">
-            {{-- <h2 class="text-3">VỀ CHÚNG TÔI</h2> --}}
-        </div>
-
+    <article class="app-container intro-details">
         <div v-html="currentIntro?.content_vi"></div>
     </article>
 </main>
