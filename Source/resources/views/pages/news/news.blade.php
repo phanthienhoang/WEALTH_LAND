@@ -30,7 +30,7 @@
             </section>
 
             <aside class="function-container col-12 col-md-3">
-                <form class="search-form">
+                <form class="search-form" style="margin: 0; padding: 0; box-shadow: none">
                     <input type="text" placeholder="Search..." />
                     <button class="btn btn-accent"><i class="fa fa-search"></i></button>
                 </form>
