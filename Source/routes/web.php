@@ -51,6 +51,9 @@ Route::group(['prefix' => 'gioi-thieu', 'name' => 'introduct.'], function() {
     // Route::get('{seoAlias}', 'LandsController@single')->name('land.single');
 });
 
+Route::group(['prefix' => 'search', 'name' => 'search.'],function() {
+    Route::post('', 'LandingPageController@search')->name('search.land');
+});
 
 use Spatie\Analytics\Period;
 
