@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "wealth-land-2020",
+  "private_key_id": "c9466b7229cb660abe6bffa481ec3bae865661dd",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDPxjlm+VYMiBpU\n8psI0FTd/CXHK1ru5qbsEN5Vz05SC4gle852mlK+27iqxYWsSwQU5AyrrVWkNMJx\nCKCTaIhxSV1IyuF6Lu/iACHFSsz7tYkwuC9xRibJnlCS+s6ysk/NALZYdEI9ahuC\nRXsAIMjGhyu2mx3tbgmd/SkG4guouo3tZSWN2EuvYetZoF6lHKZbNC8KJopJmhI+\n/mn4iL3hrRmkW06d9giFXMWN9UQqQoNsFtEsvhFJbiWb1HdPCNMWBVMLRZBfzA66\nScDlz3ypzb9xBREHbbrT23LFuFfyHyP3FF8nlzc2i/NI7wYJ82jU6GtHSAda3zjp\nTIHQDjg1AgMBAAECggEAAXXyjd2HZBep3bqF6gIy8ouVBWkx3rea6VJ2CbLnKU8A\n8kiES1Oq7MIVMogoeC1f1jjDOQrDLSAc1NgbbuXffbJnGD2q56XAVH2tPxqXRdbB\nI+lLlheI6sZ06Q+f1+RGiNmuLoGEvLNMBbaw1m+kkba+ES7Wf0aUhTqUKQL6U4GX\nALMmyW9Utku2/6LEd4T5RAOjvCwuAMlEZsCVI5t3k6qugNpvWuqOFB+6wWOXEGgY\npTDiu5fpFGKwLjfVFUt4p9DeQhe6ht7d3kFvn6I95ceNV+g0ZDpxSIjH74kwNwzz\nTglw6iDCo4Ux81QkPt1IdXSjQO2dw13jY8M4be4TsQKBgQD5Im2e7BJ5YKFNj0vR\nF2h+/QopkQ8ddRclpDlGg/r+WT1nRU2W10WVhrWrqFxGyLt5FlUXVzdVGjESs+dX\nKvGWQNLgBWNOf99e5pvVsgg/X8Zyn8Z14FKVtFeq5NhqjyFKrhHkFvhjnrunNZ+n\nJk4j4+yZhUtBneV8HGLkqry+EQKBgQDVgAMP9b6ET+d8HqLWdSaXVMV0j8e8TVi7\na/fmF9iD3mnEr+4SJXjAZ1qh0WdJx6v1war877MWleDxnv6ZVV8UHP9Kn6hoKDa6\nl+uoxHO9n+YsMpbsCDkAvj8KPMKeN7NWcdmH8dNSrFMpMoMj/ZrPkuReA59SmKMy\nXkioCR4D5QKBgB+7/vKrZ38GjAVxJ1su/CSQ3uaEj8RU0en9jT4qOaKEg4nQDh4U\ntcxiKGoBPB/YGelGqvgaJ/YzK+UR/XnhAnz9LN9UUF4Dc9SG03rY/qvz6zdWmtUR\nCfP/0Nr344lPShJVMfo34tPtuEGIVxnXi0SPF+hGTlvBXSX+B6rRBNHBAoGAQF2d\njrw5uc4VLdhWo20iO1F1ThTi1KRE8gw06ouZ3Pe6z29yyMm/Q9JlApANIbMu5qKC\nmErzpQV+kZmrjDKuvXOYi7jinrQw+8Q9ad4APtTsIbsGwRYhiVXRz5ZN3kFQsekU\n+eUwHqaRU8REwR7+A0J30tgoulAGM3M1WGOXRvkCgYEAoevGKetIo5sczfuTWeR8\nbnkOp4NJu2BACu8c6wt0zDs9qqG+fB2DCXdjY18LfVlRMtLFfJF18ikwh5GTMwFw\nrLSeJzeO9NnpWOe4qs0PI2MbNG5/yScL3CzCsGLcS1EFM9GcXAB7GLL6UZfGOIY4\n/Wc4UXdqQ6b0jwz4u2muLzk=\n-----END PRIVATE KEY-----\n",
+  "client_email": "wealth-land@wealth-land-2020.iam.gserviceaccount.com",
+  "client_id": "103671226839070732536",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/wealth-land%40wealth-land-2020.iam.gserviceaccount.com"
+}

@@ -2,35 +2,41 @@
     margin-bottom: 2rem
 
 
-.blog-list-item 
+a.blog-list-item 
     display: flex
     align-items: center
     margin-bottom: 2rem
 
-    .news-figure
+    figure.blog-list-item__preview
+        box-sizing: border-box
         flex-grow: 0
         flex-shrink: 0
+        height: 180px
         width: 30%
-        .image__wrapper
-            position: relative
-            img
-                width: 100%
+        background: red
+        position: relative
+        // overflow: hidden
 
-            .date-tag
-                position: absolute
-                left: 0
-                top: 1rem
-                padding: .5rem 1rem
-                color: $light
+        img
+            width: 100%
+            object-fit: cover
+            height: 100%
 
-                span
-                    display: block
+        .date-tag
+            position: absolute
+            left: 0
+            top: 1rem
+            padding: .5rem 1rem
+            color: $light
 
-                .date
-                    font-size: 1.2rem
+            span
+                display: block
 
-                .month
-                    font-size: .9rem
+            .date
+                font-size: 1.2rem
+
+            .month
+                font-size: .9rem
 
     .text-info
         flex-grow: 1
@@ -72,3 +78,73 @@
             font-size: .9rem
             opacity: .4
             transition: .3s all
+
+@media screen and ( max-width: $lg-screen-max )
+    a.blog-list-item 
+        figure.blog-list-item__preview
+            height: 180px
+
+@media screen and ( max-width: $md-screen-max )
+    a.blog-list-item 
+        figure.blog-list-item__preview
+            height: 160px
+        
+@media screen and ( max-width: $sm-screen-max )
+    a.blog-list-item 
+
+        figure.blog-list-item__preview
+            width: 28%
+            height: 120px
+
+            .date-tag
+                font-size: .6rem
+                position: absolute
+                left: 0
+                top: 1rem
+                padding: .2rem .3rem
+                color: $light
+
+                span
+                    display: block
+
+                .date
+                    font-size: 1rem
+
+                .month
+                    font-size: .8rem
+
+        .text-info
+            flex-grow: 1
+            text-align: left
+            padding-left: 1rem
+
+    
+@media screen and ( max-width: $xs-screen-max )
+    a.blog-list-item 
+
+        figure.blog-list-item__preview
+            width: 28%
+            height: 80px
+
+            .date-tag
+                font-size: .6rem
+                position: absolute
+                left: 0
+                top: 1rem
+                padding: .2rem .3rem
+                color: $light
+
+                span
+                    display: block
+
+                .date
+                    font-size: 1rem
+
+                .month
+                    font-size: .8rem
+
+        .text-info
+            flex-grow: 1
+            text-align: left
+            padding-left: 1rem
+     

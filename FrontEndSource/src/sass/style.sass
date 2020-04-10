@@ -9,11 +9,21 @@
 @import '../pug/components/plan-figure-house/_plan-figure-house'
 @import '../pug/components/blog-list-item/_blog-list-item'
 @import '../pug/components/land-figure/_land-figure'
+@import '../pug/components/land-gallery-item/_land-gallery-item'
 
 html
     position: relative
+    overflow-y: auto
+    overflow-x: hidden
+
+body
+    overflow-y: auto
+    overflow-x: hidden
 
 // Global Style
+
+.row
+    width: 100% !important
 
 .app-container
     max-width: $lg-screen-max
@@ -224,9 +234,8 @@ section.plan-gallery
     align-items: center
     justify-content: center
     text-align: center
-
-    background: url(/assets/images/slider_1.jpg) no-repeat center center
-    background-size: cover
+    position: relative
+    background-color: rgba($dark, .5)
     color: $white
 
     .page-title
@@ -236,6 +245,15 @@ section.plan-gallery
 
     .page-sub-title
         margin-top: 1rem
+
+    &::after
+        content: ' '
+        position: absolute
+        z-index: -1
+        background: url(/assets/images/wealthland-brand.jpg) no-repeat center center
+        background-size: cover
+        width: 100%
+        height: 100%
 
 article.intro-details
     p.intro
@@ -340,7 +358,8 @@ aside.function-container
         justify-content: space-between
 
         input
-            padding: 0 1rem
+            padding: .5rem 1rem .5rem 0
+            width: 100%
             font-size: 1rem
             font-weight: 300
 
@@ -416,6 +435,9 @@ article.blog-detail
         p
             margin-bottom: 1.5rem
             color: $medium-light
+
+.land-gallery
+    width: 100%
 
 @media screen and ( max-width: $lg-screen-max )
     section.overview

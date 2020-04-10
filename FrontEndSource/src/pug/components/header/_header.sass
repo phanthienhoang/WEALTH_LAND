@@ -3,7 +3,7 @@
     height: 100vh
     width: 100vw
     background: white
-    z-index: 100
+    z-index: 10000
     display: flex
     justify-content: center
     align-items: center
@@ -20,7 +20,7 @@
     box-sizing: border-box
     width: 100vw
     height: 0vh
-    background-color: rgba(0,0,0, .7)
+    background-color: rgba(0,0,0, .8)
     transition: .3s opacity ease-in
 
     &.show
@@ -37,11 +37,10 @@
         color: $light
 
 header
-    background-color: transparent
-    z-index: 1
     transition: .3s all
     display: block
-    z-index: 1000
+    z-index: 100
+    position: absolute
 
     &.fixed
         top: -100px
@@ -62,7 +61,8 @@ nav
     left: 0
     background-color: rgba($dark, 0%)
     transition: .3s all
-
+    background: linear-gradient(180deg, rgba(0,0,0,0.623686974789916) 0%, rgba(0,0,0,0.3127626050420168) 51%, rgba(0,0,0,0) 86%);
+    
     .nav-container
         display: flex
         justify-content: space-between
@@ -73,7 +73,7 @@ nav
         display: none
 
     ul
-        z-index: 10
+        
         li
             text-transform: uppercase
             color: $white
@@ -128,6 +128,7 @@ nav
                 height: 24px
                 
     header
+        z-index: 1000
         &.fixed
             .toggle-menu-button-container
                 a
@@ -137,6 +138,7 @@ nav
         nav
             padding: 1rem 1rem
             align-items: flex-end
+            z-index: 1000
 
             .toggle-menu-button-container
                 display: block
@@ -159,15 +161,24 @@ nav
             left: -300px
             top: 0
             width: 300px
-            z-index: 1
+            z-index: 1000
             margin-block-start: 0
             margin-block-end: 0
             transition: .3s all ease-out
+            z-index: -2
 
             &.show
                 left: 0
+                z-index: 3
 
-            &::after
+                &::after
+                    left: 0
+                    opacity: 1
+                    height: 100vh
+                    transition-delay: 0 !important
+                    transition-property: opacity
+
+            &::before
                 content: ' '
                 top: 0
                 left: 0
@@ -176,6 +187,19 @@ nav
                 height: 100vh
                 width: 100%
                 z-index: -1
+
+            &::after
+                content: ' '
+                top: 0
+                left: 300px
+                background: rgba(black, .8)
+                position: absolute
+                height: 0
+                width: 100vw
+                z-index: -2
+                opacity: 0
+                transition: .6s opacity
+                transition-delay: opacity .5s
 
             li
                 float: none

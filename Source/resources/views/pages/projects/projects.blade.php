@@ -12,7 +12,7 @@
             @foreach($projects as $project)
             <div class="col-12 col-md-4">
                 <figure class="gallery-figure-room">
-                    <div class="image__wrapper"><img alt="{{$project->title}}" data-original="{{ $project->imgCoverUrl }}" /></div>
+                    <img alt="{{$project->title}}" data-original="{{ asset($project->imgCoverUrl) }}" />
                     <div class="title text-medium"><span>{{ $project->title }}</span></div><a class="float-title hover-darken ease-out" href="{{route('project.single', $project->seoAlias)}}"> Chi tiết</a>
                 </figure>
             </div>

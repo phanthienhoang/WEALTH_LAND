@@ -2,6 +2,7 @@
 namespace App\Application\Lands\Queries;
 
 use App\AppLand;
+use App\Helpers\Strings\FileStorageMakingUrl;
 use App\Helpers\Translaters\LandTranslater;
 
 class GetLandsPagination {
@@ -12,7 +13,10 @@ class GetLandsPagination {
         $lands = AppLand::skip(($pageIndex - 1) * $pageSize)->take($pageSize)->get();
 
         $lands->map(function($land) {
-            return LandTranslater::transform($land);
+            $land = LandTranslater::transform($land);
+            $land->imgCoverUrl = FileStorageMakingUrl::transformString($land->imgCoverUrl);
+            $land->imgUrls = FileStorageMakingUrl::transformListString($land->imgUrls);
+            return $land;
         });
 
         return $lands;

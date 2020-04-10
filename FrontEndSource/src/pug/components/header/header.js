@@ -4,6 +4,19 @@ var isFixed = false
 
 const breakPoint = 300;
 
+$(document).click(function() {
+
+    const nav = $('.nav-list.show')
+
+    if (nav) {
+        hideMenu()
+    }
+});
+
+$("li").click(function(event) {
+    event.stopPropagation();
+});
+
 $(window).scroll(() => {
     const { pageYOffset, innerWidth } = window
 
@@ -53,11 +66,14 @@ $(window).scroll(() => {
 })
 
 function showMenu() {
-    $('.nav-list').addClass('show')
-    $('.menu-backdrop').addClass('show')
+    setTimeout(function() {
+        $('.nav-list').addClass('show')
+        $('.menu-backdrop').addClass('show')
+    
+        $('html').css('overflow','hidden')
+        $('body').css('overflow', 'hidden')
+    }, 0)
 
-    $('html').css('overflow','hidden')
-    $('body').css('overflow', 'hidden')
 }
 
 function hideMenu() {

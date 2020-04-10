@@ -4,15 +4,12 @@ figure.gallery-figure-room
     overflow: hidden
     margin-bottom: 1.7rem
     height: 240px
+    width: 100%
 
-    .image__wrapper
-        display: flex
-        align-items: center
-        justify-content: center
-        // height: 100%
-
-        img
-            width: 110%
+    img
+        object-fit: cover
+        width: 100%
+        height: 100%
 
     &:hover
         .float-title

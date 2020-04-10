@@ -21,3 +21,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['prefix' => 'contact'], function () {
     Route::post('', 'ContactController@postComment');
 });
+
+Route::group(['prefix' => 'gioi-thieu', 'name' => 'introduct.'], function() {
+    Route::get('', 'IntroductController@api_index')->name('introduction.list.api');
+    Route::get('/views', 'IntroductController@api_count_views')->name('introduction.countviews.api');
+
+    // Route::get('{seoAlias}', 'LandsController@single')->name('land.single');
+});

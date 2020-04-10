@@ -3,6 +3,7 @@
 namespace App\Application\News\Queries;
 
 use App\AppNewsPost;
+use App\Helpers\Strings\FileStorageMakingUrl;
 use App\Helpers\Translaters\NewsTranslater;
 
 class GetLastNewsList
@@ -12,8 +13,12 @@ class GetLastNewsList
         $length = $args['length'] ?? 10;
 
         $newsList = AppNewsPost::orderBy('updated_at', 'desc')->get();
-        $newsList->map(function ($news) {
-            return NewsTranslater::transform($news);
+        $newsList->map(function ($news) { 
+            $news = NewsTranslater::transform($news);
+            
+            $news->imgCoverUrl = FileStorageMakingUrl::transformString($news->imgCoverUrl);
+
+            return $news;
         });
 
         return $newsList;
