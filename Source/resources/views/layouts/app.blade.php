@@ -31,8 +31,6 @@
     @yield('main-content')
 
     <script src="/assets/js/jquery.min.js"></script>
-    {{-- @yield('partial-scripts')
-     --}}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.min.js" integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin="anonymous"></script>
     @yield('partial-scripts')
@@ -40,8 +38,6 @@
     <script src="/assets/js/all.js"></script>
 
     @include('partials.footer')
-
-    @yield('partial-scripts')
     @stack('viewscount')
   </body>
 </html>

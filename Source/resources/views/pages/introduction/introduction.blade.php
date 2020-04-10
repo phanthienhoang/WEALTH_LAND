@@ -5,15 +5,21 @@
 @endsection
 
 @section('main-content')
-<main>
+<main id="introduction-tabs">
     <div class="page-header">
-        <h1 class="page-title text-3">Giới thiệu về chúng tôi </h1><span class="page-sub-title"></span>
+        <h1 class="page-title text-3">@{{ currentIntro?.title_vi }}</h1><span class="page-sub-title"></span>
     </div>
-    <article class="container intro-details">
-        <p class="intro"></p>
-        <div class="title-section">
-            {{-- <h2 class="text-3">VỀ CHÚNG TÔI</h2> --}}
+
+    <section class="control-tabs container app-container p-0">
+        <div class="row">
+          <div class="col-12 col-md-4" v-for="intro in list">
+            <button @click="setCurrentSlug(intro.slug_en)" :class="{'active': intro.slug_en == currentSlug}" class="btn btn-outline">@{{ intro.title_vi }}</button>
+          </div>
         </div>
+      </section>
+
+    <article class="app-container intro-details">
+        <div v-html="currentIntro?.content_vi"></div>
     </article>
 </main>
 @endsection
@@ -22,5 +28,5 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-    <script src="/js/contact-form.js"></script>
+    <script src="/js/introduction.js"></script>
 @endsection
