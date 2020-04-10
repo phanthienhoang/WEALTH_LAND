@@ -60,8 +60,7 @@
     <section class="search-area app-container">                   
       <form class="search-form" action="{{ route('search.land') }}" method="POST">
         @csrf
-        <div class="d-flex flex-md-row flex-column combox__wrapper">
-          <div class="col-12 col-md-4 control-column">
+        <div class="combox__wrapper">
             <div class="control__wrapper">
               <label>Giá nhà</label>
               <select class="control" placeholder="Khoảng giá" name="price">
@@ -82,8 +81,6 @@
                 <option value="5">Trên 320 m2</option>
               </select>
             </div>
-          </div>
-          <div class="col-12 col-md-4 control-column">
             <div class="control__wrapper">
               <label>Phòng ngủ</label>
               <select class="control" placeholder="Số phòng ngủ" name="bedroom">
@@ -100,8 +97,6 @@
                 <option value="3">Trên 3.5 phòng</option>
               </select>
             </div>
-          </div>
-          <div class="col-12 col-md-4 control-column">
             <div class="control__wrapper">
               <label>Từ khoá</label>
               <input class="control" type="text" placeholder="Từ khoá tìm kiếm" name="keyword"/>
@@ -109,7 +104,6 @@
             <div class="control__wrapper">
               <button type="submit" class="btn btn-accent">Tìm kiếm</button>
             </div>
-          </div>
         </div>
       </form>
     </section>
