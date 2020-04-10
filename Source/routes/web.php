@@ -16,7 +16,10 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::get('/', 'LandingPageController@index')->name('landing-page');
+Route::get('change-language/{language}', 'IntroductController@changeLanguage')
+->name('user.change-language')->middleware('locale');
+
+Route::get('/', 'LandingPageController@index')->name('landing-page')->middleware('locale');
 
 Route::group(['prefix' => 'tin-tuc', 'name' => 'news.'],function() {
     Route::get('', 'NewsController@listPagination')->name('news.list');
