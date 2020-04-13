@@ -11,7 +11,7 @@
     </div>
 
     <section class="control-tabs container app-container p-0">
-        <div class="row">
+        <div class="row" style="width: 100%">
           <div class="col-12 col-md-4" v-for="intro in list">
             <button @click="setCurrentSlug(intro.slug_en)" :class="{'active': intro.slug_en == currentSlug}" class="btn btn-outline">@{{ intro.title_vi }}</button>
           </div>
