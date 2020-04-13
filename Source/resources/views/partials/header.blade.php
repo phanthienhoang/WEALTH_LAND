@@ -14,8 +14,13 @@
                     </form>
                 </li>
                 <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'landing-page') === 0 ? 'active' : '' }}" href="{{ route('landing-page')}}"> {{ trans('navbar.trangchu') }}</a></li>
-                <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'introduction.') === 0 ? 'active' : '' }}" href="{{ route('introduction.list')}}"> {{ trans('navbar.gioithieu') }}</a></li>
-                <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'land.') ===0 ? 'active' : '' }}" href="{{ route('land.list')}}"> {{ trans('navbar.batdongsan') }}</a></li>
+                <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'introduction.') === 0 ? 'active' : '' }}" href="{{ route('introduction.list')}}"> {{ trans('navbar.gioithieu') }}</a>
+                    <ul>
+                        <li> <a class="nav-link" href="{{ route('introduction.list').'?tab=gioi-thieu-chung' }}">Giới thiệu chung</a></li>
+                        <li> <a class="nav-link" href="{{ route('introduction.list').'?tab=gioi-thieu-nang-luc' }}">Giới thiệu năng lực</a></li>
+                        <li><a class="nav-link" href="{{ route('introduction.list').'?tab=dinh-huong-phat-trien' }}">Định hướng phát triển</a></li>
+                    </ul></li>
+                {{-- <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'land.') ===0 ? 'active' : '' }}" href="{{ route('land.list')}}"> {{ trans('navbar.batdongsan') }}</a></li> --}}
                 <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'project.') === 0 ? 'active' : '' }}" href="{{ route('project.list')}}">{{ trans('navbar.duanbds') }}</a></li>
                 <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'news.') === 0 ? 'active' : '' }}" href="{{ route('news.list')}}"> {{ trans('navbar.tintuc') }}</a></li>
                 <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'contact.') === 0 ? 'active' : '' }}" href="{{ route('contact.index')}}"> {{ trans('navbar.lienhe') }}</a></li>
