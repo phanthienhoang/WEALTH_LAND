@@ -163,7 +163,7 @@
         <div class="row">
             @foreach($lastestNews as $news)
             <div class="col-12 col-sm-6 col-md-4"><a class="news-figure-vertical" href="{{ route('news.single',  $news->slug )}}">
-            <figure class="news-figure-vertical__preview"><img data-original="{{ '/'.$news->imgCoverUrl }}"/>
+            <figure class="news-figure-vertical__preview"><img data-original="{{ asset($news->imgCoverUrl) }}"/>
                 <div class="date-tag bg-accent"><span class="date">{{ date("d", strtotime($news->created_at)) }}</span><span class="month">Th{{ date("d", strtotime($news->created_at)) }}</span></div>
               </figure>
               <div class="main-title-wrapper">
