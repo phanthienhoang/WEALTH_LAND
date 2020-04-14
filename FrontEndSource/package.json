@@ -20,5 +20,11 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "jquery-lazyload": "^1.9.7"
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "not IE_Mob 11",
+    "maintained node versions"
+  ]
 }

@@ -57,6 +57,56 @@
     </div>
     {{-- End Carousel --}}
 
+    <section class="search-area app-container">                   
+      <form class="search-form" action="{{ route('search.land') }}" method="POST">
+        @csrf
+        <div class="combox__wrapper">
+            <div class="control__wrapper">
+              <label>Giá nhà</label>
+              <select class="control" placeholder="Khoảng giá" name="price">
+                <option value="1">Dưới 1.5 Tỷ</option>
+                <option value="2">Từ 1.5 Tỷ - 2.5 Tỷ</option>
+                <option value="3">Từ 2.5 Tỷ - 4 Tỷ</option>
+                <option value="4">Từ 4 Tỷ đến 7 Tỷ</option>
+                <option value="5">Trên 7 Tỷ</option>
+              </select>
+            </div>
+            <div class="control__wrapper">
+              <label>Diện tích</label>
+              <select class="control" placeholder="Diện tích" name="area">
+                <option value="1">Dưới 85 m2</option>
+                <option value="2">Từ 85 m2 - 135 m2</option>
+                <option value="3">Từ 135 m2 - 200 m2</option>
+                <option value="4">Từ 200 m2 - 320 m2</option>
+                <option value="5">Trên 320 m2</option>
+              </select>
+            </div>
+            <div class="control__wrapper">
+              <label>Phòng ngủ</label>
+              <select class="control" placeholder="Số phòng ngủ" name="bedroom">
+                <option value="1">Từ 1 - 2 phòng</option>
+                <option value="2">Từ 3 - 4 phòng</option>
+                <option value="3">Trên 4 phòng</option>
+              </select>
+            </div>
+            <div class="control__wrapper">
+              <label>Phòng tắm</label>
+              <select class="control" placeholder="Số phòng tắm" name="bathroom">
+                <option value="1">Từ 1 - 1.5 phòng</option>
+                <option value="2">Từ 2 - 3.5 phòng</option>
+                <option value="3">Trên 3.5 phòng</option>
+              </select>
+            </div>
+            <div class="control__wrapper">
+              <label>Từ khoá</label>
+              <input class="control" type="text" placeholder="Từ khoá tìm kiếm" name="keyword"/>
+            </div>
+            <div class="control__wrapper">
+              <button type="submit" class="btn btn-accent">Tìm kiếm</button>
+            </div>
+        </div>
+      </form>
+    </section>
 
     <section class="gallery-room app-container">
         <div class="title-section">
