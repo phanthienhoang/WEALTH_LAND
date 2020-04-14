@@ -3,7 +3,7 @@ figure.gallery-figure-room
     position: relative
     overflow: hidden
     margin-bottom: 1.7rem
-    height: 240px
+    height: 280px
     width: 100%
 
     img
@@ -13,7 +13,7 @@ figure.gallery-figure-room
 
     &:hover
         .float-title
-            bottom: 48%
+            bottom: 55%
             opacity: 1
             transform: scale(1) translateX(-50%)
             transition: .6s all
@@ -21,13 +21,27 @@ figure.gallery-figure-room
     .title
         position: absolute
         width: 100%
-        text-align: center
+        text-align: left
         bottom: 0
-        padding: .5rem 0 .7rem
-        background-color: rgba(white, .8)
+        left: 0
+        padding: .5rem 1rem .7rem
+        background-color: rgba(white, .9)
 
-        span
+        h4
             font-size: 17px
+            margin-bottom: .5rem
+            font-weight: 500
+
+        .sub-info 
+            opacity: .8
+            font-size: .9rem
+            margin-top: .4rem
+
+            i 
+                color: $accent-dark
+                margin-right: .5rem
+
+        
 
     .float-title
         position: absolute
@@ -44,11 +58,11 @@ figure.gallery-figure-room
 
 @media screen and ( max-width: $lg-screen-max )
     figure.gallery-figure-room
-        height: 200px
+        height: 220px
 
 @media screen and ( max-width: $md-screen-max )
     figure.gallery-figure-room
-        height: 100px
+        height: 130px
         
 @media screen and ( max-width: $sm-screen-max )
     .float-title
@@ -56,4 +70,4 @@ figure.gallery-figure-room
         color: $white !important
 
     figure.gallery-figure-room
-        height: 220px
+        height: 250px
