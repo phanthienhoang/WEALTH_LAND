@@ -38,7 +38,7 @@
         <div class="project-description" id="banner-detail" :listString="'123123'">
             <input hidden id="banner-data" type="text" value="{{$banners}}">
             <h2 class="feature text-2">@{{ currentBanner.bannerTitle }}</h2><span class="feature-description">@{{ currentBanner.bannerSubtitle }}</span><span v-if="currentBanner.price" class="feature-description">@{{ currentBanner.price }} tỷ</span>
-            <a class="btn btn-accent" :href="currentBanner.bannerHref">Xem chi tiết  @{{listString}} </a>
+            <a class="btn btn-accent" :href="currentBanner.bannerHref">{{ trans('navbar.xemchitiet') }} @{{listString}} </a>
           </div>
           {{-- End Banner Detail --}}
 
@@ -48,7 +48,7 @@
             <input type="text" v-model="form.phone" placeholder="Số điện thoại" />
             <input type="text" v-model="form.email" placeholder="Email" />
             <textarea v-model="form.comment" placeholder="Viết bình luận" rows="4"></textarea>
-            <button class="btn btn-accent">Đăng ký tư vấn</button>
+            <button class="btn btn-accent">{{ trans('navbar.dangkytuvan') }}</button>
           </form>
         {{-- End contact form --}}
         </div>
@@ -110,7 +110,7 @@
 
     <section class="gallery-room app-container">
         <div class="title-section">
-            <h2 class="text-3">Dự án nổi bật</h2>
+            <h2 class="text-3">{{ trans('navbar.duannoibat') }}</h2>
         </div>
         <div class="row">
             @foreach($hotestProjects as $project)
@@ -126,7 +126,7 @@
     <div class="bg-light">
         <section class="gallery-room app-container">
             <div class="title-section has-margin">
-                <h2 class="text-3">Bất động sản nổi bật</h2>
+                <h2 class="text-3">{{ trans('navbar.bdsnoibat') }}</h2>
             </div>
             <div class="row">
                 @foreach($hotestLands as $land)
@@ -158,12 +158,12 @@
     </div>
     <section class="news-figure-list app-container">
         <div class="title-section">
-            <h2 class="text-3">Tin tức</h2>
+            <h2 class="text-3">{{ trans('navbar.tintuc') }}</h2>
         </div>
         <div class="row">
             @foreach($lastestNews as $news)
             <div class="col-12 col-sm-6 col-md-4"><a class="news-figure-vertical" href="{{ route('news.single',  $news->slug )}}">
-            <figure class="news-figure-vertical__preview"><img data-original="{{ '/'.$news->imgCoverUrl }}"/>
+            <figure class="news-figure-vertical__preview"><img data-original="{{ asset($news->imgCoverUrl) }}"/>
                 <div class="date-tag bg-accent"><span class="date">{{ date("d", strtotime($news->created_at)) }}</span><span class="month">Th{{ date("d", strtotime($news->created_at)) }}</span></div>
               </figure>
               <div class="main-title-wrapper">
