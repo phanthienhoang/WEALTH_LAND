@@ -22,7 +22,13 @@
                     </ul></li>
                 {{-- <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'land.') ===0 ? 'active' : '' }}" href="{{ route('land.list')}}"> {{ trans('navbar.batdongsan') }}</a></li> --}}
                 <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'project.') === 0 ? 'active' : '' }}" href="{{ route('project.list')}}">{{ trans('navbar.duanbds') }}</a></li>
-                <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'news.') === 0 ? 'active' : '' }}" href="{{ route('news.list')}}"> {{ trans('navbar.tintuc') }}</a></li>
+                <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'news.') === 0 ? 'active' : '' }}" href="{{ route('news.list')}}"> {{ trans('navbar.tintuc') }}</a>
+                    <ul>
+                        @foreach ($categories as $item)
+                            <li> <a class="nav-link" href="{{ route('categories.filter', $item ) }}">{{ $item->title_vi }}</a></li>
+                        @endforeach
+                    </ul>
+                </li>
                 <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'contact.') === 0 ? 'active' : '' }}" href="{{ route('contact.index')}}"> {{ trans('navbar.lienhe') }}</a></li>
                 {{-- <li class="nav-item"><a class="nav-link" href="{{ route('user.change-language',['en'])}}" >Anh</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('user.change-language',['vi'])}}" >Việt</a></li> --}}
