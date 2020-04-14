@@ -9,7 +9,7 @@
     align-items: center
     transition: 1s opacity
 
-    .hide 
+    .hide
         opacity: 0
 
 .menu-backdrop
@@ -49,20 +49,20 @@ header
         &.show
             top: 0px !important
 
-        nav 
-           background-color: rgba($dark, 100%) !important
+        nav
+            background-color: rgba($dark, 100%) !important
 
 nav
     margin: auto
     width: 100%
-    
+
     position: absolute
     top: 0
     left: 0
     background-color: rgba($dark, 0%)
     transition: .3s all
-    background: linear-gradient(180deg, rgba(0,0,0,0.623686974789916) 0%, rgba(0,0,0,0.3127626050420168) 51%, rgba(0,0,0,0) 86%);
-    
+    background: linear-gradient(180deg, rgba(0,0,0,0.623686974789916) 0%, rgba(0,0,0,0.3127626050420168) 51%, rgba(0,0,0,0) 86%)
+
     .nav-container
         display: flex
         justify-content: space-between
@@ -73,7 +73,7 @@ nav
         display: none
 
     ul
-        
+
         li
             text-transform: uppercase
             color: $white
@@ -121,12 +121,52 @@ nav
                     &::after
                         opacity: 1
 
+li.nav-item
+    position: relative
+    ul
+        padding-inline-start: 0px
+        position: absolute
+        flex-direction: column
+        left: -1rem
+        transform: translateY(-.5rem)
+        width: 200px
+        height: 0px
+        overflow: hidden
+        transition: .3s all
+        opacity: 0
+
+        li
+            padding: 0 !important
+            background-color: $accent-dark !important
+            margin: 0
+            display: block
+            width: 100%
+
+            a.nav-link
+                width: 100%
+                padding: 1rem 1rem
+                color: $dark
+
+                &:hover
+                    color: $light
+
+                &::after
+                    background-color: $light
+
+            &:hover
+                // background-color: $light !important
+                color: $light !important
+
+    &:hover ul 
+        height: auto
+        opacity: 1
+
 @media only screen and (max-width: $md-screen-max)
     .brand
         a.logo-website
             img
                 height: 24px
-                
+
     header
         z-index: 1000
         &.fixed
@@ -246,8 +286,12 @@ nav
                         &::after
                             display: none
 
+                &:hover
+                    ul 
+                        display: none
+
     @media screen and ( max-width: $sm-screen-max )
         .brand
-                a.logo-website
-                    img
-                        height: 24px
+            a.logo-website
+                img
+                    height: 24px

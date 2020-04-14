@@ -21,7 +21,7 @@ var isFixed = false
 const breakPoint = 300;
 
 
-$(document).click(function() {
+$(document).click(function () {
 
     const nav = $('.nav-list.show')
 
@@ -30,64 +30,74 @@ $(document).click(function() {
     }
 });
 
-$("li").click(function(event) {
+$("li").click(function (event) {
     event.stopPropagation();
 });
 
 $(window).scroll(() => {
-    const { pageYOffset, innerWidth } = window
+    const { pageYOffset } = window
 
     var st = $(this).scrollTop();
-    if (st > lastScrollTop) {
-        // downscroll code
 
-        if (pageYOffset < breakPoint && isFixed) {
-            $('header').removeClass('fixed')
-            $('header').removeClass('show')
-
-            isFixed = false
-        }
-
-        if (pageYOffset >= breakPoint && isFixed) {
-            $('header').removeClass('fixed')
-            $('header').removeClass('show')
-
-            isFixed = false
-        }
-
+    if (pageYOffset > 0) {
+        isFixed = true
+        $('header').addClass('fixed')
+        $('header').addClass('show')
     } else {
-
-        if (pageYOffset >= breakPoint && !isFixed) {
-            $('header').addClass('fixed')
-
-            setTimeout(
-                function () {
-                    $('header').addClass('show')
-                },
-                0
-            )
-
-            isFixed = true
-        }
-        // upscroll
-        // isFixed = false
-
-        if (pageYOffset <= 10) {
-            $('header').removeClass('fixed')
-            $('header').removeClass('show')
-        }
+        // if (isFixed)
+        $('header').removeClass('fixed')
+        $('header').removeClass('show')
     }
+    // if (st > lastScrollTop) {
+    //     // downscroll code
+
+    //     if (pageYOffset < breakPoint && isFixed) {
+    //         $('header').removeClass('fixed')
+    //         $('header').removeClass('show')
+
+    //         isFixed = false
+    //     }
+
+    //     if (pageYOffset >= breakPoint && isFixed) {
+    //         $('header').removeClass('fixed')
+    //         $('header').removeClass('show')
+
+    //         isFixed = false
+    //     }
+
+    // } else {
+
+    //     if (pageYOffset >= breakPoint && !isFixed) {
+    //         $('header').addClass('fixed')
+
+    //         setTimeout(
+    //             function () {
+    //                 $('header').addClass('show')
+    //             },
+    //             0
+    //         )
+
+    //         isFixed = true
+    //     }
+    //     // upscroll
+    //     // isFixed = false
+
+    //     if (pageYOffset <= 10) {
+    //         $('header').removeClass('fixed')
+    //         $('header').removeClass('show')
+    //     }
+    // }
 
     lastScrollTop = st;
 
 })
 
 function showMenu() {
-    setTimeout(function() {
+    setTimeout(function () {
         $('.nav-list').addClass('show')
         $('.menu-backdrop').addClass('show')
-    
-        $('html').css('overflow','hidden')
+
+        $('html').css('overflow', 'hidden')
         $('body').css('overflow', 'hidden')
     }, 0)
 
