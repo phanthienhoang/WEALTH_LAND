@@ -1,0 +1,14 @@
+- var tabs = ['Tất cả dự án', 'Căn hộ', 'Đất nền', 'BĐS Nghỉ dưỡng', 'Nhà phố biệt thự', 'Officetel']
+
+.small-tab-controls
+    ul
+        each val, index in tabs
+            li
+                if index == 0
+                    a.active(href="javascript:;")
+                        <i class="fa fa-bookmark-o" aria-hidden="true"></i>
+                        =val
+                else
+                    a(href="javascript:;")
+                        <i class="fa fa-bookmark-o" aria-hidden="true"></i>
+                        = val
