@@ -49,6 +49,8 @@ Route::group(['middleware' => ['locale']], function () {
     Route::get('the-loai/{appnewspostcategory}', 'CategoryController@filter')->name('categories.filter');
 });
 
+
+
 use Spatie\Analytics\Period;
 
 Route::get('test',function (){
