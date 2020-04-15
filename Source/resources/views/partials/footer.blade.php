@@ -36,15 +36,14 @@
             }});
 
     }); 
-    setInterval(function(){ 
-            
-            $.ajax({
+    setTimeout(function(){ 
+        $.ajax({
             url: "{{route('introduction.countviews.api')}}", 
             success: function(result){
                 $("#countviews").html(result) ;
             }});
             
-        }, 5000);
+        }, 10000);
 </script>
   
 @endpush

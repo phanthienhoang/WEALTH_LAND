@@ -7,6 +7,6 @@ return [
     'duanbds'   =>'DỰ ÁN BĐS',
     'tintuc'     => 'TIN TỨC',
     'lienhe'    => 'LIÊN HỆ' ,
-    'xemchitiet' => 'XEM CHI TIET',
+    'xemchitiet' => 'XEM CHI TIẾT',
     'nguoitruycap' => 'người đang truy cập'
 ];

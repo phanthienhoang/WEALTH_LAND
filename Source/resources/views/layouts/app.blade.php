@@ -39,5 +39,6 @@
 
     @include('partials.footer')
     @stack('viewscount')
+    @stack('viewsproject')
   </body>
 </html>
