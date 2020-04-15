@@ -38,7 +38,7 @@
         <div class="project-description" id="banner-detail" :listString="'123123'">
             <input hidden id="banner-data" type="text" value="{{$banners}}">
             <h2 class="feature text-2">@{{ currentBanner.bannerTitle }}</h2><span class="feature-description">@{{ currentBanner.bannerSubtitle }}</span><span v-if="currentBanner.price" class="feature-description">@{{ currentBanner.price }} tỷ</span>
-            <a class="btn btn-accent" :href="currentBanner.bannerHref">Xem chi tiết  @{{listString}} </a>
+            <a class="btn btn-accent" :href="currentBanner.bannerHref">{{ trans('navbar.xemchitiet') }}  @{{listString}} </a>
           </div>
           {{-- End Banner Detail --}}
 
@@ -48,7 +48,7 @@
             <input type="text" v-model="form.phone" placeholder="Số điện thoại" />
             <input type="text" v-model="form.email" placeholder="Email" />
             <textarea v-model="form.comment" placeholder="Viết bình luận" rows="4"></textarea>
-            <button class="btn btn-accent">Đăng ký tư vấn</button>
+            <button class="btn btn-accent">{{ trans('navbar.dangkytuvan') }}</button>
           </form>
         {{-- End contact form --}}
         </div>
@@ -109,156 +109,52 @@
     </section>
     <section class="hot-projects app-container">
       <div class="title-section">
-        <h2 class="text-3">Dự án nổi bật</h2>
+        <h2 class="text-3">{{ trans('navbar.duannoibat') }}</h2>
       </div>
       <div class="hot-projects-container">
       <figure class="hot-project"><img data-original="{{$hotestProjects[0]->imgCoverUrl}}"/>
           <figcaption>
-          <p class="hot-project__title">{{$hotestProjects[0]->titleVI}}</p>
-          <p class="hot-project__description">{{$hotestProjects[0]->description_vi}}</p><a class="link-project" href="{{route('project.single',$hotestProjects[0]->seoAlias)}}">{{ trans('navbar.xemchitiet') }} >></a>
+          <p class="hot-project__title">{{$hotestProjects[0]->title}}</p>
+          <p class="hot-project__description">{{$hotestProjects[0]->description}}</p><a class="link-project" href="{{route('project.single',$hotestProjects[0]->seoAlias)}}">{{ trans('navbar.xemchitiet') }} >></a>
           </figcaption>
         </figure>
        
         <figure class="hot-project"><img data-original="{{$hotestProjects[1]->imgCoverUrl}}"/>
           <figcaption>
-            <p class="hot-project__title">{{$hotestProjects[1]->titleVI}}</p>
-            <p class="hot-project__description">{{$hotestProjects[1]->description_vi}}</p><a class="link-project" href="{{route('project.single',$hotestProjects[1]->seoAlias)}}">{{ trans('navbar.xemchitiet') }} >></a>
+            <p class="hot-project__title">{{$hotestProjects[1]->title}}</p>
+            <p class="hot-project__description">{{$hotestProjects[1]->description}}</p><a class="link-project" href="{{route('project.single',$hotestProjects[1]->seoAlias)}}">{{ trans('navbar.xemchitiet') }} >></a>
           </figcaption>
         </figure>
         <figure class="hot-project"><img data-original="{{$hotestProjects[2]->imgCoverUrl}}"/>
           <figcaption>
-          <p class="hot-project__title">{{$hotestProjects[2]->titleVI}}</p>
-            <p class="hot-project__description">{{$hotestProjects[2]->description_vi}}</p><a class="link-project" href="{{route('project.single',$hotestProjects[2]->seoAlias)}}">{{ trans('navbar.xemchitiet') }} >></a>
+          <p class="hot-project__title">{{$hotestProjects[2]->title}}</p>
+            <p class="hot-project__description">{{$hotestProjects[2]->description}}</p><a class="link-project" href="{{route('project.single',$hotestProjects[2]->seoAlias)}}">{{ trans('navbar.xemchitiet') }} >></a>
         </figure>
       </figcaption>
       </div>
     </section>
     <section class="gallery-room app-container">
       <div class="title-section">
-        <h2 class="text-3">Thư viện ảnh</h2>
+        <h2 class="text-3">Dự án đang phát triển</h2>
       </div>
       <div class="small-tab-controls">
-        <ul>
-          <li>
-            <div id="indexAll"><a id="add-class-all" href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Tất cả dự án</a>
-                
-            </div>
-          </li>
-          <li>
-          <div id="indexApartment"><a  id="add-class-apartment" href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Căn hộ</a>
-            
-            </div>
-          </li>
-          <li>
-            <div id="indexLand"><a id="add-class-land"href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Đất nền</a>
-
-              
-            </div>
-          </li>
-          <li>
-            <div id="indexBDS"><a id="add-class-BDS" href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>BĐS Nghỉ dưỡng</a>
-            </div>
-          </li>
-          <li>
-            <div id="indexVilla"><a id="add-class-Villa" href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Nhà phố biệt thự</a>
-            </div>
-          </li>
-          <li>
-            <div id="indexOfficetel"><a id="add-class-Officetel" href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Officetel</a>
-            </div>
-          </li>
+        <ul id="category_product">
+           {{-- ==========================================CALL CATEGORY_PRODUCT_DATA===============================================================
+            =====================================================================================================================> --}}
         </ul>
       </div>
         <div id="call-data-api" class="row">
-         
-          {{-- <div  class="col-12 col-sm-6 col-md-4" >
-            <figure class="gallery-figure-room"><img data-original="/assets/images/phong-giai-tr.jpg"/>
-              <div class="title text-medium">
-                <h4>ROOM IN HOUSE</h4>
-                <div class="sub-info"><i class="fa fa-book"></i><span>Quy mô dự án: 18.000 m2</span></div>
-                <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>Diện tích căn hộ: 48m2 - 96m2</span></div>
-              </div><a class="float-title hover-darken ease-out" href="../introduce.html"> Chi tiết</a>
-            </figure>
-          </div> --}}
-          {{-- <div class="col-12 col-sm-6 col-md-4">
-            <figure class="gallery-figure-room"><img data-original="/assets/images/phong-giai-tr.jpg"/>
-              <div class="title text-medium">
-                <h4>ROOM IN HOUSE</h4>
-                <div class="sub-info"><i class="fa fa-book"></i><span>Quy mô dự án: 18.000 m2</span></div>
-                <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>Diện tích căn hộ: 48m2 - 96m2</span></div>
-              </div><a class="float-title hover-darken ease-out" href="../introduce.html"> Chi tiết</a>
-            </figure>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4">
-            <figure class="gallery-figure-room"><img data-original="/assets/images/phong-giai-tr.jpg"/>
-              <div class="title text-medium">
-                <h4>ROOM IN HOUSE</h4>
-                <div class="sub-info"><i class="fa fa-book"></i><span>Quy mô dự án: 18.000 m2</span></div>
-                <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>Diện tích căn hộ: 48m2 - 96m2</span></div>
-              </div><a class="float-title hover-darken ease-out" href="../introduce.html"> Chi tiết</a>
-            </figure>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4">
-            <figure class="gallery-figure-room"><img data-original="/assets/images/phong-giai-tr.jpg"/>
-              <div class="title text-medium">
-                <h4>ROOM IN HOUSE</h4>
-                <div class="sub-info"><i class="fa fa-book"></i><span>Quy mô dự án: 18.000 m2</span></div>
-                <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>Diện tích căn hộ: 48m2 - 96m2</span></div>
-              </div><a class="float-title hover-darken ease-out" href="../introduce.html"> Chi tiết</a>
-            </figure>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4">
-            <figure class="gallery-figure-room"><img data-original="/assets/images/phong-giai-tr.jpg"/>
-              <div class="title text-medium">
-                <h4>ROOM IN HOUSE</h4>
-                <div class="sub-info"><i class="fa fa-book"></i><span>Quy mô dự án: 18.000 m2</span>
-              </div>
-              <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>Diện tích căn hộ: 48m2 - 96m2</span></div>
-              </div><a class="float-title hover-darken ease-out" href="../introduce.html"> Chi tiết</a>
-            </figure>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4">
-            <figure class="gallery-figure-room"><img data-original="/assets/images/phong-giai-tr.jpg"/>
-              <div class="title text-medium">
-                <h4>ROOM IN HOUSE</h4>
-                <div class="sub-info"><i class="fa fa-book"></i><span>Quy mô dự án: 18.000 m2</span></div>
-                <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>Diện tích căn hộ: 48m2 - 96m2</span></div>
-              </div><a class="float-title hover-darken ease-out" href="../introduce.html"> Chi tiết</a>
-            </figure>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4">
-            <figure class="gallery-figure-room"><img data-original="/assets/images/phong-giai-tr.jpg"/>
-              <div class="title text-medium">
-                <h4>ROOM IN HOUSE</h4>
-                <div class="sub-info"><i class="fa fa-book"></i><span>Quy mô dự án: 18.000 m2</span></div>
-                <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>Diện tích căn hộ: 48m2 - 96m2</span></div>
-              </div><a class="float-title hover-darken ease-out" href="../introduce.html"> Chi tiết</a>
-            </figure>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4">
-            <figure class="gallery-figure-room"><img data-original="/assets/images/phong-giai-tr.jpg"/>
-              <div class="title text-medium">
-                <h4>ROOM IN HOUSE</h4>
-                <div class="sub-info"><i class="fa fa-book"></i><span>Quy mô dự án: 18.000 m2</span></div>
-                <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>Diện tích căn hộ: 48m2 - 96m2</span></div>
-              </div><a class="float-title hover-darken ease-out" href="../introduce.html"> Chi tiết</a>
-            </figure>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4">
-            <figure class="gallery-figure-room"><img data-original="/assets/images/phong-giai-tr.jpg"/>
-              <div class="title text-medium">
-                <h4>ROOM IN HOUSE</h4>
-                <div class="sub-info"><i class="fa fa-book"></i><span>Quy mô dự án: 18.000 m2</span></div>
-                <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>Diện tích căn hộ: 48m2 - 96m2</span></div>
-              </div><a class="float-title hover-darken ease-out" href="../introduce.html"> Chi tiết</a>
-            </figure>
-          </div> --}}
+
+          {{-- ===========================================CALL PRODUCT_DATA=========================================================
+            =====================================================================================================================> --}}
+
+
         </div>
     </section>
     </div>
     <section class="news-figure-list app-container">
         <div class="title-section">
-            <h2 class="text-3">Tin tức</h2>
+            <h2 class="text-3">{{ trans('navbar.tintuc') }}</h2>
         </div>
         <div class="row">
             @foreach($lastestNews as $news)
@@ -312,239 +208,99 @@
 @push('viewsproject')
 
 <script>
+
+var category = category || {};
+var product = product || {};
+category.drawTable = function (){
+  $.ajax({
+    url:"{{route('project.api.call.indexCategoryPro')}}",
+    method : 'GET',
+    dataType : 'json',
+    success : function(data){
+        $('#category_product').empty();
+        $.each(data, function(index, value){
+            $('#category_product').append(
+              `
+              <li>
+                <div><a id="product-all-${value.id}" onclick="product.getData(${value.id})"  href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>${value.category_project_land_name}</a>
+                  
+                </div>
+              </li>
+
+              `
+            );
+            $('#product-all-0').addClass("active");
+        });
+    }
+  });
+}
+
+product.drawTable = function(){
+  $.ajax({
+      url:"{{route('project.api.call.data')}}",
+      method : 'GET',
+      dataType : 'json',
+      success : function(data){
+          $('#call-data-api').empty();
+          $.each(data, function(index, value){
+              $('#call-data-api').append(
+                `
+                <div  class="col-12 col-sm-6 col-md-4" >
+                <figure class="gallery-figure-room"><img src="{{asset('${value.imgCoverUrl}')}}"/>
+                  <div class="title text-medium">
+                    <h4>${value.title}</h4>
+                    <div class="sub-info"><i class="fa fa-book"></i><span>Quy mô dự án: 18.000 m2</span></div>
+                    <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>Diện tích căn hộ: 48m2 - 96m2</span></div>
+                  </div><a class="float-title hover-darken ease-out" href="du-an/${value.seoAlias}">{{ trans('navbar.xemchitiet') }}</a>
+                </figure>
+              </div>
+                `
+              );
+          });
+      }
+  });
+};
+
+product.getData=function (id){
+  $('[id^="product-all-"]').removeClass("active");
+  $('#product-all-'+id).addClass("active");
+  $.ajax({
+      url:"/indexCategoryPro/" +id ,
+      method : 'GET',
+      dataType : 'json',
+      success : function(data){
+          $('#call-data-api').empty();
+          $.each(data, function(index, value){
+              $('#call-data-api').append(
+                `
+                <div  class="col-12 col-sm-6 col-md-4" >
+                <figure class="gallery-figure-room"><img src="{{asset('${value.imgCoverUrl}')}}"/>
+                  <div class="title text-medium">
+                    <h4>${value.title}</h4>
+                    <div class="sub-info"><i class="fa fa-book"></i><span>Quy mô dự án: 18.000 m2</span></div>
+                    <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>Diện tích căn hộ: 48m2 - 96m2</span></div>
+                  </div><a class="float-title hover-darken ease-out"href="du-an/${value.seoAlias}> {{ trans('navbar.xemchitiet') }}</a>
+                </figure>
+              </div>
+                `
+              );
+          });
+      }
+  });
+}
+
+category.init =function () {
+  category.drawTable();
+  product.drawTable();
   
-$( document ).ready(function() {
-  $('#add-class-all').addClass('active');
-    $.ajax({
-      url:"{{route('project.api.call.data')}}",
-      method : 'GET',
-      dataType : 'json',
-      success : function(data){
-          $('#call-data-api').empty();
-          $.each(data, function(index, value){
-              $('#call-data-api').append(
-                `
-                <div  class="col-12 col-sm-6 col-md-4" >
-                <figure class="gallery-figure-room"><img src="{{asset('${value.imgCoverUrl}')}}"/>
-                  <div class="title text-medium">
-                    <h4>${value.titleVI}</h4>
-                    <div class="sub-info"><i class="fa fa-book"></i><span>Quy mô dự án: 18.000 m2</span></div>
-                    <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>Diện tích căn hộ: 48m2 - 96m2</span></div>
-                  </div><a class="float-title hover-darken ease-out" href="../introduce.html"> Chi tiết</a>
-                </figure>
-              </div>
-                `
-              );
-          });
-      }
-  });
+};
 
 
+$(document).ready(function () {
+  category.init();
+});
 
-  $("#indexAll" ).click(function() {
-    $('#add-class-all').addClass('active');
-    $('#add-class-apartment').removeClass('active');
-    $('#add-class-Officetel').removeClass('active');
-    $('#add-class-BDS').removeClass('active');
-    $('#add-class-Villa').removeClass('active');
-    $('#add-class-land').removeClass('active');
-    $.ajax({
-      url:"{{route('project.api.call.data')}}",
-      method : 'GET',
-      dataType : 'json',
-      success : function(data){
-          $('#call-data-api').empty();
-          $.each(data, function(index, value){
-              $('#call-data-api').append(
-                `
-                <div  class="col-12 col-sm-6 col-md-4" >
-                <figure class="gallery-figure-room"><img src="{{asset('${value.imgCoverUrl}')}}"/>
-                  <div class="title text-medium">
-                    <h4>${value.titleVI}</h4>
-                    <div class="sub-info"><i class="fa fa-book"></i><span>Quy mô dự án: 18.000 m2</span></div>
-                    <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>Diện tích căn hộ: 48m2 - 96m2</span></div>
-                  </div><a class="float-title hover-darken ease-out" href="../introduce.html"> Chi tiết</a>
-                </figure>
-              </div>
-                `
-              );
-          });
-      }
-    });
-  });
-
-// ========================== CĂN HỘ =============================================>
-  $("#indexApartment" ).click(function() {
-    $('#add-class-all').removeClass('active');
-    $('#add-class-apartment').addClass('active');
-    $('#add-class-Officetel').removeClass('active');
-    $('#add-class-BDS').removeClass('active');
-    $('#add-class-Villa').removeClass('active');
-    $('#add-class-land').removeClass('active');
-    $.ajax({
-      url:"{{route('project.api.call.indexApartment')}}",
-      method : 'GET',
-      dataType : 'json',
-      success : function(data){
-          $('#call-data-api').empty();
-          $.each(data, function(index, value){
-              $('#call-data-api').append(
-                `
-                <div  class="col-12 col-sm-6 col-md-4" >
-                <figure class="gallery-figure-room"><img src="{{asset('${value.imgCoverUrl}')}}"/>
-                  <div class="title text-medium">
-                    <h4>${value.titleVI}</h4>
-                    <div class="sub-info"><i class="fa fa-book"></i><span>Quy mô dự án: 18.000 m2</span></div>
-                    <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>Diện tích căn hộ: 48m2 - 96m2</span></div>
-                  </div><a class="float-title hover-darken ease-out" href="../introduce.html"> Chi tiết</a>
-                </figure>
-              </div>
-                `
-              );
-          });
-      }
-    });
-  });
+</script>
 
 
-// ========================== ĐẤT NỀN =============================================>
-  $("#indexLand" ).click(function() {
-    $('#add-class-all').removeClass('active');
-    $('#add-class-apartment').removeClass('active');
-    $('#add-class-Officetel').removeClass('active');
-    $('#add-class-BDS').removeClass('active');
-    $('#add-class-Villa').removeClass('active');
-    $('#add-class-land').addClass('active');
-    $.ajax({
-      url:"{{route('project.api.call.indexLand')}}",
-      method : 'GET',
-      dataType : 'json',
-      success : function(data){
-          $('#call-data-api').empty();
-          $.each(data, function(index, value){
-              $('#call-data-api').append(
-                `
-                <div  class="col-12 col-sm-6 col-md-4" >
-                <figure class="gallery-figure-room"><img src="{{asset('${value.imgCoverUrl}')}}"/>
-                  <div class="title text-medium">
-                    <h4>${value.titleVI}</h4>
-                    <div class="sub-info"><i class="fa fa-book"></i><span>Quy mô dự án: 18.000 m2</span></div>
-                    <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>Diện tích căn hộ: 48m2 - 96m2</span></div>
-                  </div><a class="float-title hover-darken ease-out" href="../introduce.html"> Chi tiết</a>
-                </figure>
-              </div>
-                `
-              );
-          });
-      }
-    });
-  });
-
-  // ========================== BĐS NGHỈ DƯỠNG =============================================>
-
-  $("#indexBDS" ).click(function() {
-    $('#add-class-all').removeClass('active');
-    $('#add-class-apartment').removeClass('active');
-    $('#add-class-Officetel').removeClass('active');
-    $('#add-class-BDS').addClass('active');
-    $('#add-class-Villa').removeClass('active');
-    $('#add-class-land').removeClass('active');
-    $.ajax({
-      url:"{{route('project.api.call.indexBDS')}}",
-      method : 'GET',
-      dataType : 'json',
-      success : function(data){
-          $('#call-data-api').empty();
-          $.each(data, function(index, value){
-              $('#call-data-api').append(
-                `
-                <div  class="col-12 col-sm-6 col-md-4" >
-                <figure class="gallery-figure-room"><img src="{{asset('${value.imgCoverUrl}')}}"/>
-                  <div class="title text-medium">
-                    <h4>${value.titleVI}</h4>
-                    <div class="sub-info"><i class="fa fa-book"></i><span>Quy mô dự án: 18.000 m2</span></div>
-                    <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>Diện tích căn hộ: 48m2 - 96m2</span></div>
-                  </div><a class="float-title hover-darken ease-out" href="../introduce.html"> Chi tiết</a>
-                </figure>
-              </div>
-                `
-              );
-          });
-      }
-    });
-  });
-
-
-  // ========================== NHÀ PHỐ BIỆT THỰ =============================================>
-
-  $("#indexVilla" ).click(function() {
-    $('#add-class-all').removeClass('active');
-    $('#add-class-apartment').removeClass('active');
-    $('#add-class-Officetel').removeClass('active');
-    $('#add-class-BDS').removeClass('active');
-    $('#add-class-Villa').addClass('active');
-    $('#add-class-land').removeClass('active');
-    $.ajax({
-      url:"{{route('project.api.call.indexVilla')}}",
-      method : 'GET',
-      dataType : 'json',
-      success : function(data){
-          $('#call-data-api').empty();
-          $.each(data, function(index, value){
-              $('#call-data-api').append(
-                `
-                <div  class="col-12 col-sm-6 col-md-4" >
-                <figure class="gallery-figure-room"><img src="{{asset('${value.imgCoverUrl}')}}"/>
-                  <div class="title text-medium">
-                    <h4>${value.titleVI}</h4>
-                    <div class="sub-info"><i class="fa fa-book"></i><span>Quy mô dự án: 18.000 m2</span></div>
-                    <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>Diện tích căn hộ: 48m2 - 96m2</span></div>
-                  </div><a class="float-title hover-darken ease-out" href="../introduce.html"> Chi tiết</a>
-                </figure>
-              </div>
-                `
-              );
-          });
-      }
-    });
-  });
-
-
-  // ========================== xOfficetel=============================================>
-
-  $("#indexOfficetel" ).click(function() {
-    $('#add-class-all').removeClass('active');
-    $('#add-class-apartment').removeClass('active');
-    $('#add-class-Officetel').addClass('active');
-    $('#add-class-BDS').removeClass('active');
-    $('#add-class-Villa').removeClass('active');
-    $('#add-class-land').removeClass('active');
-    $.ajax({
-      url:"{{route('project.api.call.Officetel')}}",
-      method : 'GET',
-      dataType : 'json',
-      success : function(data){
-          $('#call-data-api').empty();
-          $.each(data, function(index, value){
-              $('#call-data-api').append(
-                `
-                <div  class="col-12 col-sm-6 col-md-4" >
-                <figure class="gallery-figure-room"><img src="{{asset('${value.imgCoverUrl}')}}"/>
-                  <div class="title text-medium">
-                    <h4>${value.titleVI}</h4>
-                    <div class="sub-info"><i class="fa fa-book"></i><span>Quy mô dự án: 18.000 m2</span></div>
-                    <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>Diện tích căn hộ: 48m2 - 96m2</span></div>
-                  </div><a class="float-title hover-darken ease-out" href="../introduce.html"> Chi tiết</a>
-                </figure>
-              </div>
-                `
-              );
-          });
-      }
-    });
-  });
-
-}); 
-
-    </script>
 @endpush

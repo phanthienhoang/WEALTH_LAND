@@ -2,9 +2,9 @@
     <div class="container-fluid contact">
         <div class="container">
             <div class="title-section">
-                <h2 class="text-3">liên hệ với chúng tôi</h2>
+                <h2 class="text-3">{{ trans('navbar.lienhevoichungtoi') }}</h2>
             </div>
-            <div class="description">Nếu có bất kỳ câu hỏi thắc mắc nào hay muốn tìm hiểu thêm về chúng tôi. Xin hãy liên hệ với chúng tôi để nhận được câu trả lời chính xác và nhanh nhất!</div>
+            <div class="description">{{ trans('navbar.motalienhe') }}</div>
             <a class="btn btn-accent" href="{{ route('contact.index') }}">{{ trans('navbar.lienhe') }}</a>
         </div>
     </div>
@@ -19,7 +19,8 @@
                 <img style="width: 30px; margin-left: 5px" src="/assets/icons/united-states.svg"/>
             </a>
         </div> 
-        <p>  Copyright 2020 @ WealthLand  </p> <p style="width: 5rem"><span id="countviews"> </span> {{ trans('navbar.nguoitruycap') }}</p> 
+        <p>  Copyright 2020 @ WealthLand  </p> <p style="width: 5rem"><span id="countviews"> </span> 	&nbsp;	&nbsp;<i class="fa fa-user-plus" aria-hidden="true"></i>
+        </p> 
     </div>
    </div>
 </footer>
