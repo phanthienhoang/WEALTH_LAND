@@ -111,6 +111,25 @@
       <div class="title-section">
         <h2 class="text-3">Dự án nổi bật</h2>
       </div>
+
+
+      <div class="small-tab-controls">
+        <ul>
+          <li><a class="active" href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Tất cả dự án</a>
+          </li>
+          <li><a href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Căn hộ</a>
+          </li>
+          <li><a href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Đất nền</a>
+          </li>
+          <li><a href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>BĐS Nghỉ dưỡng</a>
+          </li>
+          <li><a href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Nhà phố biệt thự</a>
+          </li>
+          <li><a href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Officetel</a>
+          </li>
+        </ul>
+      </div>
+      x
       <div class="hot-projects-container">
       <figure class="hot-project"><img data-original="{{$hotestProjects[0]->imgCoverUrl}}"/>
           <figcaption>
@@ -150,31 +169,28 @@
     </section>
     <div class="bg-light">
         <section class="gallery-room app-container">
-            <div class="title-section has-margin">
-                <h2 class="text-3">{{ trans('navbar.bdsnoibat') }}</h2>
-            </div>
-          </li>
-          <li>
-            <div id="indexLand"><a id="add-class-land"href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Đất nền</a>
+          <div class="title-section has-margin">
+              <h2 class="text-3">{{ trans('navbar.bdsnoibat') }}</h2>
+          </div>
 
-              
-            </div>
-          </li>
-          <li>
-            <div id="indexBDS"><a id="add-class-BDS" href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>BĐS Nghỉ dưỡng</a>
-            </div>
-          </li>
-          <li>
-            <div id="indexVilla"><a id="add-class-Villa" href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Nhà phố biệt thự</a>
-            </div>
-          </li>
-          <li>
-            <div id="indexOfficetel"><a id="add-class-Officetel" href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Officetel</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-        <div id="call-data-api" class="row">
+          <div class="small-tab-controls">
+            <ul>
+              <li><a class="active" href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Tất cả dự án</a>
+              </li>
+              <li><a href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Căn hộ</a>
+              </li>
+              <li><a href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Đất nền</a>
+              </li>
+              <li><a href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>BĐS Nghỉ dưỡng</a>
+              </li>
+              <li><a href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Nhà phố biệt thự</a>
+              </li>
+              <li><a href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Officetel</a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="call-data-api" class="row">
          
           {{-- <div  class="col-12 col-sm-6 col-md-4" >
             <figure class="gallery-figure-room"><img data-original="/assets/images/phong-giai-tr.jpg"/>
@@ -268,7 +284,7 @@
         <div class="row">
             @foreach($lastestNews as $news)
             <div class="col-12 col-sm-6 col-md-4"><a class="news-figure-vertical" href="{{ route('news.single',  $news->slug )}}">
-            <figure class="news-figure-vertical__preview"><img data-original="{{ asset($news->imgCoverUrl) }}"/>
+              <figure class="news-figure-vertical__preview"><img data-original="{{ asset($news->imgCoverUrl) }}"/>
                 <div class="date-tag bg-accent"><span class="date">{{ date("d", strtotime($news->created_at)) }}</span><span class="month">Th{{ date("d", strtotime($news->created_at)) }}</span></div>
               </figure>
               <div class="main-title-wrapper">
@@ -282,7 +298,7 @@
               <div class="short-description text-medium">
                 {{ $news->created_at }}
               </div></a></div>
-                @endforeach
+            @endforeach
         </div>
     </section>
 </main>
@@ -298,7 +314,7 @@
     <script src="/js/landing-page.js"></script>
 
     <div id='fb-root'>
-    </div>
+    </div>  
         <script>
             (function(d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
