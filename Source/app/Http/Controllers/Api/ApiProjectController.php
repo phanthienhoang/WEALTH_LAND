@@ -5,83 +5,61 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\AppProjectLand;
+use App\AppCategoryProjectLand;
+use App\Helpers\Translaters\ProjectTranslater;
+use App\Helpers\Translaters\CategoryTranslater;
+
 use App\Helpers\Strings\FileStorageMakingUrl;
 
 class ApiProjectController extends Controller
 {
 
-    public function IndexAll(){
+    public function indexCategoryPro()
+    {
+        $indexCategoryPro = AppCategoryProjectLand::all();
 
-        $indexAll= AppProjectLand::all();
-
-        $indexAll->map(function($indexAll) {
-            $indexAll->imgCoverUrl = FileStorageMakingUrl::transformString($indexAll->imgCoverUrl);
-            $indexAll->imgUrls = FileStorageMakingUrl::transformListString($indexAll->imgUrls);
-
-            // return ProjectTranslater::transform($project);
+        $indexCategoryPro->map(function($indexCategoryPro){
+           return CategoryTranslater::transform($indexCategoryPro);
         });
+       
+        return response()->json($indexCategoryPro,200);
+    }
+
+    public function getProduct($id){
+        if($id == 0) {
+            $indexAll= AppProjectLand::orderBy('updated_at', 'desc')->take(6)->get();
+            $indexAll->map(function($indexAll) {
+                $indexAll->imgCoverUrl = FileStorageMakingUrl::transformString($indexAll->imgCoverUrl);
+                $indexAll->imgUrls = FileStorageMakingUrl::transformListString($indexAll->imgUrls);
+                return ProjectTranslater::transform($indexAll);
+            });
+        }else{
+
+            $indexAll= AppProjectLand::where('category_project_land_id', $id)->get();
+            $indexAll->map(function($indexAll) {
+                $indexAll->imgCoverUrl = FileStorageMakingUrl::transformString($indexAll->imgCoverUrl);
+                $indexAll->imgUrls = FileStorageMakingUrl::transformListString($indexAll->imgUrls);
+                return ProjectTranslater::transform($indexAll);
+            });
+
+        }
+       
         return response()->json($indexAll, 200);    
     }
 
+    public function indexAll(){
 
-    public function indexApartment(){
-
-        $indexAll= AppProjectLand::where('category_project_land_id', 1)->get();
-
-        $indexAll->map(function($indexAll) {
-            $indexAll->imgCoverUrl = FileStorageMakingUrl::transformString($indexAll->imgCoverUrl);
-            $indexAll->imgUrls = FileStorageMakingUrl::transformListString($indexAll->imgUrls);
-
-        });
-        return response()->json($indexAll, 200);    
-    }
-
-    public function indexLand(){
-
-        $indexAll= AppProjectLand::where('category_project_land_id', 2)->get();
+        $indexAll= AppProjectLand::orderBy('updated_at', 'desc')->take(6)->get();
 
         $indexAll->map(function($indexAll) {
             $indexAll->imgCoverUrl = FileStorageMakingUrl::transformString($indexAll->imgCoverUrl);
             $indexAll->imgUrls = FileStorageMakingUrl::transformListString($indexAll->imgUrls);
 
+            return ProjectTranslater::transform($indexAll);
         });
-        return response()->json($indexAll, 200);    
-    }
 
-    public function indexBDS(){
+        return response()->json($indexAll, 200);
 
-        $indexAll= AppProjectLand::where('category_project_land_id', 3)->get();
-
-        $indexAll->map(function($indexAll) {
-            $indexAll->imgCoverUrl = FileStorageMakingUrl::transformString($indexAll->imgCoverUrl);
-            $indexAll->imgUrls = FileStorageMakingUrl::transformListString($indexAll->imgUrls);
-
-        });
-        return response()->json($indexAll, 200);    
-    }
-
-    public function indexVilla(){
-
-        $indexAll= AppProjectLand::where('category_project_land_id', 4)->get();
-
-        $indexAll->map(function($indexAll) {
-            $indexAll->imgCoverUrl = FileStorageMakingUrl::transformString($indexAll->imgCoverUrl);
-            $indexAll->imgUrls = FileStorageMakingUrl::transformListString($indexAll->imgUrls);
-
-        });
-        return response()->json($indexAll, 200);    
-    }
-
-    public function Officetel(){
-
-        $indexAll= AppProjectLand::where('category_project_land_id', 5)->get();
-
-        $indexAll->map(function($indexAll) {
-            $indexAll->imgCoverUrl = FileStorageMakingUrl::transformString($indexAll->imgCoverUrl);
-            $indexAll->imgUrls = FileStorageMakingUrl::transformListString($indexAll->imgUrls);
-
-        });
-        return response()->json($indexAll, 200);    
     }
 
 }

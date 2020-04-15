@@ -19,7 +19,8 @@
                 <img style="width: 30px; margin-left: 5px" src="/assets/icons/united-states.svg"/>
             </a>
         </div> 
-        <p>  Copyright 2020 @ WealthLand  </p> <p style="width: 5rem"><span id="countviews"> </span> {{ trans('navbar.nguoitruycap') }}</p> 
+        <p>  Copyright 2020 @ WealthLand  </p> <p style="width: 5rem"><span id="countviews"> </span> 	&nbsp;	&nbsp;<i class="fa fa-user-plus" aria-hidden="true"></i>
+        </p> 
     </div>
    </div>
 </footer>

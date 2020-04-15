@@ -1,6 +1,5 @@
 <?php 
 return [
-    
     'trangchu'  => 'HOME',
     'gioithieu' => 'INTRODUCTION',
     'batdongsan' => 'REAL ESTATE',

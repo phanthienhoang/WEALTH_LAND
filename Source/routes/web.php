@@ -49,7 +49,11 @@ Route::group(['middleware' => ['locale']], function () {
     Route::get('the-loai/{appnewspostcategory}', 'CategoryController@filter')->name('categories.filter');
 });
 
-
+Route::group(['middleware' => ['locale']], function () {
+    Route::get('indexAll','Api\ApiProjectController@indexAll')->name('project.api.call.data');
+    Route::get('indexCategoryPro','Api\ApiProjectController@indexCategoryPro')->name('project.api.call.indexCategoryPro');
+    Route::get('indexCategoryPro/{id}','Api\ApiProjectController@getProduct')->name('project.api.call.getProduct');
+});
 
 use Spatie\Analytics\Period;
 
