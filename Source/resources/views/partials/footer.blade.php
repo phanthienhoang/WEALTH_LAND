@@ -28,23 +28,22 @@
 @push('viewscount')
 <script>
 
-
-  $( document ).ready(function() {
+    $( document ).ready(function() {
         $.ajax({
             url: "{{route('introduction.countviews.api')}}", 
             success: function(result){
-                $("#countviews").html(result) ;
+                $("#countviews").html(result);
             }});
 
     }); 
-    setTimeout(function(){ 
+    setInterval(function(){ 
         $.ajax({
-            url: "{{route('introduction.countviews.api')}}", 
-            success: function(result){
-                $("#countviews").html(result) ;
-            }});
+        url: "{{route('introduction.countviews.api')}}", 
+        success: function(result){
+            $("#countviews").html(result);
+        }});
             
-        }, 10000);
+    }, 5000);
 </script>
   
 @endpush

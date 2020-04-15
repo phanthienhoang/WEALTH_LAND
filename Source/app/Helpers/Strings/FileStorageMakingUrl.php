@@ -4,7 +4,7 @@ namespace App\Helpers\Strings;
 class FileStorageMakingUrl {
     public static function transformString($str) {
         if(config('app.dev_environment') == 'valet') {
-            return dd('valet');
+            return $str;
         }
 
         if (!isset($str) || strlen($str) == 0) {
