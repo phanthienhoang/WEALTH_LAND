@@ -44,10 +44,10 @@
 
           {{-- Contact Form --}}
           <form id="contact-form" @submit.prevent="postComment" action="/api/contact">
-            <input type="text" v-model="form.fullname" placeholder="Vui lòng nhập họ tên" />
-            <input type="text" v-model="form.phone" placeholder="Số điện thoại" />
+          <input type="text" v-model="form.fullname" placeholder="{{trans('navbar.vuilongnhaphoten')}}" />
+            <input type="text" v-model="form.phone" placeholder="{{trans('navbar.sdt')}}" />
             <input type="text" v-model="form.email" placeholder="Email" />
-            <textarea v-model="form.comment" placeholder="Viết bình luận" rows="4"></textarea>
+            <textarea v-model="form.comment" placeholder="{{trans('navbar.vietbinhluan')}}" rows="4"></textarea>
             <button class="btn btn-accent">{{ trans('navbar.dangkytuvan') }}</button>
           </form>
         {{-- End contact form --}}
@@ -62,9 +62,9 @@
         @csrf
         <div class="combox__wrapper">
             <div class="control__wrapper">
-              <label>Giá nhà</label>
+              <label>{{ trans('navbar.gianha') }}</label>
               <select class="control" placeholder="Khoảng giá" name="price">
-                <option value="1">Dưới 1.5 Tỷ</option>
+                <option value="1">{{ trans('navbar.duoi1ty5') }}</option>
                 <option value="2">Từ 1.5 Tỷ - 2.5 Tỷ</option>
                 <option value="3">Từ 2.5 Tỷ - 4 Tỷ</option>
                 <option value="4">Từ 4 Tỷ đến 7 Tỷ</option>
@@ -72,9 +72,9 @@
               </select>
             </div>
             <div class="control__wrapper">
-              <label>Diện tích</label>
+              <label>{{ trans('navbar.dientich') }}</label>
               <select class="control" placeholder="Diện tích" name="area">
-                <option value="1">Dưới 85 m2</option>
+                <option value="1">{{ trans('navbar.duoi85m') }}</option>
                 <option value="2">Từ 85 m2 - 135 m2</option>
                 <option value="3">Từ 135 m2 - 200 m2</option>
                 <option value="4">Từ 200 m2 - 320 m2</option>
@@ -82,27 +82,27 @@
               </select>
             </div>
             <div class="control__wrapper">
-              <label>Phòng ngủ</label>
+              <label>{{ trans('navbar.phongngu') }}</label>
               <select class="control" placeholder="Số phòng ngủ" name="bedroom">
-                <option value="1">Từ 1 - 2 phòng</option>
+                <option value="1">{{ trans('navbar.tu1den2phongngu') }}</option>
                 <option value="2">Từ 3 - 4 phòng</option>
                 <option value="3">Trên 4 phòng</option>
               </select>
             </div>
             <div class="control__wrapper">
-              <label>Phòng tắm</label>
+              <label>{{ trans('navbar.phongtam') }}</label>
               <select class="control" placeholder="Số phòng tắm" name="bathroom">
-                <option value="1">Từ 1 - 1.5 phòng</option>
+                <option value="1">{{ trans('navbar.tu1den2phongtam') }}</option>
                 <option value="2">Từ 2 - 3.5 phòng</option>
                 <option value="3">Trên 3.5 phòng</option>
               </select>
             </div>
             <div class="control__wrapper">
-              <label>Từ khoá</label>
-              <input class="control" type="text" placeholder="Từ khoá tìm kiếm" name="keyword"/>
+              <label>{{ trans('navbar.tukhoa') }}</label>
+              <input class="control" type="text" placeholder="{{ trans('navbar.tukhoatimkiem') }}" name="keyword"/>
             </div>
             <div class="control__wrapper">
-              <button type="submit" class="btn btn-accent">Tìm kiếm</button>
+              <button type="submit" class="btn btn-accent">{{ trans('navbar.timkiem') }}</button>
             </div>
         </div>
       </form>
@@ -135,7 +135,7 @@
     </section>
     <section class="gallery-room app-container">
       <div class="title-section">
-        <h2 class="text-3">Dự án đang phát triển</h2>
+        <h2 class="text-3">{{ trans('navbar.duandangphattrien') }}</h2>
       </div>
       <div class="small-tab-controls">
         <ul id="category_product">
@@ -249,8 +249,8 @@ product.drawTable = function(){
                 <figure class="gallery-figure-room"><img src="{{asset('${value.imgCoverUrl}')}}"/>
                   <div class="title text-medium">
                     <h4>${value.title}</h4>
-                    <div class="sub-info"><i class="fa fa-book"></i><span>Quy mô dự án: 18.000 m2</span></div>
-                    <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>Diện tích căn hộ: 48m2 - 96m2</span></div>
+                    <div class="sub-info"><i class="fa fa-book"></i><span>{{ trans('navbar.quymoduan') }} 18.000 m2</span></div>
+                    <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>{{ trans('navbar.dientichcanho') }} 48m2 - 96m2</span></div>
                   </div><a class="float-title hover-darken ease-out" href="du-an/${value.seoAlias}">{{ trans('navbar.xemchitiet') }}</a>
                 </figure>
               </div>
@@ -276,10 +276,10 @@ product.getData=function (id){
                 <div  class="col-12 col-sm-6 col-md-4" >
                 <figure class="gallery-figure-room"><img src="{{asset('${value.imgCoverUrl}')}}"/>
                   <div class="title text-medium">
-                    <h4>${value.title}</h4>
-                    <div class="sub-info"><i class="fa fa-book"></i><span>Quy mô dự án: 18.000 m2</span></div>
-                    <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>Diện tích căn hộ: 48m2 - 96m2</span></div>
-                  </div><a class="float-title hover-darken ease-out"href="du-an/${value.seoAlias}> {{ trans('navbar.xemchitiet') }}</a>
+                    <h4>${value.title}</h4>"
+                    <div class="sub-info"><i class="fa fa-book"></i><span>{{ trans('navbar.quymoduan') }} 18.000 m2</span></div>
+                    <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>{{ trans('navbar.quymoduan') }} 48m2 - 96m2</span></div>
+                  </div><a class="float-title hover-darken ease-out"href="du-an/${value.seoAlias}"> {{ trans('navbar.xemchitiet') }}</a>
                 </figure>
               </div>
                 `
