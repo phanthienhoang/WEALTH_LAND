@@ -13,5 +13,23 @@ return [
     'lienhevoichungtoi' => 'LIÊN HỆ VỚI CHÚNG TÔI',
     'motalienhe'    => 'Nếu có bất kỳ câu hỏi thắc mắc nào hay muốn tìm hiểu thêm về chúng tôi. Xin hãy liên hệ với chúng tôi để nhận được câu trả lời chính xác và nhanh nhất!',
     'bdsnoibat' => 'BẤT ĐỘNG SẢN NỔI BẬT',
-    'dangkytuvan' => 'ĐĂNG KÝ TƯ VẤN'
+    'dangkytuvan' => 'ĐĂNG KÝ TƯ VẤN',
+    'duandangphattrien' => 'DỰ ÁN ĐANG TRIỂN KHAI',
+    'timkiem' => 'TÌM KIẾM',
+    'gianha'  => 'Giá nhà',
+    'dientich' => 'Diện tích',
+    'phongtam'=> 'Phòng tắm',
+    'tukhoa'    =>'Từ khóa',
+    'phongngu'  => 'Phòng ngủ',
+    'quymoduan' => 'Quy mô dự án:',
+    'dientichcanho' => 'Diện tích căn hộ:',
+    'vuilongnhaphoten' => 'Vui lòng nhập họ tên',
+    'sdt' => 'Số điện thoại',
+    'vietbinhluan' => 'Viết bình luận',
+    'duoi1ty5' => 'Dưới 1.5 tỷ',
+    'duoi85m'   => 'Dưới 85m2',
+    'tu1den2phongngu' => 'Từ 1 - 2 phòng',
+    'tu1den2phongtam' => 'Từ 1 - 1.5 phòng',
+    'tukhoatimkiem'     => 'Từ khóa tìm kiếm'
+
 ];
