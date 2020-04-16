@@ -31,6 +31,4 @@ return [
     'tu1den2phongtam' => 'From 1 to 1.5 rooms',
     'tukhoatimkiem'     => 'Keyword search'
 
-
-
 ];

@@ -276,7 +276,7 @@ product.getData=function (id){
                 <div  class="col-12 col-sm-6 col-md-4" >
                 <figure class="gallery-figure-room"><img src="{{asset('${value.imgCoverUrl}')}}"/>
                   <div class="title text-medium">
-                    <h4>${value.title}</h4>"
+                    <h4>${value.title}</h4>
                     <div class="sub-info"><i class="fa fa-book"></i><span>{{ trans('navbar.quymoduan') }} 18.000 m2</span></div>
                     <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>{{ trans('navbar.quymoduan') }} 48m2 - 96m2</span></div>
                   </div><a class="float-title hover-darken ease-out"href="du-an/${value.seoAlias}"> {{ trans('navbar.xemchitiet') }}</a>
