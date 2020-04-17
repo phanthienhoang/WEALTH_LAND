@@ -8,7 +8,7 @@
         <h1 class="page-title text-3"> Dự án {{ $message ?? ''}} từ WealthLand </h1>
     </div>
     <section class="gallery-room container">
-        <div class="row">
+        <div class="row" style="width: 100%">
             @foreach($projects as $project)
             <div class="col-12 col-md-4">
                 <figure class="gallery-figure-room">
