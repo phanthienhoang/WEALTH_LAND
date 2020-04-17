@@ -31,7 +31,9 @@
                 <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'news.') === 0 ? 'active' : '' }}" href="{{ route('news.list')}}"> {{ trans('navbar.tintuc') }}</a>
                     <ul>
                         @foreach ($categories as $item)
+                            @if($item->id != 0)
                             <li> <a class="nav-link" href="{{ route('categories.filter', $item ) }}">{{ $item->title_vi }}</a></li>
+                            @endif
                         @endforeach
                     </ul>
                 </li>
