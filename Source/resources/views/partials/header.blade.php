@@ -24,16 +24,16 @@
                 <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'project.') === 0 ? 'active' : '' }}" href="{{ route('project.list')}}">{{ trans('navbar.duanbds') }}</a>
                     <ul>
                         @foreach ($category_projects as $item)
+                            @if($item->id != 0)
                             <li> <a class="nav-link" href="{{ route('categories.project.filter', $item ) }}">{{ $item->category_project_land_name_vi }}</a></li>
+                            @endif
                         @endforeach
                     </ul>
                 </li>
                 <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'news.') === 0 ? 'active' : '' }}" href="{{ route('news.list')}}"> {{ trans('navbar.tintuc') }}</a>
                     <ul>
                         @foreach ($categories as $item)
-                            @if($item->id != 0)
                             <li> <a class="nav-link" href="{{ route('categories.filter', $item ) }}">{{ $item->title_vi }}</a></li>
-                            @endif
                         @endforeach
                     </ul>
                 </li>
