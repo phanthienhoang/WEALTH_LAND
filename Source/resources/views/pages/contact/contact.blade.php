@@ -38,13 +38,13 @@
             <div class="intro-row reverse">
                 <div class="media-container">
                     <form class="contact-form" id="contact-form" @submit.prevent="postComment" action="/api/contact">
-                        <input type="text" v-model="form.fullname" placeholder="Vui lòng nhập họ tên" />
-                        <input type="text" v-model="form.phone" placeholder="Số điện thoại" />
+                        <input type="text" v-model="form.fullname" placeholder="{{trans('navbar.vuilongnhaphoten')}}" />
+                        <input type="text" v-model="form.phone" placeholder="{{trans('navbar.sdt')}}" />
                         <input type="text" v-model="form.email" placeholder="Email" />
-                        <textarea type="text" v-model="form.comment" placeholder="Viết bình luận" rows="6"></textarea>
+                        <textarea type="text" v-model="form.comment" placeholder="{{trans('navbar.vietbinhluan')}}" rows="6"></textarea>
                         <button class="btn btn-accent" v-bind:disabled="requesting">
-                            <span v-if="!requesting">Gửi bình luận </span>
-                            <span v-if="requesting">Đang yêu cầu ... </span>
+                            <span v-if="!requesting">{{ trans('navbar.dangkytuvan') }}</span>
+                            <span v-if="requesting">{{ trans('navbar.dangkytuvan') }}</span>
                         </button>
                     </form>
                 </div>

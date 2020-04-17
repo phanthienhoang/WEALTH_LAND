@@ -30,6 +30,6 @@ return [
     'duoi85m'   => 'Dưới 85m2',
     'tu1den2phongngu' => 'Từ 1 - 2 phòng',
     'tu1den2phongtam' => 'Từ 1 - 1.5 phòng',
-    'tukhoatimkiem'     => 'Từ khóa tìm kiếm'
-
+    'tukhoatimkiem'     => 'Từ khóa tìm kiếm',
+    'khatvong' => 'Khát vọng vươn xa'
 ];

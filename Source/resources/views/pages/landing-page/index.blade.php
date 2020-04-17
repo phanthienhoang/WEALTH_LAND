@@ -147,11 +147,44 @@
 
           {{-- ===========================================CALL PRODUCT_DATA=========================================================
             =====================================================================================================================> --}}
-
+          
 
         </div>
     </section>
     </div>
+
+    <section class="overview">
+      <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-12 col-md-6">
+          <div class="text__container">
+            <div class="title-section">
+              <h2 class="text-3">{{ trans('navbar.khatvong') }}</h2>
+            </div>
+            <p class="description">Khu căn hộ Babylon Residence được đầu tư bởi Tập đoàn Đất Xanh, hiện dự án Babylon Residence đang hoàn thiện nhà điều hành, nhà mẫu và công viên ven sông. Dự kiến dự án sẽ được công bố vào tháng 5/2016 và hoàn thành vào đầu năm 2018.</p>
+            <div class="more-description">
+              <div class="widget">
+                <div class="title">TẦM NHÌN</div>
+                <p class="content"><b>2025:</b> Trở thành công ty đầu tư kinh doanh, dịch vụ bất động sản uy tín và chuyên nghiệp hàng đầu miền Nam<br/>
+              </div>
+              <div class="widget">
+                <div class="title">SỨ MỆNH</div>
+                <p class="content">Phải mất công tìm kiếm một nơi để hoạt động thể thao đủ lớn và tiện nghi ,nay với việc sở hữu căn hộ của…</p>
+              </div>
+              <div class="widget">
+                <div class="title">GIÁ TRỊ CỐT LÕI</div>
+                <p class="content">Khát vọng  - Chuyên nghiệp - Chính trực - Nhân văn</p>
+              </div>
+              <div class="widget">
+                <div class="title">TRIẾT LÝ KINH DOANH</div>
+                <p class="content">“Chúng tôi xây dựng niềm tin bắt đầu từ xây dựng ngôi nhà của bạn”.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="news-figure-list app-container">
         <div class="title-section">
             <h2 class="text-3">{{ trans('navbar.tintuc') }}</h2>
