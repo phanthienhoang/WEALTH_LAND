@@ -29,6 +29,10 @@ return [
     'duoi85m'   => 'Under 85m2',
     'tu1den2phongngu' => 'From 1 to 2 rooms',
     'tu1den2phongtam' => 'From 1 to 1.5 rooms',
-    'tukhoatimkiem'     => 'Keyword search'
-
+    'tukhoatimkiem'     => 'Keyword search',
+    'khatvong' => 'WealthLand Oriented',
+    'thuvienhinhanh' => 'Images Gallery',
+    'gallery-anhtintuc' => 'News Gallery',
+    'gallery-anhduan' => 'Projects Gallery',
+    'gallery-anhlienquan' => 'Activities Gallery'
 ];

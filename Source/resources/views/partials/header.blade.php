@@ -21,7 +21,13 @@
                         <li><a class="nav-link" href="{{ route('introduction.list').'?tab=dinh-huong-phat-trien' }}">Định hướng phát triển</a></li>
                     </ul></li>
                 {{-- <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'land.') ===0 ? 'active' : '' }}" href="{{ route('land.list')}}"> {{ trans('navbar.batdongsan') }}</a></li> --}}
-                <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'project.') === 0 ? 'active' : '' }}" href="{{ route('project.list')}}">{{ trans('navbar.duanbds') }}</a></li>
+                <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'project.') === 0 ? 'active' : '' }}" href="{{ route('project.list')}}">{{ trans('navbar.duanbds') }}</a>
+                    <ul>
+                        @foreach ($category_projects as $item)
+                            <li> <a class="nav-link" href="{{ route('categories.project.filter', $item ) }}">{{ $item->category_project_land_name_vi }}</a></li>
+                        @endforeach
+                    </ul>
+                </li>
                 <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'news.') === 0 ? 'active' : '' }}" href="{{ route('news.list')}}"> {{ trans('navbar.tintuc') }}</a>
                     <ul>
                         @foreach ($categories as $item)
@@ -29,10 +35,16 @@
                         @endforeach
                     </ul>
                 </li>
+                <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'galleries.') === 0 ? 'active' : '' }}" href="javascript:;"> {{ trans('navbar.thuvienhinhanh') }}</a>
+                   <ul>
+                        <li> <a class="nav-link" href="{{ route('galleries.getNewsGallery', $item ) }}">{{ trans('navbar.gallery-anhtintuc') }}</a></li>  
+                        <li> <a class="nav-link" href="{{ route('galleries.getProjectGallery', $item ) }}">{{ trans('navbar.gallery-anhduan') }}</a></li>  
+                        <li> <a class="nav-link" href="{{ route('galleries.getActivityGallery', $item ) }}">{{ trans('navbar.gallery-anhlienquan') }}</a></li>  
+                    </ul>
+                </li>
                 <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'contact.') === 0 ? 'active' : '' }}" href="{{ route('contact.index')}}"> {{ trans('navbar.lienhe') }}</a></li>
                 {{-- <li class="nav-item"><a class="nav-link" href="{{ route('user.change-language',['en'])}}" >Anh</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('user.change-language',['vi'])}}" >Việt</a></li> --}}
-
             </ul>
         </div>
     </nav>

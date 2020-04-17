@@ -33,7 +33,10 @@ Route::group(['middleware' => ['locale']], function () {
     });
     Route::group(['prefix' => 'thu-vien-anh', 'name' => 'galleries.'], function() {
         Route::get('', 'GalleriesController@index')->name('galleries.index');
-        Route::get('{room}', 'GalleriesController@roomGallery')->name('galleries.room');
+        Route::get('anh-tin-tuc', 'GalleriesController@getNewsGallery')->name('galleries.getNewsGallery');
+        Route::get('anh-du-an', 'GalleriesController@getProjectGallery')->name('galleries.getProjectGallery');
+        Route::get('anh-hoat-dong', 'GalleriesController@getActivityGallery')->name('galleries.getActivityGallery');
+        
     });
     Route::group(['prefix' => 'lien-he', 'name' => 'contact.'], function() {
         Route::get('', 'ContactController@index')->name('contact.index');
@@ -47,6 +50,7 @@ Route::group(['middleware' => ['locale']], function () {
     });
 
     Route::get('the-loai/{appnewspostcategory}', 'CategoryController@filter')->name('categories.filter');
+    Route::get('phan-loai-du-an/{appcategoryprojectland}', 'CategoryController@getProject')->name('categories.project.filter');
 });
 
 Route::group(['middleware' => ['locale']], function () {
