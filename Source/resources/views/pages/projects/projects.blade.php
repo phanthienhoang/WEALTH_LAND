@@ -5,7 +5,7 @@
 @section('main-content')
 <main class="index-page">
     <div class="page-header">
-        <h1 class="page-title text-3"> Dự án từ WealthLand </h1>
+        <h1 class="page-title text-3"> Dự án {{ $message ?? ''}} từ WealthLand </h1>
     </div>
     <section class="gallery-room container">
         <div class="row">
