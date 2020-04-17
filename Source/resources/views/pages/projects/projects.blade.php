@@ -5,10 +5,10 @@
 @section('main-content')
 <main class="index-page">
     <div class="page-header">
-        <h1 class="page-title text-3"> Dự án từ WealthLand </h1>
+        <h1 class="page-title text-3"> Dự án {{ $message ?? ''}} từ WealthLand </h1>
     </div>
     <section class="gallery-room container">
-        <div class="row">
+        <div class="row" style="width: 100%">
             @foreach($projects as $project)
             <div class="col-12 col-md-4">
                 <figure class="gallery-figure-room">

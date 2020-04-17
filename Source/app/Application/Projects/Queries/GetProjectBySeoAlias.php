@@ -21,4 +21,19 @@ class GetProjectBySeoAlias
 
         return $project;
     }
+
+    public static function getProjectByCategoryId(int $id)
+    {
+        $projects = AppProjectLand::where('category_project_land_id', '=', $id)->get();
+        // $project = ProjectTranslater::transform($project);
+
+        $projects->map(function($project) {
+            $project->imgCoverUrl = FileStorageMakingUrl::transformString($project->imgCoverUrl);
+            $project->imgUrls = FileStorageMakingUrl::transformListString($project->imgUrls);
+
+            return ProjectTranslater::transform($project);
+        });
+
+        return $projects;
+    }
 }

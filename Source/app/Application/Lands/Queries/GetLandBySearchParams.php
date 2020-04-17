@@ -2,6 +2,9 @@
 
 namespace App\Application\Lands\Queries;
 
+use App\AppLand;
+use App\Helpers\Strings\FileStorageMakingUrl;
+use App\Helpers\Translaters\LandTranslater;
 use Illuminate\Support\Facades\DB;
 
 class GetLandBySearchParams {
@@ -34,17 +37,24 @@ class GetLandBySearchParams {
     ];
 
     public static function query($params = []) {
-        
+
         // dd($params);
         $keyword = $params['keyword'];
 
-        $result = DB::table('app_lands')->where('titleVI', 'LIKE', "%$keyword%")
+        $result = AppLand::where('titleVI', 'LIKE', "%$keyword%")
         ->whereBetween('iPrice', self::$pricearray[$params['price']])
         ->whereBetween('iArea', self::$area[$params['area']])
         ->whereBetween('iBedroom', self::$bedroom[$params['bedroom']])
         ->whereBetween('iBathroom', self::$bathroom[$params['bathroom']])
         ->get();
-        
+
+        $result->map(function($land) {
+            $land = LandTranslater::transform($land);
+            $land->imgCoverUrl = FileStorageMakingUrl::transformString($land->imgCoverUrl);
+            $land->imgUrls = FileStorageMakingUrl::transformListString($land->imgUrls);
+            return $land;
+        });
+
         return $result;
     }
 }

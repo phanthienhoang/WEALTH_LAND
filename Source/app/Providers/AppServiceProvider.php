@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\AppCategoryProjectLand;
 use App\AppNewsPostCategory;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
@@ -34,7 +35,8 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('partials.header', function ($view) {
             $categories = AppNewsPostCategory::all();
-            $view->with(compact('categories'));
+            $category_projects = AppCategoryProjectLand::all();
+            $view->with(compact('categories', 'category_projects'));
         });
     }
 }

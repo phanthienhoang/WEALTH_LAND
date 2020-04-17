@@ -50,6 +50,7 @@ Route::group(['middleware' => ['locale']], function () {
     });
 
     Route::get('the-loai/{appnewspostcategory}', 'CategoryController@filter')->name('categories.filter');
+    Route::get('phan-loai-du-an/{appcategoryprojectland}', 'CategoryController@getProject')->name('categories.project.filter');
 });
 
 Route::group(['middleware' => ['locale']], function () {
