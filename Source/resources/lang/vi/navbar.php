@@ -33,7 +33,7 @@ return [
     'tukhoatimkiem'     => 'Từ khóa tìm kiếm',
     'khatvong' => 'Khát vọng vươn xa',
     'thuvienhinhanh' => 'Thư viện hình ảnh',
-    'gallery-anhtintuc' => 'Ảnh Tin tức',
+    'gallery-anhtintuc' => 'Ảnh tin tức',
     'gallery-anhduan' => 'Ảnh dự án',
     'gallery-anhlienquan' => 'Hoạt động / Ảnh liên quan'
 ];
