@@ -32,8 +32,8 @@ return [
     'tu1den2phongtam' => 'Từ 1 - 1.5 phòng',
     'tukhoatimkiem'     => 'Từ khóa tìm kiếm',
     'khatvong' => 'Khát vọng vươn xa',
-    'thuvienhinhanh' => 'Thư viện hình ảnh',
+    'thuvienhinhanh' => 'Thư viện ảnh',
     'gallery-anhtintuc' => 'Ảnh Tin tức',
-    'gallery-anhduan' => 'Ảnh dự án',
-    'gallery-anhlienquan' => 'Hoạt động / Ảnh liên quan'
+    'gallery-anhduan' => 'Ảnh sản phẩm',
+    'gallery-anhlienquan' => 'Ảnh WealthLand'
 ];
