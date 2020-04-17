@@ -45,7 +45,6 @@
                 <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'contact.') === 0 ? 'active' : '' }}" href="{{ route('contact.index')}}"> {{ trans('navbar.lienhe') }}</a></li>
                 {{-- <li class="nav-item"><a class="nav-link" href="{{ route('user.change-language',['en'])}}" >Anh</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('user.change-language',['vi'])}}" >Việt</a></li> --}}
-
             </ul>
         </div>
     </nav>
