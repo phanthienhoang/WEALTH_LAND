@@ -7,19 +7,19 @@
 @section('main-content')
 <main id="introduction-tabs">
     <div class="page-header">
-        <h1 class="page-title text-3">@{{ currentIntro?.title_vi }}</h1><span class="page-sub-title"></span>
+        <h1 class="page-title text-3">@{{ currentIntro?.title }}</h1><span class="page-sub-title"></span>
     </div>
 
     <section class="control-tabs container app-container p-0">
         <div class="row" style="width: 100%">
           <div class="col-12 col-md-4" v-for="intro in list">
-            <button @click="setCurrentSlug(intro.slug_en)" :class="{'active': intro.slug_en == currentSlug}" class="btn btn-outline">@{{ intro.title_vi }}</button>
+            <button @click="setCurrentSlug(intro.slug)" :class="{'active': intro.slug == currentSlug}" class="btn btn-outline">@{{ intro.title_vi }}</button>
           </div>
         </div>
       </section>
 
     <article class="app-container intro-details">
-        <div v-html="currentIntro?.content_vi"></div>
+        <div v-html="currentIntro?.content"></div>
     </article>
 </main>
 @endsection

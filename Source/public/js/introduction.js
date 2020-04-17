@@ -4,7 +4,7 @@ new Vue({
         list: [],
         currentSlug: ''
     },
-    created() {
+    created(){
         this.currentSlug = this.getQueryParams('tab');
         this.loadList()
     },
@@ -13,14 +13,14 @@ new Vue({
             const self = this
 
             let current = this.list.find(e => {
-                return e.slug_vi == self.currentSlug
+                return e.slug == self.currentSlug
             })
             
 
             if (!current) {
                 current = self.list[0]
                 if(!current) return null
-                self.currentSlug = current.slug_vi
+                self.currentSlug = current.slug
             }
 
             return current;

@@ -129,24 +129,23 @@ li.nav-item
         flex-direction: column
         left: -1rem
         transform: translateY(-.5rem)
-        width: 265px
         height: 0px
         overflow: hidden
         transition: .3s all
         opacity: 0
+        width: auto
 
         li
             padding: 0 !important
             background-color: $accent-dark !important
             margin: 0
-            display: block
-            width: 100%
 
             a.nav-link
-                width: 100%
+                white-space:nowrap
                 padding: 1rem 1rem
                 color: $dark
                 text-transform: none
+                box-sizing: border-box
 
                 &:hover
                     color: $light

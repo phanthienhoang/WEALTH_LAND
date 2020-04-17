@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\AppIntroduction;
-use Analytics;
+use App\Application\Introductions\Queries\GetAllIntroduction;
+use Spatie\Analytics\Analytics;
+
 class IntroductController extends Controller
 {
     public function index()
@@ -14,33 +16,9 @@ class IntroductController extends Controller
     }
 
     public function api_index(){
-        $datas = AppIntroduction::all();
+        $result = GetAllIntroduction::query();
 
-        // $arrayData;
-        // foreach($datas as $key =>$data){
-        //     $data_json = [
-        //         'vietname' => [
-        //             'title' => $data['title_vi'],
-        //             'slug' => $data['slug_vi'],
-        //             'description' => $data['description_vi'],
-        //             'content' => $data['content_vi']
-        //         ],
-        //         'english' => [
-        //             'title' => $data['title_en'],
-        //             'slug' => $data['slug_en'],
-        //             'description' => $data['description_en'],
-        //             'content' => $data['content_en']
-        //         ],
-    
-        //     ];
-
-        //     $arrayData[$key] =$data_json;
-        // }
-       
-        // dd($data_json);
-
-
-        return response()->json($datas, 200);
+        return response()->json($result, 200);
     }
 
     public function api_count_views()
