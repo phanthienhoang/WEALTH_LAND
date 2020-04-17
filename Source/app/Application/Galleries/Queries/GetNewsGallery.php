@@ -10,7 +10,7 @@ class GetNewsGallery {
         $result = DB::table('app_news_posts')->select(['imgCoverUrl', 'created_at'])->get();
 
         $result->map(function($elem) {
-            FileStorageMakingUrl::transformString($elem->imgCoverUrl);
+            $elem->imgCoverUrl = FileStorageMakingUrl::transformString($elem->imgCoverUrl);
         });
 
         return $result;

@@ -44,7 +44,7 @@ class GetProjectGallery {
 
         $result = collect($result)->map(function ($elem) {
             $elem = (object)$elem;
-            FileStorageMakingUrl::transformString($elem->imgCoverUrl);
+            $elem->imgCoverUrl = FileStorageMakingUrl::transformString($elem->imgCoverUrl);
             return (object)$elem;
         });
 
