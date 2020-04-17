@@ -56,8 +56,14 @@ Route::group(['middleware' => ['locale']], function () {
 });
 
 use Spatie\Analytics\Period;
-
 Route::get('test',function (){
-    $analyticsData = Analytics::fetchVisitorsAndPageViews(Period::days(7));
-    dd($analyticsData);
+
+    $startDate= Carbon\Carbon::now()->subMonth();
+
+    $endDate = Carbon\Carbon::now();
+
+    $a = Period::create($startDate, $endDate);
+
+    dd($a);
+   
 });

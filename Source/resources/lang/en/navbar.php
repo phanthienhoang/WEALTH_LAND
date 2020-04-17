@@ -13,7 +13,7 @@ return [
     'motalienhe'    => 'If you have any questions or want to learn more about us.  Please contact us to get the most accurate and fastest answer!',
     'bdsnoibat' => 'OUTSTANDING IMMOPABLES',
     'dangkytuvan' => 'REGISTER CONSULTANT',
-    'duandangtrienkhai' =>'DEPLOYING PLAN',
+    'duandangphattrien' =>'DEPLOYING PLAN',
     'timkiem' => 'SEARCH',
     'gianha'  => 'Price',
     'dientich' => 'Acreage',
