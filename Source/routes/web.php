@@ -57,6 +57,10 @@ Route::group(['middleware' => ['locale']], function () {
     Route::get('indexAll','Api\ApiProjectController@indexAll')->name('project.api.call.data');
     Route::get('indexCategoryPro','Api\ApiProjectController@indexCategoryPro')->name('project.api.call.indexCategoryPro');
     Route::get('indexCategoryPro/{id}','Api\ApiProjectController@getProduct')->name('project.api.call.getProduct');
+    Route::get('api/introduct', 'IntroductController@api_index')->name('introduction.list.api');
+    Route::get('api/introduct/{id}', 'IntroductController@get_introduction_data')->name('introduction.list.api.id');
+
+    
 });
 
 use Spatie\Analytics\Period;

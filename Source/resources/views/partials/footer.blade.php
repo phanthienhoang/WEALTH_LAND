@@ -32,7 +32,12 @@
         $.ajax({
             url: "{{route('introduction.countviews.api')}}", 
             success: function(result){
-                $("#countviews").html(result);
+                if(result == 0){
+                    $("#countviews").html(1);
+                }else{
+                    $("#countviews").html(result);
+                }
+           
             }});
 
     }); 

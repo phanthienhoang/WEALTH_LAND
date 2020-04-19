@@ -19,7 +19,8 @@
                         <li> <a class="nav-link" href="{{ route('introduction.list').'?tab=gioi-thieu-chung' }}">Giới thiệu chung</a></li>
                         <li> <a class="nav-link" href="{{ route('introduction.list').'?tab=gioi-thieu-nang-luc' }}">Giới thiệu năng lực</a></li>
                         <li><a class="nav-link" href="{{ route('introduction.list').'?tab=dinh-huong-phat-trien' }}">Định hướng phát triển</a></li>
-                    </ul></li>
+                    </ul>
+                </li>
                 {{-- <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'land.') ===0 ? 'active' : '' }}" href="{{ route('land.list')}}"> {{ trans('navbar.batdongsan') }}</a></li> --}}
                 <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'project.') === 0 ? 'active' : '' }}" href="{{ route('project.list')}}">{{ trans('navbar.duanbds') }}</a>
                     <ul>
