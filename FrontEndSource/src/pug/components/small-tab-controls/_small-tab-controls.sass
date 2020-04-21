@@ -6,7 +6,6 @@
 
     ul
         display: flex
-        min-width: $sm-screen-max
         justify-content: space-between
         border: 1px solid $light
 
@@ -48,3 +47,10 @@
                     //     background: blue
                     //     border-left: 20px green
                     //     border-bottom: 20px solid green
+
+
+@media screen and ( max-width: $md-screen-max )
+    .small-tab-controls
+        ul
+            display: grid !important
+            grid-template-columns: repeat(4, 1fr)
