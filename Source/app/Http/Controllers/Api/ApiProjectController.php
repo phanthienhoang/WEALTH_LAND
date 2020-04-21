@@ -6,6 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\AppProjectLand;
 use App\AppCategoryProjectLand;
+use App\AppPartner;
+use App;
+
+use App\Helpers\Translaters\PartnerTranslater;
 use App\Helpers\Translaters\ProjectTranslater;
 use App\Helpers\Translaters\CategoryTranslater;
 
@@ -59,6 +63,27 @@ class ApiProjectController extends Controller
         });
 
         return response()->json($indexAll, 200);
+
+    }
+
+
+    // ===========================================
+
+    public function partner_getdata($id){
+        
+        $partner = AppPartner::find($id);
+        if (App::isLocale('vi')) {
+            $partner->title = $partner->title_vi;
+            $partner->description = $partner->description_vi;
+            $partner->content = $partner->content_vi;
+            // dd($partner);
+            return view('pages.partner.index',compact('partner'));
+        }else{
+            $partner->title = $partner->title_en;
+            $partner->description = $partner->description_en;
+            $partner->content = $partner->content_en;
+            return view('pages.partner.index',compact('partner'));
+        }
 
     }
 

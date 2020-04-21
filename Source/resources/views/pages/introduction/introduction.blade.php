@@ -28,9 +28,7 @@
 @endsection
 
 @section('partial-scripts')
-    <script>
-
-
+<script>
 
 var introduction = introduction || {} ; 
 
@@ -91,6 +89,7 @@ introduction.getData=function (id){
 }
 
 
+
 introduction.init =function () {
     introduction.drawIntroduction();
 };
@@ -99,7 +98,6 @@ introduction.init =function () {
 
         
 $( document ).ready(function() {
-
     introduction.init();
 });
 

@@ -34,5 +34,7 @@ return [
     'thuvienhinhanh' => 'Images Gallery',
     'gallery-anhtintuc' => 'News Gallery',
     'gallery-anhduan' => 'Projects Gallery',
-    'gallery-anhlienquan' => 'Activities Gallery'
+    'gallery-anhlienquan' => 'Activities Gallery',
+    'doitac' => 'PARTNER'
+
 ];

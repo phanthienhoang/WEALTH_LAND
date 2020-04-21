@@ -25,7 +25,9 @@
                 <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'project.') === 0 ? 'active' : '' }}" href="javascript:;">{{ trans('navbar.duanbds') }}</a>
                     <ul>
                         @foreach ($category_projects as $item)
-                            <li> <a class="nav-link" href="{{ route('categories.project.filter', $item ) }}">{{ $item->category_project_land_name_vi }}</a></li>
+                            @if($item ->id != 0 )
+                                <li> <a class="nav-link" href="{{ route('categories.project.filter', $item ) }}">{{ $item->category_project_land_name_vi }}</a></li>
+                            @endif
                         @endforeach
                     </ul>
                 </li>
@@ -33,6 +35,13 @@
                     <ul>
                         @foreach ($categories as $item)
                             <li> <a class="nav-link" href="{{ route('categories.filter', $item ) }}">{{ $item->title_vi }}</a></li>
+                        @endforeach
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'partner.') === 0 ? 'active' : '' }}" href="javascript:;"> {{ trans('navbar.doitac') }}</a>
+                    <ul>
+                        @foreach ($partner as $item)
+                    <li> <a class="nav-link" href="{{route('partner.getPartner',$item->id )}}">{{$item->title}}</a></li>
                         @endforeach
                     </ul>
                 </li>
@@ -44,8 +53,6 @@
                     </ul>
                 </li>
                 <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'contact.') === 0 ? 'active' : '' }}" href="{{ route('contact.index')}}"> {{ trans('navbar.lienhe') }}</a></li>
-                {{-- <li class="nav-item"><a class="nav-link" href="{{ route('user.change-language',['en'])}}" >Anh</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('user.change-language',['vi'])}}" >Việt</a></li> --}}
             </ul>
         </div>
     </nav>
