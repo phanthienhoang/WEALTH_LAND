@@ -48,6 +48,10 @@ Route::group(['middleware' => ['locale']], function () {
     Route::group(['prefix' => 'search', 'name' => 'search.'],function() {
         Route::post('', 'LandingPageController@search')->name('search.land');
     });
+    Route::group(['prefix' => 'doi-tac', 'name' => 'partner.'], function() {
+        // Route::get('', 'Api\ApiProjectController@partner_index')->name('partner.list');
+        Route::get('{id}', 'Api\ApiProjectController@partner_getdata')->name('partner.getPartner');
+    });
 
     Route::get('the-loai/{appnewspostcategory}', 'CategoryController@filter')->name('categories.filter');
     Route::get('phan-loai-du-an/{appcategoryprojectland}', 'CategoryController@getProject')->name('categories.project.filter');

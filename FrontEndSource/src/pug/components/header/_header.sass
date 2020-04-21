@@ -288,7 +288,12 @@ li.nav-item
 
                 &:hover
                     ul 
-                        display: none
+                        position: inherit
+                        width: auto
+                        padding: 0 1rem 0 2rem
+
+                        li
+                            background: transparent !important
 
     @media screen and ( max-width: $sm-screen-max )
         .brand

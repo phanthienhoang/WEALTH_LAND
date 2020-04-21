@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\AppCategoryProjectLand;
 use App\AppNewsPostCategory;
+use App\AppPartner;
+use App\Helpers\Translaters\PartnerTranslater;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
@@ -36,7 +38,10 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('partials.header', function ($view) {
             $categories = AppNewsPostCategory::all();
             $category_projects = AppCategoryProjectLand::all();
-            $view->with(compact('categories', 'category_projects'));
+            $partner = AppPartner::all()->map(function($partner) {
+                return PartnerTranslater::transform($partner);
+            });
+            $view->with(compact('categories', 'category_projects','partner'));
         });
     }
 }

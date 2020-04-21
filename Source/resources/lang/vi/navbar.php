@@ -35,5 +35,6 @@ return [
     'thuvienhinhanh' => 'Thư viện hình ảnh',
     'gallery-anhtintuc' => 'Ảnh tin tức',
     'gallery-anhduan' => 'Ảnh dự án',
-    'gallery-anhlienquan' => 'Hoạt động / Ảnh liên quan'
+    'gallery-anhlienquan' => 'Ảnh WEALTH LAND',
+    'doitac' => 'ĐỐI TÁC'
 ];
