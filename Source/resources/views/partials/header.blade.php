@@ -14,7 +14,7 @@
                     </form>
                 </li>
                 <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'landing-page') === 0 ? 'active' : '' }}" href="{{ route('landing-page')}}"> {{ trans('navbar.trangchu') }}</a></li>
-                <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'introduction.') === 0 ? 'active' : '' }}" href="{{ route('introduction.list')}}"> {{ trans('navbar.gioithieu') }}</a>
+                <li class="nav-item"><a class="nav-link {{ strpos(Route::currentRouteName(), 'introduction.') === 0 ? 'active' : '' }}" href="{{ route('introduction.list').'?tab=gioi-thieu-chung'}}"> {{ trans('navbar.gioithieu') }}</a>
                     <ul>
                         <li> <a class="nav-link" href="{{ route('introduction.list').'?tab=gioi-thieu-chung' }}">Giới thiệu chung</a></li>
                         <li> <a class="nav-link" href="{{ route('introduction.list').'?tab=gioi-thieu-nang-luc' }}">Giới thiệu năng lực</a></li>
