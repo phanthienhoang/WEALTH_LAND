@@ -23,8 +23,8 @@
                 <div class="blog-group">
                     <div class="title">BÀI VIẾT MỚI</div>
                     <ul class="blog-list">
-                        @foreach($latest as $news)
-                        <li><a href="">{{ $news->title }}</a></li>
+                      @foreach($latest as $news)
+                        <li><a href="{{ route('news.single', $news->slug) }}">{{ $news->title }}</a></li>
                         @endforeach
                     </ul>
                 </div>
