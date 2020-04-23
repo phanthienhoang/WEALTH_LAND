@@ -18,9 +18,10 @@ class LandingPageController extends Controller
         ]);
 
         $hotestProjects = GetHotestProjects::query([
-            'length' => 6
+            'length' => 3
         ]);
 
+        // dd($hotestProjects);
         $hotestLands = GetHotestLands::query([
             'length' => 6
         ]);

@@ -38,7 +38,7 @@
         <div class="project-description" id="banner-detail" :listString="'123123'">
             <input hidden id="banner-data" type="text" value="{{$banners}}">
             <h2 class="feature text-2">@{{ currentBanner.bannerTitle }}</h2><span class="feature-description">@{{ currentBanner.bannerSubtitle }}</span><span v-if="currentBanner.price" class="feature-description">@{{ currentBanner.price }} tỷ</span>
-            <a class="btn btn-accent" :href="currentBanner.bannerHref">{{ trans('navbar.xemchitiet') }} @{{listString}} </a>
+            <a class="btn btn-accent" :href="currentBanner.bannerHref">{{ trans('navbar.xemchitiet') }}  @{{listString}} </a>
           </div>
           {{-- End Banner Detail --}}
 
@@ -107,54 +107,50 @@
         </div>
       </form>
     </section>
-
+    <section class="hot-projects app-container">
+      <div class="title-section">
+        <h2 class="text-3">{{ trans('navbar.duannoibat') }}</h2>
+      </div>
+      <div class="hot-projects-container">
+      <figure class="hot-project"><img data-original="{{$hotestProjects[0]->imgCoverUrl}}"/>
+          <figcaption>
+          <p class="hot-project__title">{{$hotestProjects[0]->title}}</p>
+          <p class="hot-project__description">{{$hotestProjects[0]->description}}</p><a class="link-project" href="{{route('project.single',$hotestProjects[0]->seoAlias)}}">{{ trans('navbar.xemchitiet') }} >></a>
+          </figcaption>
+        </figure>
+       
+        <figure class="hot-project"><img data-original="{{$hotestProjects[1]->imgCoverUrl}}"/>
+          <figcaption>
+            <p class="hot-project__title">{{$hotestProjects[1]->title}}</p>
+            <p class="hot-project__description">{{$hotestProjects[1]->description}}</p><a class="link-project" href="{{route('project.single',$hotestProjects[1]->seoAlias)}}">{{ trans('navbar.xemchitiet') }} >></a>
+          </figcaption>
+        </figure>
+        <figure class="hot-project"><img data-original="{{$hotestProjects[2]->imgCoverUrl}}"/>
+          <figcaption>
+          <p class="hot-project__title">{{$hotestProjects[2]->title}}</p>
+            <p class="hot-project__description">{{$hotestProjects[2]->description}}</p><a class="link-project" href="{{route('project.single',$hotestProjects[2]->seoAlias)}}">{{ trans('navbar.xemchitiet') }} >></a>
+        </figure>
+      </figcaption>
+      </div>
+    </section>
     <section class="gallery-room app-container">
-        <div class="title-section">
-            <h2 class="text-3">{{ trans('navbar.duannoibat') }}</h2>
-        </div>
-        <div class="row">
-            @foreach($hotestProjects as $project)
-            <div class="col-12 col-sm-6 col-md-4">
-                <figure class="gallery-figure-room">
-                    <img alt="$project->title" data-original="{{ asset($project->imgCoverUrl) }}" />
-                    <div class="title text-medium"><span>{{ $project->title}}</span></div><a class="float-title hover-darken ease-out" href="{{ route('project.single', $project->seoAlias) }}"> Chi tiết</a>
-                </figure>
-            </div>
-            @endforeach
+      <div class="title-section">
+        <h2 class="text-3">Dự án đang phát triển</h2>
+      </div>
+      <div class="small-tab-controls">
+        <ul id="category_product">
+           {{-- ==========================================CALL CATEGORY_PRODUCT_DATA===============================================================
+            =====================================================================================================================> --}}
+        </ul>
+      </div>
+        <div id="call-data-api" class="row">
+
+          {{-- ===========================================CALL PRODUCT_DATA=========================================================
+            =====================================================================================================================> --}}
+
+
         </div>
     </section>
-    <div class="bg-light">
-        <section class="gallery-room app-container">
-            <div class="title-section has-margin">
-                <h2 class="text-3">{{ trans('navbar.bdsnoibat') }}</h2>
-            </div>
-            <div class="row">
-                @foreach($hotestLands as $land)
-                <div class="col-12 col-md-6 col-xl-4">
-                <a class="land-figure" href="{{ route('land.single', $land->seoAlias) }}"><figure class="land-figure-link"><img alt="{{ $land->title }}" data-original="{{ $land->imgCoverUrl}}"/>
-                        <div class="land-details-nail">
-                          <div class="land-detail-info">
-                            <div class="icon"><i class="fa fa-home" aria-hidden="true"></i></div>
-                          <p>{{ $land->iArea }}m2</p>
-                          </div>
-                          <div class="land-detail-info">
-                            <div class="icon end"><i class="fa fa-bed" aria-hidden="true"></i></div>
-                            <p>{{ $land->iBedroom}}</p>
-                          </div>
-                          <div class="land-detail-info">
-                            <div class="icon top"><i class="fa fa-bath" aria-hidden="true"></i></div>
-                            <p>{{ $land->iBathroom}}</p>
-                          </div>
-                          <div class="land-detail-info">
-                            <div class="icon smaller"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i></div>
-                            <p>{{ $land->iBuiltYear }}</p>
-                          </div>
-                        </div>
-                        <div class="land-price">{{ $land->iPrice}}T</div></figure></a>
-                  </div>
-                @endforeach
-            </div>
-        </section>
     </div>
     <section class="news-figure-list app-container">
         <div class="title-section">
@@ -163,7 +159,7 @@
         <div class="row">
             @foreach($lastestNews as $news)
             <div class="col-12 col-sm-6 col-md-4"><a class="news-figure-vertical" href="{{ route('news.single',  $news->slug )}}">
-            <figure class="news-figure-vertical__preview"><img data-original="{{ asset($news->imgCoverUrl) }}"/>
+            <figure class="news-figure-vertical__preview"><img data-original="{{ '/'.$news->imgCoverUrl }}"/>
                 <div class="date-tag bg-accent"><span class="date">{{ date("d", strtotime($news->created_at)) }}</span><span class="month">Th{{ date("d", strtotime($news->created_at)) }}</span></div>
               </figure>
               <div class="main-title-wrapper">
@@ -207,3 +203,104 @@
         logged_out_greeting='Xin chào, tôi có thể hổ trợ gì cho bạn không?'>
     </div>
 @endsection
+
+
+@push('viewsproject')
+
+<script>
+
+var category = category || {};
+var product = product || {};
+category.drawTable = function (){
+  $.ajax({
+    url:"{{route('project.api.call.indexCategoryPro')}}",
+    method : 'GET',
+    dataType : 'json',
+    success : function(data){
+        $('#category_product').empty();
+        $.each(data, function(index, value){
+            $('#category_product').append(
+              `
+              <li>
+                <div><a id="product-all-${value.id}" onclick="product.getData(${value.id})"  href="javascript:;"><i class="fa fa-bookmark-o" aria-hidden="true"></i>${value.category_project_land_name}</a>
+                  
+                </div>
+              </li>
+
+              `
+            );
+            $('#product-all-0').addClass("active");
+        });
+    }
+  });
+}
+
+product.drawTable = function(){
+  $.ajax({
+      url:"{{route('project.api.call.data')}}",
+      method : 'GET',
+      dataType : 'json',
+      success : function(data){
+          $('#call-data-api').empty();
+          $.each(data, function(index, value){
+              $('#call-data-api').append(
+                `
+                <div  class="col-12 col-sm-6 col-md-4" >
+                <figure class="gallery-figure-room"><img src="{{asset('${value.imgCoverUrl}')}}"/>
+                  <div class="title text-medium">
+                    <h4>${value.title}</h4>
+                    <div class="sub-info"><i class="fa fa-book"></i><span>Quy mô dự án: 18.000 m2</span></div>
+                    <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>Diện tích căn hộ: 48m2 - 96m2</span></div>
+                  </div><a class="float-title hover-darken ease-out" href="du-an/${value.seoAlias}">{{ trans('navbar.xemchitiet') }}</a>
+                </figure>
+              </div>
+                `
+              );
+          });
+      }
+  });
+};
+
+product.getData=function (id){
+  $('[id^="product-all-"]').removeClass("active");
+  $('#product-all-'+id).addClass("active");
+  $.ajax({
+      url:"/indexCategoryPro/" +id ,
+      method : 'GET',
+      dataType : 'json',
+      success : function(data){
+          $('#call-data-api').empty();
+          $.each(data, function(index, value){
+              $('#call-data-api').append(
+                `
+                <div  class="col-12 col-sm-6 col-md-4" >
+                <figure class="gallery-figure-room"><img src="{{asset('${value.imgCoverUrl}')}}"/>
+                  <div class="title text-medium">
+                    <h4>${value.title}</h4>
+                    <div class="sub-info"><i class="fa fa-book"></i><span>Quy mô dự án: 18.000 m2</span></div>
+                    <div class="sub-info"><i class="fa fa-bookmark-o"></i><span>Diện tích căn hộ: 48m2 - 96m2</span></div>
+                  </div><a class="float-title hover-darken ease-out"href="du-an/${value.seoAlias}> {{ trans('navbar.xemchitiet') }}</a>
+                </figure>
+              </div>
+                `
+              );
+          });
+      }
+  });
+}
+
+category.init =function () {
+  category.drawTable();
+  product.drawTable();
+  
+};
+
+
+$(document).ready(function () {
+  category.init();
+});
+
+</script>
+
+
+@endpush

@@ -1,0 +1,50 @@
+.small-tab-controls
+    margin: 2rem 0 2rem
+    width: 100%
+    overflow: hidden
+    box-shadow: .1px .5px 4px rgba(0,0,0, .3)
+
+    ul
+        display: flex
+        min-width: $sm-screen-max
+        justify-content: space-between
+        border: 1px solid $light
+
+        li
+            text-align: center
+            display: block
+            margin: 0
+            width: auto
+            flex-grow: 1
+
+            a
+                display: block
+                padding: 1rem
+                // background: red
+                position: relative
+                transition: .3s all
+
+                &:hover:not(.active)
+                    color: $accent
+
+                i
+                    margin-right: .5rem
+                    opacity: .7
+
+                &.active
+                    background: $accent
+
+                    &:hover
+                        color: $light
+                    // &::after
+                    //     content: ' '
+                    //     position: absolute
+                    //     bottom: 0
+                    //     left: 50%
+                    //     transform: translateX(-50%)
+                    //     width: 100px
+                    //     height: 10px
+                    //     box-sizing: border-box
+                    //     background: blue
+                    //     border-left: 20px green
+                    //     border-bottom: 20px solid green

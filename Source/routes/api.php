@@ -28,3 +28,14 @@ Route::group(['prefix' => 'gioi-thieu', 'name' => 'introduct.'], function() {
 
     // Route::get('{seoAlias}', 'LandsController@single')->name('land.single');
 });
+
+// Route::get('indexApartment','Api\ApiProjectController@indexApartment')->name('project.api.call.indexApartment');
+// Route::get('indexLand','Api\ApiProjectController@indexLand')->name('project.api.call.indexLand');
+// Route::get('indexBDS','Api\ApiProjectController@indexBDS')->name('project.api.call.indexBDS');
+// Route::get('indexVilla','Api\ApiProjectController@indexVilla')->name('project.api.call.indexVilla');
+// Route::get('officetel','Api\ApiProjectController@Officetel')->name('project.api.call.Officetel');
+
+
+
+
+
